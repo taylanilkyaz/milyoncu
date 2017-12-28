@@ -1,0 +1,309 @@
+#teslimat-bilgileri-top-content-id .ui.steps .disabled.step{
+    background: #98cadc;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step.disabled .title{
+    color: black;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step.disabled:after{
+    background: #98cadc;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step{
+    background: #0780C7;
+}
+
+#teslimat-bilgileri-top-content-id .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon{
+    color: white;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step:after{
+    background: #0780C7;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step .title{
+    color: white;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps.title{
+    font-size: 10px;
+}
+
+#teslimat-bilgileri-top-content-id{
+    text-align: center;
+}
+#devam-et-butonu {
+    width: 100%;
+    font-size: medium;
+    background-color: #1E6DF1;
+    color: white;
+    border: 2px solid #1E6DF1;
+}
+#devam-et-butonu:hover {
+    background-color: white;
+    color: #1E6DF1;
+    border: 2px solid #1E6DF1;
+}
+
+#page-content-id a{
+    color: #43A047;
+}
+
+#credit-bank-card-id .ui.segment{
+    padding: 0em 1em;
+}
+
+#table-id{
+    margin-bottom: 20px;
+}
+
+#shipping-information-table-id .ui.header .sub.header{
+    color: #43A047;
+}
+
+#shipping-information-table-id .ui.header{
+    color: #43A047;
+    margin-top: -4px;
+}
+
+#shipping-information-table-id label{
+    width : 100px;
+    text-align: left;
+}
+
+#centered-information-menu{
+    margin-top: 10px;
+}
+
+
+#shipping-information-next-button-id{
+    margin-top: 20px;
+    background: #0780C7;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .disabled.step{
+    background: #98cadc;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .step.disabled .title{
+    color: black;
+}
+
+#odeme-bilgileri-top-content-id{
+    text-align: center;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .step.disabled:after{
+    background: #98cadc;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .step{
+    background: #0780C7;
+
+}
+
+#odeme-bilgileri-top-content-id .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon{
+    color: white;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .step:after{
+    background: #0780C7;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps .step .title{
+    color: white;
+}
+
+#odeme-bilgileri-top-content-id .ui.steps.title{
+    font-size: 10px;
+}
+
+#page-content-id{
+
+    margin-top: 20px;
+}
+
+
+#payment-information-back-button-id {
+    margin-top: 20px;
+    font-size: medium;
+    background-color: #1E6DF1;
+    color: white;
+    border: 2px solid #1E6DF1;
+}
+#payment-information-back-button-id:hover {
+    background-color: white;
+    color: #1E6DF1;
+    border: 2px solid #1E6DF1;
+}
+
+#payment-information-next-button-id {
+    margin-top: 20px;
+    font-size: medium;
+    background-color: #1E6DF1;
+    color: white;
+    border: 2px solid #1E6DF1;
+}
+#payment-information-next-button-id:hover {
+    background-color: white;
+    color: #1E6DF1;
+    border: 2px solid #1E6DF1;
+}
+
+#total-amount-id.ui.header{
+    text-align: right;
+    color: black;
+
+}
+
+#shipping-summmary-grid-id{
+    position: fixed;
+    height: 300px;
+    left: 69%;
+    top: 30.66%;
+}
+
+#shipping-summary-total-cost.ui.dividing.header{
+    font-size: 12.9px;
+    text-align: right;
+}
+
+#total-amount-without-cargo-id.ui.header{
+    color: black;
+}
+
+#segment-id{
+    width: 110%;
+}
+
+#segment-id input{
+    width: 50%;
+}
+
+#segment-id textarea{
+    width: 50%;
+}
+
+#shipping-summary-title-id{
+    color: #43A047;
+}
+
+#page-content-id input{
+    width: 50%;
+}
+
+#page-content-id label{
+    width: 140px;
+    text-align: left;
+}
+
+#shipping-information-table-id{
+    margin-right: 3.5%;
+}
+
+
+@media screen and (min-width: 768px) {
+    #steps-id{
+        margin-right: 8%;
+    }
+    #modal-segment-id{
+        width: 175%;
+    }
+    #cargo-modal-segment-id{
+        width: 175%;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+        font-size: 1.2em;
+    }
+    #segment-id{
+        width: 100%;
+    }
+    #steps-id{
+        margin-right: 2%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .card-wrapper{
+        transform:scale(0.93);
+        -webkit-transform:scale(0.93);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+}
+
+#shipping-summary-id .ui.primary.button{
+    width: 175px;
+    margin-left: 0%;
+    text-align: right;
+}
+
+
+
+#shipping-summary-id .ui.header{
+    text-align: right;
+}
+
+.ui-widget.ui-widget-content{
+    margin-left: 60%;
+    margin-top: 25%;
+}
+
+#fixed-part-header .ui.header>.icon{
+    font-size: 1.3em;
+}
+
+#shipping-summary-id h3.ui.header{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 1.2em;
+}
+
+#okButtonForAddBillAddress{
+    margin-left: 1%;
+    border-style: solid;
+    border-color: #FFC33F #FFC33F #FFC33F #FFC33F;
+    background-color: rgba(255, 195, 63, 0.75);
+}
+#okButtonForAddBillAddress:hover{
+    border: 3px solid rgba(0,160,80,0);
+    color: #FFF;
+}
+#cancelButtonForAddBillAddress{
+    border-style: solid;
+    border-color: #FFC33F #FFC33F #FFC33F #FFC33F;
+    background-color: rgba(255, 195, 63, 0.75);
+}
+#cancelButtonForAddBillAddress:hover{
+    border: 2px solid rgba(0,160,80,0);
+    color: #fff;
+}
+#add-new-adress{
+    background-color: rgba(0, 0, 0, 0.31);
+    color: white;
+}
+
+
+#okButtonForAddCargoAddress{
+    margin-left: 1%;
+    border-style: solid;
+    border-color: #FFC33F #FFC33F #FFC33F #FFC33F;
+    background-color: rgba(255, 195, 63, 0.75);
+}
+#okButtonForAddCargoAddress:hover{
+    border: 3px solid rgba(0,160,80,0);
+    color: #FFF;
+}
+#cancelButtonForAddCargoAddress{
+    border-style: solid;
+    border-color: #FFC33F #FFC33F #FFC33F #FFC33F;
+    background-color: rgba(255, 195, 63, 0.75);
+}
+#cancelButtonForAddCargoAddress:hover{
+    border: 2px solid rgba(0,160,80,0);
+    color: #fff;
+}

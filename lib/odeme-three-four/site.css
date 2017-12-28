@@ -1,0 +1,185 @@
+body {
+    font-family: Arial,Helvetica,"Helvetica Neue",sans-serif;
+}
+/*en üstteki step css
+*/
+
+#teslimat-bilgileri-top-content-id .ui.steps .disabled.step{
+    background: #98cadc;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step.disabled .title{
+    color: black;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step.disabled:after{
+    background: #98cadc;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step{
+    background: #0780C7;
+}
+
+#teslimat-bilgileri-top-content-id .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon{
+    color: white;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step:after{
+    background: #0780C7;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps .step .title{
+    color: white;
+}
+
+#teslimat-bilgileri-top-content-id .ui.steps.title{
+    font-size: 10px;
+}
+
+#teslimat-bilgileri-top-content-id{
+    text-align: center;
+}
+/*
+en üstteki step css sonu
+ */
+
+/*
+siparis tamamlandi  css
+ */
+#siparis-tamamlandi-2 .ui.header.title{
+    font-weight: bold;
+    font-size: x-large;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+#siparis-tamamlandi-2 .ui.header.color{
+    color: #298A08;
+}
+#siparis-tamamlandi-2 .link-type-one {
+    text-align: center;
+}
+#siparis-tamamlandi-2 .ui.segment.substance{
+    background: #eeedff;
+}
+#siparis-tamamlandi-2 .margin{
+    margin-top: 14px;
+}
+
+#siparis-tamamlandi-grid{
+    margin-top: 10px;
+}
+/*
+siparis tamamlandi css sonu
+ */
+/*
+siparis ozeti css
+ */
+#siparis-özeti-2 .ui.header.title{
+    font-weight: bold;
+    font-size: x-large;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right-style: groove;
+}
+
+#siparis-özeti-2 .ui.header.color{
+    color: #298A08;
+}
+
+#siparis-özeti-2 .ahref{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#siparis-özeti-2 a{
+    position: absolute;
+    top:7px;
+}
+
+#odeme-buttons {
+    margin-top: 20px;
+    font-size: medium;
+    background-color: #1E6DF1;
+    color: white;
+    border: 2px solid #1E6DF1;
+}
+#odeme-buttons:hover {
+    background-color: white;
+    color: #1E6DF1;
+    border: 2px solid #1E6DF1;
+}
+
+#siparis-özeti-2 .ui.segment.substance{
+    background: #eeedff;
+}
+#fixed-text-right.ui.segment{
+    text-align: right;
+}
+#fixed-text-right-tamamlandi.ui.segment{
+    text-align: right;
+}
+
+#siparis-özeti-2 .ui.segment .field{
+    margin: 10px 0px 10px 0px;
+}
+
+@media screen and (min-width: 769px) {
+    #fixed-part-siparis-ozeti{
+        text-align: right;
+        width: 260px;
+    }
+    #steps-id{
+        margin-right: 12%;
+    }
+    #fixed-part-siparis-tamamlandi{
+        position: fixed;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #segment-id{
+        width: 100%;
+    }
+    #steps-id{
+        margin-right: 2%;
+    }
+    #siparis-özeti-2 a {
+        font-size: 12px;
+        top: 0px;
+    }
+    #siparis-özeti-2 .ui.header.title {
+        font-weight: bold;
+        font-size: large;
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right-style: groove;
+    }
+}
+
+#information-menu{
+    margin-top: 10px;
+}
+
+#ozet-segment-id{
+    width: 100%;
+}
+
+#siparis-özeti-2 .primary.submit.button{
+    margin-top: 10px;
+}
+
+#siparis-özeti-2 .lftpadd{
+    padding-left: 15px;
+}
+
+#siparis-özeti-2 .toplam{
+    padding-right: 25px;
+}
+/*
+siparis ozeti css son
+ */
+#orderplus-container{
+    width: 30%;
+    height: 100%;
+}

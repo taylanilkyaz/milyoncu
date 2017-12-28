@@ -1,0 +1,291 @@
+/* Slider */
+.slick-slider {
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    height: 500px;
+    background: #ffffff;
+}
+
+.fiyat {
+    font-size: 22px;
+    color: #3593F4;
+    font-weight: bolder;
+    margin-top: 2%;
+    padding-bottom: 5%;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+}
+
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+
+    text-align: left;
+    padding-top: 0%;
+    padding-bottom: 2%;
+
+}
+
+.price .fiyat{
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.price .grey.top {
+    background-color: #1080F2;
+    font-size: 24px;
+    border-bottom: 0px solid;
+    color: #fff;
+    height: 15%;
+    padding-top: 2%;
+
+}
+
+.sefa-slider-content-block {
+    height: 85%;
+    text-indent: 5%;
+}
+
+.sefa-slider-content-block .description-row{
+
+    padding-left: 10%;
+
+}
+
+.sefa-slider-button-position {
+    text-align: center;
+}
+
+.button-slider {
+    background-color: #3593F4;
+    border: none;
+    padding: 1vw 4vw;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #FFFFFF;
+}
+
+.button-position {
+    bottom: 5%;
+    margin-left: 1%;
+
+}
+
+.button-slider:hover {
+    background-color: #FFFFFF;
+    text-color: #000000;
+    border: 2px solid #3593F4;
+
+}
+
+.slick-current {
+    font-size: 14px;
+}
+
+.slick-active:not(.slick-current) {
+    transform: scale(0.9);
+}
+
+.slick-slide:not(.slick-active) {
+    transform: scale(0.8);
+}
+
+.slick-slide.slick-active .button-position {
+    display: none;
+}
+
+.slick-slide.slick-current.slick-active.slick-center .button-position {
+    display: inline;
+}
+
+.slick-slide:not(.slick-active).button-position {
+    display: none;
+}
+
+.price.slick-slide .button-position {
+    display: none;
+}
+
+/*
+aktif slaytın arka planı
+ */
+.slick-current {
+    background-color: #3593F4;
+}
+
+.slick-current #product-description {
+    color: #FFFFFF;
+}
+
+.slick-current .fiyat {
+    color: #FFFFFF;
+}
+
+.slick-current i.icon, i.icons {
+    font-size: 1.5em;
+}
+
+.slick-current.price li {
+    color: #FFFFFF;
+}
+
+.slick-current.checkmark.icon {
+    color: #FFFFFF;
+}
+
+#slick-content a:visited {
+    color: #FFFFFF;
+}
+
+#slick-content a:visited:hover {
+    color: #000000;
+}
+
+i.checkmark.icon {
+    color: #3593F4;
+    margin-left: -9%;
+    padding-right: 10%;
+}
+
+.slick-current i.checkmark.icon {
+    color: white;
+    margin-left: -9%;
+    padding-right: 12%;
+}
+
+.slick-current #main-attribute-id {
+    background-color: #5DA9F7;
+}

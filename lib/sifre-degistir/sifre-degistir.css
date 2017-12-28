@@ -1,0 +1,15 @@
+#check_equal{
+    font-size: 19px;
+    color: #80cd70;
+}
+
+#check_error{
+    font-size: 19px;
+    color: #eb7225;
+}
+i.icon.check.circle:before{
+    color: #80cd70;
+}
+i.icon.warning.circle:before{
+    color: #eb7225;
+}

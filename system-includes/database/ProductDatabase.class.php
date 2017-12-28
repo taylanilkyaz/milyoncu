@@ -1,0 +1,208 @@
+<?php
+
+class ProductDatabase extends Database{
+    public static $PRODUCT_TABLE_NAME = "product";
+    public static $PRODUCT_ID = "id";
+    public static $PRODUCT_NAME = "name";
+    public static $PRODUCT_PRICE = "price";
+    public static $PRODUCT_DESC = "short_desc";
+    public static $PRODUCT_IMAGEPATH = "image_path";
+    public static $PRODUCT_COUNT = "count";
+    public static $PRODUCT_CATEGORY_ID = "category_id";
+    public static $PRODUCT_SUB_CATEGORY_ID = "sub_category_id";
+    public static $PRODUCT_EXPERT_ACTIVE = "expert_active";
+    public static $PRODUCT_LONG_DESC = "long_desc";
+
+    /**
+     * @param $object Product
+     * @return mixed|string
+     */
+    public function insertProduct($object){
+        $name = $object->getName();
+        $price = $object->getPrice();
+        $short_desc = $object->getShortDesc();
+        $path = $object->getImagePath();
+        $long_desc = $object->getLongDesc();
+        $sql = sprintf("
+                INSERT INTO %s (%s, %s ,%s , %s,%s)
+                VALUES (?,?,?,?,?)",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_NAME,
+            self::$PRODUCT_PRICE,
+            self::$PRODUCT_DESC,
+            self::$PRODUCT_IMAGEPATH,
+            self::$PRODUCT_LONG_DESC);
+
+        if ($stmt = $this->getDb()->prepare($sql)){
+
+            $stmt->bind_param("sssss",
+                $name,
+                $price,
+                $short_desc,
+                $path,
+                $long_desc);
+
+            if (!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Ürün ekleme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+                return $this->getErrorMessage();
+            }
+            return "Ürün başarılı bir şekilde eklendi.";
+        }
+    }
+
+    public function editProduct($productName,$productPrice,$productInfo,$nameOfFile,$productId,$productLongInfo){
+        $sql = sprintf("
+            UPDATE %s SET %s=? ,%s=? ,%s=? ,%s=? ,%s=? WHERE %s=?",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_NAME,
+            self::$PRODUCT_PRICE,
+            self::$PRODUCT_DESC,
+            self::$PRODUCT_IMAGEPATH,
+            self::$PRODUCT_LONG_DESC,
+            self::$PRODUCT_ID
+        );
+        if ($stmt = $this->getDb()->prepare($sql)) {
+            $stmt->bind_param("sssssd", $productName,$productPrice,$productInfo,$nameOfFile,$productLongInfo,$productId);
+            $res = $stmt->execute();
+            if(!$res){
+                $this->setIsError(true);
+                $this->setErrorMessage("Ürün düzenleme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+            }
+        }
+        else{
+            $this->setIsError(true);
+            $this->setErrorMessage("Ürün düzenleme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+        }
+    }
+
+    public function getProductByName($productName){
+        $sql = sprintf("SELECT * FROM %s WHERE %s=?",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_NAME);
+        if ($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("s",$productName);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = mysqli_fetch_assoc($result);
+            return Product::__constructByMysqliRow($row,false);
+        }
+
+    }
+
+    public function editProductWithoutImage($productName,$productPrice,$productInfo,$productId,$productLongInfo){
+        $sql = sprintf("
+            UPDATE %s SET %s=? ,%s=? ,%s=? ,%s=? WHERE %s=?",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_NAME,
+            self::$PRODUCT_PRICE,
+            self::$PRODUCT_DESC,
+            self::$PRODUCT_LONG_DESC,
+            self::$PRODUCT_ID
+        );
+        if ($stmt = $this->getDb()->prepare($sql)) {
+            $stmt->bind_param("ssssd", $productName,$productPrice,$productInfo,$productLongInfo,$productId);
+            $res = $stmt->execute();
+            if(!$res){
+                $this->setIsError(true);
+                $this->setErrorMessage("Ürün düzenleme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+            }
+        }
+        else{
+            $this->setIsError(true);
+            $this->setErrorMessage("Ürün düzenleme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+        }
+    }
+
+    public function listAllProduct(){
+        $sql = sprintf("SELECT * FROM %s",self::$PRODUCT_TABLE_NAME);
+        if ($stmt = $this->getDb()->prepare($sql)){
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $rows = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($rows,$row);
+            }
+            echo json_encode($rows);
+        }
+    }
+
+
+    public function getAllProducts($category_id)
+    {
+        $sql = sprintf("SELECT * FROM %s WHERE %s=?",
+            ProductDatabase::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_CATEGORY_ID);
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("d",$category_id);
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+
+    public function getAllProductsForSubCategory($subCategoryId){
+        $sql = sprintf("SELECT * FROM %s WHERE %s=?",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_SUB_CATEGORY_ID);
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("d",$subCategoryId);
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+
+    public function deleteProduct($productId){
+        $sql = sprintf("DELETE FROM %s WHERE %s=?",self::$PRODUCT_TABLE_NAME,self::$PRODUCT_ID);
+        if ($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("d",$productId);
+            $res = $stmt->execute();
+            if (!$res){
+                $this->setIsError(true);
+                $this->setErrorMessage("Ürün silme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+            }
+        }
+        else{
+            $this->setIsError(true);
+            $this->setErrorMessage("Ürün silme sırasında bir hata meydana geldi : " .$this->getDb()->error);
+        }
+    }
+}
