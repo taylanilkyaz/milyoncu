@@ -1,10 +1,10 @@
 <?php
 
 //$dev = 'localhost';
-$dev = 'kolaydna.dev';
+$dev = 'milyoncu.dev';
 //$dev = 'www.kolaydna.com';
 
-if($dev == 'localhost' || $dev == 'kolaydna.dev'){
+if($dev == 'localhost' || $dev == 'milyoncu.dev'){
     /**Error report Ayarları **/
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
