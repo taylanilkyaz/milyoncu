@@ -1,7 +1,7 @@
 <?php
 
-//$dev = 'localhost';
-$dev = 'kolaydna.dev';
+$dev = 'localhost';
+//$dev = 'kolaydna.dev';
 //$dev = 'www.kolaydna.com';
 
 if($dev == 'localhost' || $dev == 'kolaydna.dev'){
