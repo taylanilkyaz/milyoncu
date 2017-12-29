@@ -24,13 +24,15 @@ CREATE TABLE IF NOT EXISTS `address_user_relation` (
   `is_active` tinyint(4) DEFAULT '1',
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.address_user_relation: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `address_user_relation` DISABLE KEYS */;
 INSERT IGNORE INTO `address_user_relation` (`user_id`, `bill_address_id`, `cargo_address_id`, `is_active`, `id`) VALUES
 	(1, NULL, 1, 1, 1),
-	(1, 1, NULL, 1, 2);
+	(1, 1, NULL, 1, 2),
+	(6, NULL, 2, 1, 3),
+	(6, 2, NULL, 1, 4);
 /*!40000 ALTER TABLE `address_user_relation` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.aktivasyon_kodu
@@ -64,13 +66,15 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `process_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.basket: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
 INSERT IGNORE INTO `basket` (`id`, `product_id`, `user_id`, `process_date`) VALUES
 	(2, 2, 1, '2017-09-19 17:12:43'),
-	(3, 1, 5, '2017-09-19 19:17:43');
+	(3, 1, 5, '2017-09-19 19:17:43'),
+	(4, 2, 6, '2017-12-29 17:21:38'),
+	(5, 2, 6, '2017-12-29 17:21:39');
 /*!40000 ALTER TABLE `basket` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.bill_address
@@ -87,12 +91,13 @@ CREATE TABLE IF NOT EXISTS `bill_address` (
   `phoneNumber` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `address_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.bill_address: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `bill_address` DISABLE KEYS */;
 INSERT IGNORE INTO `bill_address` (`id`, `firstname`, `lastname`, `country`, `city`, `county`, `district`, `billingAddress`, `postcode`, `phoneNumber`, `address_name`) VALUES
-	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev');
+	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
+	(2, 'ayşe', 'akcan', 'tr', 'ankara', 'çankaya', 'beytepe', 'hacettepe üniversitesi', 6800, '05386151818', 'beytepe');
 /*!40000 ALTER TABLE `bill_address` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.buyed_products
@@ -128,12 +133,13 @@ CREATE TABLE IF NOT EXISTS `cargo_address` (
   `phoneNumber` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `address_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.cargo_address: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `cargo_address` DISABLE KEYS */;
 INSERT IGNORE INTO `cargo_address` (`id`, `firstname`, `lastname`, `country`, `city`, `county`, `district`, `cargoAddress`, `postcode`, `phoneNumber`, `address_name`) VALUES
-	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev');
+	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
+	(2, 'ayşe', 'akcan', 'tr', 'ankara', 'çankaya', 'beytepe', 'hacettepe üniversitesi', 6800, '05386151818', 'beytepe');
 /*!40000 ALTER TABLE `cargo_address` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.categories
@@ -151,22 +157,6 @@ INSERT IGNORE INTO `categories` (`id`, `name`) VALUES
 	(3, 'sağlık'),
 	(4, 'köken');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
-
--- tablo yapısı dökülüyor b4u_dna.contact
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `subject` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `message` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- b4u_dna.contact: ~1 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT IGNORE INTO `contact` (`id`, `subject`, `email`, `name`, `message`) VALUES
-	(1, 'Başvuru & Fiyatlandırma', 'ayseakcan1907@gmail.com', 'Ayşe Akcan', 'Çok pahalı bit site. biraz yardımcı olun lütfen.');
-/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.kullanıcılar
 CREATE TABLE IF NOT EXISTS `kullanıcılar` (
@@ -190,7 +180,7 @@ INSERT IGNORE INTO `kullanıcılar` (`id`, `e_mail`, `tc`, `şifre`, `ad`, `soya
 	(1, 'ayhanyunt@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayhan', 'yünt', '2017-08-06 20:42:45', '05456772303', 1, 0),
 	(2, 'ednarge@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ali kemal', 'kırçakçı', '2017-08-07 12:37:46', '', 1, 1),
 	(3, 'laboratuvar@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'labaratuvar', 'test', '2017-08-07 12:39:00', '', 1, 0),
-	(5, 'test@test.com', '11111111111', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'test', 'test', '2017-09-13 17:28:42', '55369326827', 1, 0),
+	(5, 'test@test.com', '11111111111', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'test', 'deneme', '2017-09-13 17:28:42', '7777', 1, 0),
 	(6, 'ayseakcan1907@gmail.com', '12565605338', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayşe', 'akcan', '2017-12-29 03:20:58', '05386151818', 1, 0);
 /*!40000 ALTER TABLE `kullanıcılar` ENABLE KEYS */;
 
@@ -226,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `order_buy_relation` (
 /*!40000 ALTER TABLE `order_buy_relation` DISABLE KEYS */;
 INSERT IGNORE INTO `order_buy_relation` (`id`, `order_code`, `add_time`, `update_time`, `order_status`, `user_id`, `cargo_address_id`, `bill_address_id`, `cargo_no`) VALUES
 	(1, 'B1000001', '2017-08-17 20:22:45', '2017-08-18 11:23:37', 5, 1, 1, 1, 'S757465'),
-	(2, 'B1000002', '2017-08-17 20:23:11', '2017-08-18 11:23:42', 3, 1, 1, 1, 'S457876');
+	(2, 'B1000002', '2017-08-17 20:23:11', '2017-12-29 19:03:47', 2, 1, 1, 1, 'S457876');
 /*!40000 ALTER TABLE `order_buy_relation` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.product_comments
@@ -287,19 +277,22 @@ CREATE TABLE IF NOT EXISTS `status_update_time` (
   `order_status` int(11) NOT NULL,
   `add_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.status_update_time: ~8 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `status_update_time` DISABLE KEYS */;
 INSERT IGNORE INTO `status_update_time` (`id`, `order_code`, `order_status`, `add_time`) VALUES
 	(1, 'B1000001', 1, '2017-08-17 21:57:10'),
-	(2, 'B1000002', 1, '2017-08-17 21:57:17'),
 	(3, 'B1000001', 2, '2017-08-17 21:57:22'),
 	(4, 'B1000001', 3, '2017-08-17 21:57:36'),
-	(6, 'B1000002', 2, '2017-08-18 11:21:29'),
 	(10, 'B1000001', 4, '2017-08-18 11:23:36'),
 	(11, 'B1000001', 5, '2017-08-18 11:23:37'),
-	(12, 'B1000002', 3, '2017-08-18 11:23:42');
+	(12, 'B1000002', 3, '2017-08-18 11:23:42'),
+	(13, 'B1000002', 4, '2017-12-29 19:03:31'),
+	(14, 'B1000002', 5, '2017-12-29 19:03:31'),
+	(15, 'B1000002', 6, '2017-12-29 19:03:32'),
+	(20, 'B1000002', 1, '2017-12-29 19:03:45'),
+	(21, 'B1000002', 2, '2017-12-29 19:03:47');
 /*!40000 ALTER TABLE `status_update_time` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.stored_card
@@ -313,12 +306,14 @@ CREATE TABLE IF NOT EXISTS `stored_card` (
   `card_holder_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `add_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.stored_card: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `stored_card` DISABLE KEYS */;
 INSERT IGNORE INTO `stored_card` (`id`, `user_id`, `card_user_key`, `card_token`, `card_alias`, `bin_number`, `card_holder_name`, `add_datetime`) VALUES
-	(2, 1, NULL, NULL, NULL, NULL, 'ayhan yünt', '2017-08-19 21:46:18');
+	(2, 1, NULL, NULL, NULL, NULL, 'ayhan yünt', '2017-08-19 21:46:18'),
+	(3, 6, NULL, NULL, NULL, NULL, 'ayşe akcan', '2017-12-29 17:26:29'),
+	(5, 6, NULL, NULL, NULL, NULL, 'ayse akcan', '2017-12-29 17:32:43');
 /*!40000 ALTER TABLE `stored_card` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.sub_categories
@@ -359,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `ürün` (
   `uzun_açıklama` text,
   PRIMARY KEY (`id`),
   KEY `name` (`isim`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- b4u_dna.ürün: ~35 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `ürün` DISABLE KEYS */;
@@ -385,7 +380,6 @@ INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_y
 	(19, 'Kuş Cinsiyet Belirleme Testi', 122.93, 'Kuşların cinsiyetlerini belirlemek oldukça zor. Testimiz sayesinde,%100 doğrulukla kuşlarınızın cinsiyetini öğrenebilmenizi sağlıyoruz.', 'kus-cinsiyet-testi.png', 9, 2, 'Kuşların cinsiyetlerini belirlemek oldukça zor. Testimiz sayesinde,%100 doğrulukla kuşlarınızın cinsiyetini öğrenebilmenizi sağlıyoruz. '),
 	(20, 'Kedigiller Polikistik Böbrek Hastalığı DNA Testi', 50.46, 'Kedilerinizin sağlığının sizler için ne kadar önemli olduğunu biliyoruz. Onların ömrünü uzatmayı ve daha sağlıklı bir yaşam sürmelerini amaçlıyoruz.', 'kedigiller-polistik-bobrek-hastaligi-testi.png', 7, 2, 'Kedilerinizin sağlığının sizler için ne kadar önemli olduğunu biliyoruz. Onların ömrünü uzatmayı amaçlıyor,daha sağlıklı bir yaşam sürmelerini sağlıyoruz. '),
 	(21, 'At DNA Testi', 0, 'Testimiz sayesinde at sahiplerinin ve at yetiştiricilerinin, atların sağlıklı yaşam seviyelerini en üst seviyeye çıkarmaları amaçlanmıştır. ', 'at-dna-testi.png', 10, 2, 'Testimiz sayesinde at yetiştiricilerinin, atların sağlıklıyaşam seviyelerini en üst seviyeye çıkarmaları amaçlanmıştır. Herhangi bir sağlık sorununa yatkınları olup olmadığını testimiz sayesinde öğrenebilirsiniz. '),
-	(22, 'DNA Babalık Testi', 128.11, '', 'dna-babalık-testi.png', 1, 1, ' '),
 	(23, 'Hamilelikte Babalık Testi', 1163.48, '', 'hamilelikte-babalik.png', 2, 1, ' '),
 	(24, 'Kardeşlik DNA Testi', 257.46, '', 'kardeşlik-dna-testi.png', 3, 1, ' '),
 	(25, 'Hala-Amca DNA Testi', 257.46, '', 'hala-amca-testi.png', 5, 1, ' '),
@@ -398,7 +392,8 @@ INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_y
 	(32, 'Genetik Yapılandırma Testi', 386.93, '', 'genetic-yapilandirma-testi.png', 13, 4, ' '),
 	(33, 'Anne Soy Testi', 205.71, '', 'anne-soy-testi.png', 2, 1, ' '),
 	(34, 'Baba Soy Testi', 179.83, '', 'baba-soy-testi.png', 1, 1, ' '),
-	(35, 'Köpek Dışkısıyla DNA Testi', 0, 'Sorumsuz köpek sahiplerinden bıktınız mı? Testimiz, köpeklerinin kakalarını halka açık yerlerden temizlemeyen köpek sahiplerini tespit etmenizi sağlıyor.', 'kopek-diskisi-ile-dna-testi.png', 8, 2, 'Sorumsuz köpek sahiplerinden bıktınız mı? Testimiz,köpeklerinin kakalarınıhalka açık yerlerden temizlemeyen köpek sahiplerini tespit etmenizi sağlıyor. ');
+	(35, 'Köpek Dışkısıyla DNA Testi', 0, 'Sorumsuz köpek sahiplerinden bıktınız mı? Testimiz, köpeklerinin kakalarını halka açık yerlerden temizlemeyen köpek sahiplerini tespit etmenizi sağlıyor.', 'kopek-diskisi-ile-dna-testi.png', 8, 2, 'Sorumsuz köpek sahiplerinden bıktınız mı? Testimiz,köpeklerinin kakalarınıhalka açık yerlerden temizlemeyen köpek sahiplerini tespit etmenizi sağlıyor. '),
+	(39, 'Koyun Sabun', 5, 'Süslü ve Kokulu sabun', '12841251_1074548082612917_8682153281614067795_o.jpg', NULL, NULL, 'tanesi 5 lira');
 /*!40000 ALTER TABLE `ürün` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
