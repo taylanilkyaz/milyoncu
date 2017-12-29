@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 14.06.2017
- * Time: 21:30
- */
+
 class MailSender
 {
 

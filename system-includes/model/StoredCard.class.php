@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 5.08.2017
- * Time: 23:47
- */
+
 class StoredCard{
     private $id;
     private $user_id;

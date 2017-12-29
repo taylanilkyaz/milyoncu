@@ -23,7 +23,6 @@ getAdminHeader();
     <h1 id="header-id" class="ui header">Ürün Ekle</h1>
 
     <?php
-    //getNavbar();
     require 'addproduct-form.php';
     ?>
 
@@ -31,7 +30,6 @@ getAdminHeader();
 
 <?php
 require "../form/index-form.php";
-require '../form/right-sidebar.php';
 require '../form/bottom-sidebar.php';
 ?>
 

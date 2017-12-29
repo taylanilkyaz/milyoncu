@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 3.08.2017
- * Time: 18:00
- */
-
 
 class CategoriesDatabase extends Database {
     public static $CATEGORIES_TABLE_NAME = "categories";

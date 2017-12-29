@@ -4,7 +4,6 @@ require $_SERVER['DOCUMENT_ROOT'].'/system-header.php';
 getAdminHeader();
 
     require '../form/index-form.php';
-    require '../form/right-sidebar.php';
     require '../form/bottom-sidebar.php';
 
 

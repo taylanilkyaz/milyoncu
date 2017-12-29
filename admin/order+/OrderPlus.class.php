@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 5.08.2017
- * Time: 22:27
- */
 
 class OrderPlus{
 
