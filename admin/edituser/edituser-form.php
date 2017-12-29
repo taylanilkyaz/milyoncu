@@ -18,18 +18,6 @@
                 <input value="<?php echo $res->getPhoneNumber()?>" name="phone-number" type="text">
             </div>
             <div class="field">
-                <label>Baba İsmi</label>
-                <input value="<?php echo $res->getFatherFirst()?>" name="father-first" type="text">
-            </div>
-            <div class="field">
-                <label>Anne İsmi</label>
-                <input value="<?php echo $res->getMotherFirst()?>" name="mother-first" type="text">
-            </div>
-            <div class="field">
-                <label>Anne Kızlık Soyadı</label>
-                <input value="<?php echo $res->getMotherMaiden()?>" name="mother-maiden" type="text">
-            </div>
-            <div class="field">
                 <label>T.C. Kimlik Numarası</label>
                 <input value="<?php echo $res->getTc()?>" name="tc-no" type="text">
             </div>

@@ -1,11 +1,10 @@
 <?php
 
 class ActivationDatabase extends Database{
-    public static $ACTIVATION_TABLE_NAME = "activation_codes";
+    public static $ACTIVATION_TABLE_NAME = "aktivasyon_kodu";
     public static $ACTIVATION_ID = "id";
-    public static $ACTIVATION_USER_ID = "user_id";
-    public static $ACTIVATION_SEND_TIME = "send_date_time";
-    public static $ACTIVATION_CODE= "activation_code";
+    public static $ACTIVATION_USER_ID = "gönderim_zamanı";
+    public static $ACTIVATION_CODE= "aktivasyon_kodu";
 
 
    public function createActivationCode($e_mail,$activation_code){
