@@ -20,24 +20,6 @@ body {
 #secondary-pointing-menu.ui.secondary.pointing.menu .item{
     font-size: 23px;
 }
-#yardim-merkezi .row{
-    padding-top: 2%;
-}
-#iletisim-1 .row{
-    padding-top: 2%;
-}
-@media screen and (max-width: 768px){
-    #yardim-merkezi-mobile-center .column{
-        text-align: center;
-    }
-    #secondary-pointing-menu.ui.secondary.pointing.menu .active.item{
-        font-size: 18px;
-    }
-
-    #secondary-pointing-menu.ui.secondary.pointing.menu .item{
-        font-size: 16px;
-    }
-}
 
 #secondary-pointing-menu.ui.secondary.pointing.menu .item:hover{
     opacity: 0.5;

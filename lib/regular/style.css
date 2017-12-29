@@ -41,12 +41,6 @@ h1,h2,h3,h4,h5{
   line-height: 72px;
 }
 
-@media (min-width: 768px ) and (max-width: 900px){
-  .test-sureci-size-ayari{
-    font-size: 13px;
-  }
-}
-
 #top-content .sub{
   font-size: 20px;
   text-align: center;
@@ -231,7 +225,7 @@ div#faq-container {
 /**navbar**/
 
 .logo-size{
-  height: 64px;
+  height: 66px;
 }
 
 #navbar{

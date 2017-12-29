@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif !important;
 }
 
-#taylan{
+#user-pointing-menu{
     position: fixed;
     top: -14px;
     width: 100%;
@@ -17,8 +17,9 @@ body {
     margin-top: 13px !important;
 }
 
-#taylan .logo-sidebar img{
-    width: 37%;
+#user-pointing-menu .logo-sidebar img{
+    height: 66px;
+    width: auto;
 }
 
 #order-container h1 {

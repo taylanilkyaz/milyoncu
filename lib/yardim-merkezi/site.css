@@ -76,10 +76,6 @@ a {
     border: groove;
     border-color: #4abbe4;
 }
-#iletisim-1 .ui.segment{
-    padding: 10%;
-    height: 100%;
-}
 .ui.grid.toppadd {
     margin-top: 10%;
 }

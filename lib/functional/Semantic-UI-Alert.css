@@ -1,7 +1,5 @@
 .ui-alert-content{
   position: fixed;
-  width: 50%;
-  min-width: 320px;
   font-size: 19px;
   z-index: 2060;
 }
@@ -19,7 +17,7 @@
   left: 20px;
 }
 .ui-alert-content-bottom-right{
-  bottom: 0;
+  bottom: 50px;
   right: 20px;
 }
 .ui-alert-content-bottom-center{

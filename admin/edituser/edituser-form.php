@@ -21,7 +21,7 @@
                 <label>T.C. Kimlik Numarası</label>
                 <input value="<?php echo $res->getTc()?>" name="tc-no" type="text">
             </div>
-             <div class="ui green submit button" id="submit-edit-user">Değişiklikleri Kaydet</div>
+             <div  class="ui green submit button" onclick="myFunction()" id="submit-edit-user">Değişiklikleri Kaydet</div>
 
 
             <div class="ui error message"></div>
@@ -29,6 +29,12 @@
     </div>
 
 </form>
+
+<script>
+  function myFunction() {
+    document.getElementById("submit-edit-user").innerHTML = "Kaydedildi!";
+  }
+</script>
 
 
 
