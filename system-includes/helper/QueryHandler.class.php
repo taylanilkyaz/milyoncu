@@ -49,10 +49,6 @@ class QueryHandler{
         return $this->title;
     }
 
-    public function getSingularContent(){
-        require( STATICCONTENT . 'hakkinda.php');
-    }
-
 
 
 
