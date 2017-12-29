@@ -3,42 +3,43 @@ body {
 }
 /*en üstteki step css
 */
-
-#teslimat-bilgileri-top-content-id .ui.steps .disabled.step{
-    background: #98cadc;
+#teslimat-bilgileri-top-content-id{
+    text-align: center;
+    margin-top: -80px;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps .step.disabled .title{
-    color: black;
+.ui.steps .disabled.step{
+    background: rgba(255, 129, 26, 0.61) !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps .step.disabled:after{
-    background: #98cadc;
+.ui.steps .step.disabled .title{
+    color: black !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps .step{
-    background: #0780C7;
+.ui.steps .step.disabled:after{
+    background: #ff811a !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.ordered.steps .step.active:before, .ui.steps .active.step .icon{
-    color: white;
+.ui.steps .step{
+    background: #ff811a !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps .step:after{
-    background: #0780C7;
+.ui.ordered.steps .step.active:before, .ui.steps .active.step .icon{
+    color: white !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps .step .title{
-    color: white;
+.ui.steps .step:after{
+    background: #ff811a !important;
 }
 
-#teslimat-bilgileri-top-content-id .ui.steps.title{
+.ui.steps .step .title{
+    color: white !important;
+}
+
+.ui.steps.title{
     font-size: 10px;
 }
 
-#teslimat-bilgileri-top-content-id{
-    text-align: center;
-}
 /*
 en üstteki step css sonu
  */
@@ -53,13 +54,13 @@ siparis tamamlandi  css
     padding-right: 15px;
 }
 #siparis-tamamlandi-2 .ui.header.color{
-    color: #298A08;
+    color: #41C4E2;
 }
 #siparis-tamamlandi-2 .link-type-one {
     text-align: center;
 }
 #siparis-tamamlandi-2 .ui.segment.substance{
-    background: #eeedff;
+    background: #ffbb71;
 }
 #siparis-tamamlandi-2 .margin{
     margin-top: 14px;
@@ -83,7 +84,7 @@ siparis ozeti css
 }
 
 #siparis-özeti-2 .ui.header.color{
-    color: #298A08;
+    color:  #41C4E2;
 }
 
 #siparis-özeti-2 .ahref{
@@ -99,18 +100,18 @@ siparis ozeti css
 #odeme-buttons {
     margin-top: 20px;
     font-size: medium;
-    background-color: #1E6DF1;
+    background-color: #ff811a;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #ff811a;
 }
 #odeme-buttons:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #ff811a;
+    border: 2px solid #ff811a;
 }
 
 #siparis-özeti-2 .ui.segment.substance{
-    background: #eeedff;
+    background: #ffbb71;
 }
 #fixed-text-right.ui.segment{
     text-align: right;
@@ -134,26 +135,6 @@ siparis ozeti css
     #fixed-part-siparis-tamamlandi{
         position: fixed;
         width: 200px;
-    }
-}
-
-@media screen and (max-width: 768px){
-    #segment-id{
-        width: 100%;
-    }
-    #steps-id{
-        margin-right: 2%;
-    }
-    #siparis-özeti-2 a {
-        font-size: 12px;
-        top: 0px;
-    }
-    #siparis-özeti-2 .ui.header.title {
-        font-weight: bold;
-        font-size: large;
-        margin-right: 10px;
-        padding-right: 10px;
-        border-right-style: groove;
     }
 }
 

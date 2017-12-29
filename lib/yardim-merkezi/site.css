@@ -9,7 +9,7 @@ body {
     border-bottom: white;
 }
 #secondary-pointing-menu.ui.secondary.pointing.menu .active.item{
-    border-color: #0780C7;
+    border-color: #41C4E2;
     font-size: 20px;
 }
 #secondary-pointing-menu.ui.secondary.pointing.menu .item{
@@ -26,11 +26,10 @@ body {
     margin-top: 45px;
 }
 #left-menu-id a.header{
-    color: black;
+    color: #ff811a;
     font-size: 20px;
     padding-left: 10px;
 }
-
 
 /*iletişim css başlangıç*/
 .ui.items > .item {
@@ -57,10 +56,9 @@ a {
 }
 
 .ui.primary.button {
-    background-color: #4abbe4;
+    background-color: #41C4E2;
     color: #FFFFFF;
     text-shadow: none;
-    background-image: none;
     text-align: center;
     height: 50px;
     width: 130px;
@@ -78,26 +76,6 @@ a {
 }
 .ui.grid.toppadd {
     margin-top: 10%;
-}
-
-@media screen and (min-width: 768px) {
-    .mobile{
-        text-align: left;
-    }
-    iframe{
-        width: 1000px;
-        height: 400px;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .mobile{
-        text-align: center;
-    }
-    iframe{
-        width: 325px;
-        height: 200px;
-    }
 }
 
 /*iletişim css bitiş*/

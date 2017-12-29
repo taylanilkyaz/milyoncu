@@ -9,14 +9,14 @@ $user_id = $_SESSION['id'];
 <div id="sepetim-segment" class="ui fluid container">
     <form class="ui large form" action="../odeme/teslimat-bilgileri" method="get">
         <div class="ui stackable centered grid" id="sepetim-top-grid">
-            <div class="one wide tablet column one wide computer columnn"></div>
-            <div class="center aligned eight wide computer ten wide tablet column">
+            <div class="three wide computer column"></div>
+            <div class="center aligned eight wide computer column">
                 <div class="ui segment left aligned" id="sepet-id">
                     <span class="ui header" id="titlecolor"><b>Sepetim</b></span>
                     <div class="ui stackable grid">
                         <div class="nine wide tablet nine wide computer column">
                         </div>
-                        <div class="three wide tablet four wide computer column" id="sepetim-four-wide">
+                        <div class="four wide computer column" id="sepetim-four-wide">
                             <div class="col-amount">ADET</div>
                         </div>
                         <div class="four wide tablet three wide computer column right aligned"id="sepetim-toplam">

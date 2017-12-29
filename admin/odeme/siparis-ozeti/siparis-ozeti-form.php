@@ -51,8 +51,8 @@ $basketList = $dashboard->getAllBasketAsProductArr($user_id);
 <div id="siparis-özeti-2" class="ui fluid container">
     <form class="ui large form" id="shipping-information-form" action="../siparis-tamamlandi">
         <div class="ui stackable grid" id="information-menu">
-            <div class="one wide tablet two wide computer column"></div>
-            <div class="ten wide tablet column seven wide computer column " id="ozet-segment-id">
+            <div class=" three wide computer column"></div>
+            <div class=" column seven wide computer column " id="ozet-segment-id">
                  <div class="ui segment">
                             <p class="ahref">
                                 <span class="ui header title color" >Sipariş Özeti </span>

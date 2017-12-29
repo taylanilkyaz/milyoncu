@@ -20,8 +20,6 @@ $_SESSION['csrf'] = $csrf_salt;
             </div>
 
             <br><br>
-
-
         </div>
     </div>
 

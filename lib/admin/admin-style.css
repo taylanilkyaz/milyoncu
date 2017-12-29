@@ -47,7 +47,7 @@ body {
 
 #dashboard .primary-button {
     color: #ffffff;
-    background: #3079e1;
+    background: #E76F2F;
 }
 
 #dashboard .secondary-button {
@@ -69,7 +69,7 @@ body {
 
 #dashboard h3 {
     padding: 5px 0 16px 0 !important;
-    color: #3079e1;
+    color: #E76F2F;
 }
 
 #dashboard h4 {
@@ -83,7 +83,7 @@ body {
 }
 
 #menu-icon {
-    color: #3079e1;
+    color: #E76F2F;
     cursor: pointer;
 }
 
@@ -137,7 +137,7 @@ body {
 }
 
 #shop-icon {
-    color: #3079e1;
+    color: #E76F2F;
     cursor: pointer;
 }
 
@@ -310,7 +310,7 @@ body {
 }
 
 #bottom-sidebar .item {
-    color: #3079e1;
+    color: #E76F2F;
 }
 
 #buy-sidebar-content {
@@ -319,15 +319,15 @@ body {
 
 #detail-checkout-button {
     width: 100%;
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #detail-checkout-button:hover {
     background-color: #1C1D1D;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #orders-id.ui.table tr td {
@@ -377,15 +377,15 @@ product-description start
 }
 
 #product-description-button {
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #product-description-button:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #41C4E2;
+    border: 2px solid #41C4E2;
 }
 
 #product-description-id #product-comment-button {
@@ -397,7 +397,7 @@ product-description start
 }
 
 #product-description-id .count-input .incr-btn {
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
 }
 
@@ -500,129 +500,56 @@ product-description end
     }
 }
 
-@media screen and (max-width: 767px) {
-    /*mobil*/
-    #sepet-topmost-grid-id .ui.grid .flex-parent {
-        padding-bottom: 0px;
-        padding-top: 0px;
-
-    }
-
-    .col-total-sepetim {
-        text-align: right;
-        font-size: medium;
-    }
-
-    .count-input {
-        position: relative;
-    }
-
-    div#sepetim-four-wide {
-        display: none;
-    }
-
-    #sepetim-toplam {
-        display: none;
-    }
-
-    #sepetim-segment img {
-        width: 150px;
-        height: 150px;
-        object-fit: contain;
-    }
-
-    #sepetim-top-grid {
-        width: 100%;
-    }
-
-    #alisverise-geri-don {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px ) and (max-width: 1440px) {
-    /*tablet*/
-    #computer-input-count {
-        width: 110px;
-    }
-
-    h4.product-name {
-        font-size: 16px;
-    }
-
-    #sepet-id h4.product-name {
-        padding: 5px 0 0px 0 !important;
-    }
-
-    #sepetim-top-grid {
-        width: 90%;
-    }
-
-    .col-total-sepetim {
-        font-size: medium;
-        text-align: right;
-    }
-
-    #fixed-part-id-sepetim {
-        width: 27%;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .col-total-sepetim {
-        font-size: x-large;
-        text-align: right;
-    }
-}
-
 #sepetim-segment #titlecolor {
     font-size: 40px;
-    color: #00aa00;
+    color: #41C4E2;
     margin: 2%;
 }
 
 #sepetim-segment #rightscreen {
     font-size: 30px;
-    color: #00aa00;
+    color: #41C4E2;
 }
 
 #rightscreen-odtu {
     font-size: large;
 }
 
-#alisveris-tamamla {
+#alisveris-tamamla , #alisverise-geri-don {
     width: 100%;
     font-size: medium;
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
+    margin-bottom: 10px ;
+
 }
 
-#alisveris-tamamla:hover {
+#alisveris-tamamla:hover , #alisverise-geri-don:hover{
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color:#41C4E2 ;
+    border: 2px solid #41C4E2;
 }
 
 #alisverise-geri-don {
 
     margin-bottom: 20px;
     font-size: medium;
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #alisverise-geri-don:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #41C4E2;
+    border: 2px solid #41C4E2;
 }
 
 .btn-delete:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px #1E6DF1;
+    color: #41C4E2;
+    border: 2px #41C4E2;
 }
 
 #sepetim-segment .ui.divider {
@@ -725,15 +652,15 @@ rating bar bitiş
 
 #yorum-yap-button {
     font-size: larger;
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #yorum-yap-button:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #41C4E2;
+    border: 2px solid #41C4E2;
 }
 
 .speech-ballon {
@@ -767,15 +694,15 @@ rating bar bitiş
 }
 
 #add-basket-button {
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 #add-basket-button:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #41C4E2;
+    border: 2px solid #41C4E2;
 }
 
 #urun-incele-button {
@@ -1071,15 +998,15 @@ result-upload
 /*ticket (destek) css başlangıç*/
 
 input#sendTicket {
-    background-color: #1E6DF1;
+    background-color: #41C4E2;
     color: white;
-    border: 2px solid #1E6DF1;
+    border: 2px solid #41C4E2;
 }
 
 input#sendTicket:hover {
     background-color: white;
-    color: #1E6DF1;
-    border: 2px solid #1E6DF1;
+    color: #41C4E2;
+    border: 2px solid #41C4E2;
 }
 
 @media screen and (min-width: 2400px) {
