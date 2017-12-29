@@ -141,12 +141,16 @@
             <i class="warning icon"></i>
             Üye olmadan satın alma işlemi yapamazsınız.
             <br>
+            <br>
+
             <a href="/register" class="item">
                 <div class="ui primary button">Kayıt Ol</div>
             </a>
+
             <a href="/register" class="item" style="padding-bottom: 20px">
                 <div class="ui primary button">Giriş Yap</div>
             </a>
+            <br>
             <br>
             <a id="href-id" href="" class="item">
                 <div class="ui primary button">Üye olmadan ürün incelemek için tıklayınız.</div>

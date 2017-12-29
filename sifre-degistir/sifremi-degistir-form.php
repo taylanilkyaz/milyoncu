@@ -54,12 +54,6 @@
                     </div>
                 </div>
 
-
-                <div class="field" id="captcha">
-                    <div class="g-recaptcha" data-sitekey="6LfpjSoUAAAAADaoMygW8iNMCNFYYDLCnGxDb5eC"></div>
-                </div>
-
-
                 <input value="Şifremi Değiştir" class="ui fluid big submit disabled button" type="submit" id="login-submit">
 
                 <p class="smalller-text"><i class="big hide icon"></i>Bilgileriniz hiç kimseyle kati suretle paylaşılmaz.<p>
