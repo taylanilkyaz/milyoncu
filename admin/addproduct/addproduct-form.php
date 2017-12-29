@@ -8,14 +8,12 @@ if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
     echo "<script type='text/javascript'>alert('${message}');</script>";
     unset ($_SESSION['message']);
-
 }
 ?>
 <script>
   $(function () {
     $('.ui.dropdown').dropdown()
-  })
-
+  });
 </script>
 <!--
 eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
@@ -33,13 +31,12 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
                 for ($i = 1; $i < 5; $i++) {
                     $categoryName = $category->getCategoryNameNonSeq($i);
                     ?>
-                    <div class="item" data-value="<?php echo $i; ?>"><?php echo ucwords($categoryName) ?></div>
+                    <div class="item" data-value="<?php echo $i; ?>"><?php echo ucwords($categoryName)?></div>
                 <?php } ?>
             </div>
-
         </div>
 
-        <div class="ui selection dropdown " style="margin-bottom: 10px;margin-left: 20px">
+        <div class="ui selection dropdown alt-kategori" style="margin-bottom: 10px;margin-left: 20px">
             <input type="hidden" name="gender">
             <i class="dropdown icon"></i>
             <div class="default text">Alt Kategori</div>

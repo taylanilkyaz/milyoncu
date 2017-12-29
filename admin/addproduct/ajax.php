@@ -6,8 +6,6 @@
     $productInfo = $_POST['product-info'];
     $productLongInfo = $_POST['product-long-info'];
 
-
-
     $path_parts = pathinfo($uploadfile);
 
 //yolun 255ten uzun olup olmaması kontrolu
