@@ -18,10 +18,7 @@ $productName = $_GET['name'];
 </div>
 
 <div id="dashboard">
-    <h1 class="ui header">ÜRÜN DETAYLARI</h1>
-
     <?php
-    //getNavbar();
     require("product-description-form.php");
     ?>
 

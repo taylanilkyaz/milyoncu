@@ -15,7 +15,7 @@ getAdminHeader();
 </div>
 
 <div id="dashboard">
-    <h1 class="ui header">Kullanıcı Listele</h1>
+    <h1 class="ui header" style="margin-top: -50px ; margin-bottom: -10px; text-align: center">Kullanıcı Listele</h1>
     <?php
     //getNavbar();
     require 'listall-form.php';

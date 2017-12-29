@@ -8,11 +8,6 @@
         ?>
 
         <h1 class="ui center aligned header"><?php echo ucwords($subCategoryName) ?></h1>
-        <div class="ui big breadcrumb">
-            <a class="section" href="/detail/index.php">Ürünler</a>
-            <i class="right chevron icon divider"></i>
-            <div class="active section"><?php echo ucwords($subCategoryName) ?></div>
-        </div>
         <div class="ui divider"></div>
         <div class="ui four column doubling stackable centered grid">
         <?php
@@ -30,26 +25,12 @@
                         <img class="ui centered fluid image"
                              src="/assets/images/productimage/512/<?=$product->getImagePath() ?>">
 
-                        <div class="bottom-imgs">
-                            <div class="center aligned centered eight wide column">
-                                <div class="x wtf-red active-x"></div>
-                                <div class="x wtf-blue"></div>
-                                <div class="x wtf-green"></div>
-                            </div>
-                        </div>
-
                         <div class="bottom-detail">
                             <p class="name"><?php echo $product->getName() ?></p>
                             <p class="price"><i class="lira icon"></i><?php echo floor($product->getPrice()); ?></p>
                             <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
                         </div>
                     </div>
-
-                    <?php if ($product->getExpertActive() == 1) {?>
-                        <div class="top-event">
-                            Uzman Önerisi
-                        </div>
-                    <?php } ?>
 
                     <div class="add-basket-button" >
                         + Sepete Ekle
@@ -85,14 +66,6 @@
                         <div class="ui segment ">
                             <img class="ui centered fluid image"
                                  src="/assets/images/productimage/512/<?=$product->getImagePath() ?>">
-
-                            <div class="bottom-imgs">
-                                <div class="center aligned centered eight wide column">
-                                    <div class="x wtf-red active-x"></div>
-                                    <div class="x wtf-blue"></div>
-                                    <div class="x wtf-green"></div>
-                                </div>
-                            </div>
 
                             <div class="bottom-detail">
                                 <p class="name"><?php echo $product->getName() ?></p>

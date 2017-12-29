@@ -7,8 +7,6 @@ getAdminHeader();
 ?>
 
 <div id="dashboard">
-
-
     <?php
     require 'buy-form.php';
     ?>

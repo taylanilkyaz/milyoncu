@@ -38,21 +38,9 @@ if ($sum != 0) {
 
 $userDatabaseObj = new UserDatabase();
 ?>
-<div class="ui segment"style="margin-left: -1.2%">
-    <div class="ui big breadcrumb">
-        <a class="section" href="/home/index.php">Ana Sayfa</a>
-        <i class="right chevron icon divider"></i>
-        <a class="section" href="/admin/buy/index.php">Satın Al</a>
-        <i class="right chevron icon divider"></i>
-        <a class="section" href="#"><?php echo ucwords($categoryName['name']) ?></a>
-        <i class="right chevron icon divider"></i>
-        <div class="active section"><?php echo $product->getName() ?></div>
-    </div>
-</div>
 <div class="ui stackable grid" id="product-description-id">
-    <div class="eight wide center aligned column" style="border: 2px solid #F5F5F5 ;padding-top: 3%;" >
-        <img  style="max-width: 256px; width: 100%" src='/assets/images/productimage/512/<?= $product->getImagePath()?>'
-             >
+    <div class="eight wide center aligned column" style="border: 2px solid #F5F5F5" >
+        <img  style="max-width: 256px; width: 100%" src='/assets/images/productimage/512/<?= $product->getImagePath()?>'>
     </div>
 
     <div class="eight wide column">
@@ -60,8 +48,8 @@ $userDatabaseObj = new UserDatabase();
         <div class="field" id="product-name-field"><h2><?php echo $product->getName() ?></h2>
         </div>
         <div class="field">
-            <div class="product-sale-prices" style="width: 100% ; padding-top: 10px>
-                <div class="ui grid">
+            <div class="product-sale-prices ui grid" style="width: 100% ; padding-top: 10px>
+                <div class="">
             <div style="display: none;">
                 <div class="three wide grid">
                     <div class="sale-part">%6</div>
@@ -172,8 +160,6 @@ $userDatabaseObj = new UserDatabase();
     <div class="container">
         <?php echo $product->getLongDesc()?>
     </div>
-    <h2 class="ui header">Detaylı Ürün İnceleme sayfası için <a href="/bilgi/<?=urlencode($lowerStr) ?>">buraya tıklayın</a> </h2>
-
 </div>
 <div class="ui bottom attached tab segment" data-tab="second">
     <div id="rating-bar-container">

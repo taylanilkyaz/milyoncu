@@ -13,8 +13,8 @@ getAdminHeader();
     <button class="ui right floated button"><i id="shop-icon" class="huge shop icon"></i></button>
 </div>
 
-<div id="dashboard">
-    <h1 id="header-id" class="ui header">Sipariş Takibi</h1>
+<div id="dashboard" style="margin-left: 150px ; margin-right: 150px">
+    <h1 id="header-id" class="ui header" style="margin-top: -50px ; margin-bottom: -15px">Sipariş Takibi</h1>
 
     <button onclick="window.history.back()" style="margin-top: 15px; margin-bottom: 15px; " class="ui labeled icon button">
         <i class="left chevron icon"></i>

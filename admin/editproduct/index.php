@@ -19,7 +19,7 @@ getAdminHeader();
 </div>
 
 <div id="dashboard">
-    <h1 id="header-id" class="ui header">Ürün Düzenle</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: -50px">Ürün Düzenle</h1>
     <?php
 
     //getNavbar();

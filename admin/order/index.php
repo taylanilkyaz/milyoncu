@@ -13,7 +13,7 @@ getAdminHeader();
     <button class="ui right floated button"><i id="shop-icon" class="huge shop icon"></i></button>
 </div>
 <div id="dashboard">
-    <h1 id="header-id" class="ui header">Sipariş Durumu</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: -80px">Sipariş Durumu</h1>
     <?php
     require 'order-form.php';
     ?>

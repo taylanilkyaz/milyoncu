@@ -21,7 +21,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
     </div>
 </div>
 
-<div id="order-container" class="goodmargin">
+<div id="order-container" class="goodmargin" style="margin-left: 150px ; margin-right: 150px">
     <div class="ui divider"></div>
 
     <div class="ui stackable centered one column  grid">

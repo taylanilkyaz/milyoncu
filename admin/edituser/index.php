@@ -14,7 +14,7 @@ getAdminHeader();
     <button class="ui right floated button"><i id="shop-icon" class="huge shop icon"></i></button>
 </div>
 <div id="dashboard">
-    <h1 id="header-id" class="ui header">Profil</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: -80px">Profil</h1>
     <?php
     //getNavbar();
     $object = new UserDatabase();

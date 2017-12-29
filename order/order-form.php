@@ -22,9 +22,9 @@ global $queryHandler;
         <a href="../faqs"><li style="border-right: 1px solid #6d6f73;">SSS</li></a>
     </ul>
 </div>
-<div id="order-container">
+<div id="order-container" >
     <h4>Sepetim</h4>
-    <div id="quantity-container">
+    <div id="quantity-container ">
         <div class="ui stackable grid middle aligned">
             <div class="four wide column"><img src="<?php echo IMAGEPATH . 'kit.png' ?>" style="width: 100px;"></div>
             <div class="eight wide column">

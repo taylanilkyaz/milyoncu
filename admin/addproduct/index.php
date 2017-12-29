@@ -20,7 +20,7 @@ getAdminHeader();
 </div>
 
 <div id="dashboard">
-    <h1 id="header-id" class="ui header">Ürün Ekle</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: -50px">Ürün Ekle</h1>
 
     <?php
     require 'addproduct-form.php';

@@ -15,7 +15,7 @@ getAdminHeader();
 </div>
 
 <div id="dashboard">
-    <h1 id="header-id" class="ui header">Satın Alınanalar</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: -80px" >Satın Alınan Ürünler</h1>
     <?php
     //getNavbar();
     require 'buyed-form.php';
