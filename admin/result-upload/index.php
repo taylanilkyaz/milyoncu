@@ -21,7 +21,6 @@ getAdminHeader();
 </div>
 <?php
 require '../form/index-form.php';
-require '../form/bottom-sidebar.php';
 ?>
 
 <script type="text/javascript" src="/lib/admin/compoments/base.js"></script>

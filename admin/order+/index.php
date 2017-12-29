@@ -29,7 +29,6 @@ getAdminHeader();
 
 <?php
 require '../form/index-form.php';
-require '../form/bottom-sidebar.php';
 ?>
 
 <script src="/lib/functional/clipboard.min.js"></script>

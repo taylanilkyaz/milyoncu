@@ -1,6 +1,7 @@
-<div id="ticket-segment" class="ui segment goodmargin">
+<div id="ticket-segment" class="goodmargin">
     <div class="ui stackable grid">
 
+        <div class="two wide column"></div>
         <div class="six wide column">
             <?php
             /**
@@ -36,9 +37,10 @@
             ?>
         </div>
 
-        <div id="detail-container" class="eight wide column">
+        <div id="detail-container" class="six wide column">
 
         </div>
+        <div class="two wide column"></div>
 
 
 

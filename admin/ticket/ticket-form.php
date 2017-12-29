@@ -2,7 +2,7 @@
     <?php
 
         if(!isset($_GET['go'])) {
-            require "submit-ticket-form.php";
+            require "open-ticket-form.php";
             echo "</div>";
             return;
         }

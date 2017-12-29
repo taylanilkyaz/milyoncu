@@ -106,7 +106,7 @@ foreach($res as $row) {
             <input name="parentId" value="<?php echo $ticketId ?>" type="text" >
         </div>
 
-        <input value="Soru Gönder" name="save" class="huge ui button" type="submit"id="sendTicket">
+        <input value="Gönder" name="save" class="huge ui button" type="submit"id="sendTicket">
 
         <input value="insertToParent" style="display: none" name="type" type="text">
     </form>

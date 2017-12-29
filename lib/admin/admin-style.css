@@ -303,16 +303,6 @@ body {
 
 /**End of Edit user**/
 
-#bottom-sidebar.sidebar {
-    font-size: 1.1em;
-    box-shadow: none;
-    border: none;
-}
-
-#bottom-sidebar .item {
-    color: #E76F2F;
-}
-
 #buy-sidebar-content {
     height: 50px;
 }

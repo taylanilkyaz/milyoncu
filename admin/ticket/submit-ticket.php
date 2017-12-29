@@ -4,7 +4,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/system-header.php';
 
 define("CLOSE_TICKET","Talep Kapat");
 define("OPEN_CLOSED_TICKET","Talebi Yeniden Aç");
-define("SEND_TICKET","Soru Gönder");
+define("SEND_TICKET","Gönder");
 
 $controller = new TicketController();
 $type = "";
