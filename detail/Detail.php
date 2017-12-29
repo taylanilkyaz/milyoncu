@@ -1,7 +1,0 @@
-<?php
-
-
-class Detail{
-
-
-}
