@@ -1,6 +1,6 @@
 <div id="taylan" class="ui pointing menu ">
     <div class="logo-sidebar">
-        <a href="/index.php">
+        <a href="/admin">
             <img src="/assets/fotos/logo.png"></a>
     </div>
     <?php

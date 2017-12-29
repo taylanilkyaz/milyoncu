@@ -50,13 +50,10 @@ class Login
             $user_data = $result->fetch_assoc();
             $_SESSION['id'] = $user_data['id'];
             $_SESSION['e-mail'] = $user_data['e_mail'];
-            $_SESSION['name'] = $user_data['first_name'];;
-            $_SESSION['surname'] = $user_data['last_name']; ;
-            $_SESSION['father_first'] = $user_data['father_first'];
-            $_SESSION['mother_first'] = $user_data['mother_first'];
-            $_SESSION['mother_maiden'] = $user_data['mother_maiden'];
-            $_SESSION['add_datetime'] = $user_data['add_datetime'];
-            $_SESSION['user_type'] = $user_data['type'];
+            $_SESSION['name'] = $user_data['ad'];;
+            $_SESSION['surname'] = $user_data['soyad']; ;
+            $_SESSION['add_datetime'] = $user_data['ekleme_zamanı'];
+            $_SESSION['user_type'] = $user_data['admin'];
             $_SESSION['token'] = $user_data['id'].microtime().$constant;
             return true;
         }

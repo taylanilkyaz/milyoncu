@@ -82,13 +82,7 @@
                      */
                     ?>
                     <div class="center aligned centered column">
-                        <div class="ui segment <?php
-                        if ($product->getExpertActive() == 1) {
-                            ?>
-                                featured
-                <?php
-                        }
-                        ?>">
+                        <div class="ui segment ">
                             <img class="ui centered fluid image"
                                  src="/assets/images/productimage/512/<?=$product->getImagePath() ?>">
 
@@ -106,15 +100,6 @@
                                     <?php echo floor($product->getPrice()); ?></p>
                                 <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
                             </div>
-                            <?php
-                            if ($product->getExpertActive() == 1) {
-                                ?>
-                                <div class="top-event">
-                                    Uzman Önerisi
-                                </div>
-                                <?php
-                            }
-                            ?>
 
                         </div>
                         <div class="add-basket-button">

@@ -1,17 +1,16 @@
 <?php
 
 class ProductDatabase extends Database{
-    public static $PRODUCT_TABLE_NAME = "product";
+    public static $PRODUCT_TABLE_NAME = "ürün";
     public static $PRODUCT_ID = "id";
-    public static $PRODUCT_NAME = "name";
-    public static $PRODUCT_PRICE = "price";
-    public static $PRODUCT_DESC = "short_desc";
-    public static $PRODUCT_IMAGEPATH = "image_path";
+    public static $PRODUCT_NAME = "isim";
+    public static $PRODUCT_PRICE = "fiyat";
+    public static $PRODUCT_DESC = "kısa_açıklama";
+    public static $PRODUCT_IMAGEPATH = "resim_yeri";
     public static $PRODUCT_COUNT = "count";
-    public static $PRODUCT_CATEGORY_ID = "category_id";
-    public static $PRODUCT_SUB_CATEGORY_ID = "sub_category_id";
-    public static $PRODUCT_EXPERT_ACTIVE = "expert_active";
-    public static $PRODUCT_LONG_DESC = "long_desc";
+    public static $PRODUCT_CATEGORY_ID = "kategori_id";
+    public static $PRODUCT_SUB_CATEGORY_ID = "alt_kategori_id";
+    public static $PRODUCT_LONG_DESC = "uzun_açıklama";
 
     /**
      * @param $object Product

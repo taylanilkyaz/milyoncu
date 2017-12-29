@@ -9,9 +9,6 @@ class User
     private $password;
     private $first_name;
     private $last_name;
-    private $father_first;
-    private $mother_first;
-    private $mother_maiden;
     private $add_datetime;
     private $phone_number;
 
@@ -29,7 +26,7 @@ class User
      * @param $add_datetime
      * @param $phone_number
      */
-    public function __construct($id, $e_mail, $tc, $password, $first_name, $last_name, $father_first, $mother_first, $mother_maiden, $add_datetime, $phone_number)
+    public function __construct($id, $e_mail, $tc, $password, $first_name, $last_name, $add_datetime, $phone_number)
     {
         $this->id = $id;
         $this->e_mail = $e_mail;
@@ -37,9 +34,6 @@ class User
         $this->password = $password;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
-        $this->father_first = $father_first;
-        $this->mother_first = $mother_first;
-        $this->mother_maiden = $mother_maiden;
         $this->add_datetime = $add_datetime;
         $this->phone_number = $phone_number;
     }
@@ -53,9 +47,6 @@ class User
             null,
             $row[UserDatabase::$USER_FIRST_NAME],
             $row[UserDatabase::$USER_LAST_NAME],
-            $row[UserDatabase::$USER_FATHER_FIRST],
-            $row[UserDatabase::$USER_MOTHER_FIRST],
-            $row[UserDatabase::$USER_MOTHER_MAIDEN],
             null,
             $row[UserDatabase::$USER_PHONE_NUMBER]
         );

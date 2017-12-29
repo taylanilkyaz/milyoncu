@@ -9,7 +9,6 @@ class Product{
     private $count;
     private $category;
     private $sub_category;
-    private $expert_active;
     private $long_desc;
 
 
@@ -22,7 +21,7 @@ class Product{
      * @param $image_path
      * @param $count
      */
-    public function __construct($id, $name, $price, $short_desc, $image_path,$count=null,$expert_active,$long_desc,$category)
+    public function __construct($id, $name, $price, $short_desc, $image_path,$count=null,$long_desc,$category)
     {
         $this->id = $id;
         $this->name = $name;
@@ -30,7 +29,6 @@ class Product{
         $this->short_desc = $short_desc;
         $this->image_path = $image_path;
         $this->count = $count;
-        $this->expert_active = $expert_active;
         $this->long_desc = $long_desc;
         $this->category = $category;
     }
@@ -57,7 +55,6 @@ class Product{
                 $row[ProductDatabase::$PRODUCT_DESC],
                 $row[ProductDatabase::$PRODUCT_IMAGEPATH],
                 $row[ProductDatabase::$PRODUCT_COUNT],
-                $row[ProductDatabase::$PRODUCT_EXPERT_ACTIVE],
                 $row[ProductDatabase::$PRODUCT_LONG_DESC],
                 $row[ProductDatabase::$PRODUCT_CATEGORY_ID]);
         }else{
@@ -67,7 +64,6 @@ class Product{
                 $row[ProductDatabase::$PRODUCT_PRICE],
                 $row[ProductDatabase::$PRODUCT_DESC],
                 $row[ProductDatabase::$PRODUCT_IMAGEPATH],null,
-                $row[ProductDatabase::$PRODUCT_EXPERT_ACTIVE],
                 $row[ProductDatabase::$PRODUCT_LONG_DESC],
                 $row[ProductDatabase::$PRODUCT_CATEGORY_ID]);
         }
@@ -206,21 +202,6 @@ class Product{
         $this->sub_category = $sub_category;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getExpertActive()
-    {
-        return $this->expert_active;
-    }
-
-    /**
-     * @param mixed $expert_active
-     */
-    public function setExpertActive($expert_active)
-    {
-        $this->expert_active = $expert_active;
-    }
 
     /**
      * @return mixed
