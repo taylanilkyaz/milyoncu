@@ -8,7 +8,10 @@ require $_SERVER['DOCUMENT_ROOT'].'/system-header.php';
 
 $controller = new TicketController();
 $ticketId = $_POST['ticketId'];
-$type = $_POST['type'];
+if (isset($_POST['type']))
+    $type = $_POST['type'];
+else
+    $type = TicketController::$OPEN_TICKET;
 
 
 
@@ -45,10 +48,37 @@ foreach($res as $row) {
     ?>
     <div class="ten wide column">
         <div data-id='<?php echo $row->getId(); ?>' class="ui blue segment parent">
-            <div class="item">
-                <div class="header">
-                    <h3 class="header">Destek İsteği</h3>
-                </div>
+            <div class="item"><?php
+                if ($row->getUserId() == $_SESSION['id'] && UserTypes::$TYPICAL_USER == $_SESSION['user_type']  ){
+                    ?>
+                    <div class="header">
+                        <h3 class="header">Destek İsteği</h3>
+                    </div>
+                <?php
+                } else if ($row->getUserId() == $_SESSION['id'] && UserTypes::$ADMIN_USER == $_SESSION['user_type'] ){
+                    ?>
+                    <div class="header">
+                        <h3 class="header" style="color: #33cc2b;">Destek Cevabı</h3>
+                    </div>
+                    <?php
+                }
+                else if ( UserTypes::$ADMIN_USER == $_SESSION['user_type'] )
+                {
+                    ?>
+                    <div class="header">
+                        <h3 class="header">Destek İsteği</h3>
+                    </div>
+                <?php
+                }
+                else if ( UserTypes::$TYPICAL_USER == $_SESSION['user_type'] )
+                {
+                    ?>
+                    <div class="header">
+                        <h3 class="header" style="color: #33cc2b;">Destek Cevabı</h3>
+                    </div>
+                    <?php
+                }
+            ?>
                 <div class="header">
                     <h4 class="header"> <?php echo $row->getTitle(); ?> </h4>
                 </div>
@@ -69,15 +99,14 @@ foreach($res as $row) {
     <form class="ui fluid form" method="post" action="submit-ticket.php">
 
         <div class="field">
-            <textarea  type="text" name="detail"  placeholder="Sorunuzu adeta size soruluyormuş gibi detaylandırın ."></textarea>
+            <textarea  type="text" name="detail"  placeholder="Sorunuzu veya cevabınızı yazabilirsiniz."></textarea>
         </div>
 
         <div style="display: none" class="field">
             <input name="parentId" value="<?php echo $ticketId ?>" type="text" >
         </div>
 
-        <input value="Talep Gönder" name="save" class="huge ui button" type="submit"id="sendTicket">
-        <input value="Talep Kapat" name="close" class="huge ui button" type="submit"id="sendTicket">
+        <input value="Soru Gönder" name="save" class="huge ui button" type="submit"id="sendTicket">
 
         <input value="insertToParent" style="display: none" name="type" type="text">
     </form>

@@ -12,12 +12,11 @@ getAdminHeader();
 
 <div id="dashboard">
     <div class="pusher">
-        <h1 id="header-id" class="ui header">Destek</h1>
+        <h1 id="header-id" class="ui header">Destek ve İletişim</h1>
 
         <div class="large ui buttons">
-        <button id="open-ticket" class="ui blue basic button">Açık Talep</button>
-        <button id="close-ticket" class="ui blue basic button">Kapalı Talep</button>
-        <button id="submit-ticket" class="ui blue basic button">Yeni Talep</button>
+        <button id="open-ticket" class="ui blue basic button">Önceki Sorular</button>
+        <button id="submit-ticket" class="ui blue basic button">Yeni Soru</button>
         </div>
         <div class="ui divider"></div>
     </div>

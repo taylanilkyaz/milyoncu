@@ -1,6 +1,14 @@
 <div id="user-pointing-menu" class="ui pointing menu ">
     <div class="logo-sidebar">
+        <?php
+        if (isset($_SESSION['user_type'])) {
+        ?>
         <a href="/admin">
+            <?php }
+            else{
+            ?>
+            <a href="/home">
+            <?php  }  ?>
             <img src="/assets/fotos/logo.png"></a>
     </div>
     <div class="right menu">
@@ -80,6 +88,20 @@
 
                 <?php
             }
+        }
+        else{
+            ?>
+            <a href="/admin/buy" class="item">
+                <div class="ui primary button">Ürünler</div>
+            </a>
+            <a href="/register" class="item">
+                <div class="ui primary button">Kayıt Ol</div>
+            </a>
+
+            <a href="/login" class="item">
+                <div class="ui primary button">Giriş Yap</div>
+            </a>
+        <?php
         }
 
         ?>

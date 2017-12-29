@@ -9,10 +9,10 @@
                 </div>
 
                 <div class="field">
-                    <textarea  type="text" name="detail"  placeholder="Sorunuzu adeta size soruluyormuş gibi detaylandırın ."></textarea>
+                    <textarea  type="text" name="detail"  placeholder="Sorunuzu yazabilirsiniz."></textarea>
                 </div>
 
-                <input id="sendTicket" value="Talep Gönder" name="save" class="huge ui button" type="submit">
+                <input id="sendTicket" value="Soru Gönder" name="save" class="huge ui button" type="submit">
                 <input value="insertAsParent" style="display: none" name="type" type="text">
             </form>
         </div>

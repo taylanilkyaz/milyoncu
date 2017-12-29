@@ -5,11 +5,10 @@
 <html  lang="tr">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="shortcut icon" type="image/png"  href="/assets/images/logo07082017/a16.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/fotos/newmini.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="description" content=" Geniş bir yelpazedeki DNA testleri ile hem genetik kodlarınızı keşfetmenizi hem velayet davalarını çözmenizi hem de kafanızdaki soru işaretlerini gidermenizi amaçlıyoruz"/>
-    <title>Hey Burası Kolaydna</title>
+    <title>Milyoncu</title>
     <script src="/lib/functional/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/lib/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/admin/admin-style.css">

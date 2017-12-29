@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
   `process_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- b4u_dna.basket: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `basket` DISABLE KEYS */;
@@ -160,24 +160,13 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- b4u_dna.contact: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
-
--- tablo yapısı dökülüyor b4u_dna.exchange_rate
-CREATE TABLE IF NOT EXISTS `exchange_rate` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dollar_to_try` float NOT NULL,
-  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.exchange_rate: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `exchange_rate` DISABLE KEYS */;
-INSERT IGNORE INTO `exchange_rate` (`id`, `dollar_to_try`) VALUES
-	(1, 3.5341);
-/*!40000 ALTER TABLE `exchange_rate` ENABLE KEYS */;
+-- b4u_dna.contact: ~1 rows (yaklaşık) tablosu için veriler indiriliyor
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT IGNORE INTO `contact` (`id`, `subject`, `email`, `name`, `message`) VALUES
+	(1, 'Başvuru & Fiyatlandırma', 'ayseakcan1907@gmail.com', 'Ayşe Akcan', 'Çok pahalı bit site. biraz yardımcı olun lütfen.');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.kullanıcılar
 CREATE TABLE IF NOT EXISTS `kullanıcılar` (
@@ -260,6 +249,37 @@ INSERT IGNORE INTO `product_comments` (`id`, `product_id`, `user_id`, `title`, `
 	(10, 1, 1, 'ayhan6', 'ayhan', '2017-09-13 17:14:20', 4);
 /*!40000 ALTER TABLE `product_comments` ENABLE KEYS */;
 
+-- tablo yapısı dökülüyor b4u_dna.sorular
+CREATE TABLE IF NOT EXISTS `sorular` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kullanıcı_id` int(11) NOT NULL,
+  `başlık` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `açıklama` text COLLATE utf8_unicode_ci NOT NULL,
+  `ana_soru_id` int(11) NOT NULL,
+  `ana_soru` tinyint(4) NOT NULL,
+  `aktif` tinyint(4) NOT NULL,
+  `ekleme_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`kullanıcı_id`),
+  KEY `parent_ticket_id` (`ana_soru_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- b4u_dna.sorular: ~10 rows (yaklaşık) tablosu için veriler indiriliyor
+/*!40000 ALTER TABLE `sorular` DISABLE KEYS */;
+INSERT IGNORE INTO `sorular` (`id`, `kullanıcı_id`, `başlık`, `açıklama`, `ana_soru_id`, `ana_soru`, `aktif`, `ekleme_zamanı`) VALUES
+	(1, 6, 'Para Sorunu', 'Fiyatlar çok fazla', -1, 1, 1, '2017-12-29 16:06:55'),
+	(2, 2, '', 'N ealaka Efendim. Adı üstünde Milyoncu yuz', 1, 0, 1, '2017-12-29 16:07:49'),
+	(3, 6, '', 'Aloooo', 1, 0, 1, '2017-12-29 16:15:30'),
+	(4, 1, 'Kargo çok yavaş', 'Bir hafta da anca geliyor. Kontrol etmelisiniz.', -1, 1, 1, '2017-12-29 16:22:25'),
+	(5, 2, '', 'Haklısınız. İnceleyeceğiz', 4, 0, 1, '2017-12-29 16:22:54'),
+	(6, 2, '', 'Teşekkürler.', 4, 0, 1, '2017-12-29 16:25:02'),
+	(7, 1, '', 'Ben Teşekkür Ederim', 4, 0, 1, '2017-12-29 16:33:32'),
+	(8, 2, '', 'Özür Dileriz', 1, 0, 1, '2017-12-29 16:50:47'),
+	(9, 6, '', 'Ne demek. aslında çok haklısınız.', 1, 0, 1, '2017-12-29 16:56:42'),
+	(10, 6, '', 'Cevap atabilirdiiniz ama.', 1, 0, 1, '2017-12-29 17:08:11'),
+	(11, 2, '', 'Haklısınız efendim. Size daha iyi hizmet verebilmek için uğraşmaktayız', 1, 0, 1, '2017-12-29 17:08:59');
+/*!40000 ALTER TABLE `sorular` ENABLE KEYS */;
+
 -- tablo yapısı dökülüyor b4u_dna.status_update_time
 CREATE TABLE IF NOT EXISTS `status_update_time` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -326,25 +346,6 @@ INSERT IGNORE INTO `sub_categories` (`id`, `super_category_id`, `name`) VALUES
 	(12, 3, 'hastalık'),
 	(13, 4, 'köken testleri');
 /*!40000 ALTER TABLE `sub_categories` ENABLE KEYS */;
-
--- tablo yapısı dökülüyor b4u_dna.ticket
-CREATE TABLE IF NOT EXISTS `ticket` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `parent_ticket_id` int(11) NOT NULL,
-  `is_parent` tinyint(4) NOT NULL,
-  `is_active` tinyint(4) NOT NULL,
-  `add_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `parent_ticket_id` (`parent_ticket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- b4u_dna.ticket: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor b4u_dna.ürün
 CREATE TABLE IF NOT EXISTS `ürün` (

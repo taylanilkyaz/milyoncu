@@ -1,15 +1,15 @@
 <?php
 
 class TicketDatabase extends Database {
-    public static $TABLE_NAME = "ticket";
+    public static $TABLE_NAME = "sorular";
     public static $ID = "id";
-    public static $USER_ID = "user_id";
-    public static $TITLE = "title";
-    public static $DESC = "description";
-    public static $ADD_DATETIME = "add_datetime";
-    public static $PARENT_ID = "parent_ticket_id";
-    public static $IS_PARENT = "is_parent";
-    public static $IS_ACTIVE = "is_active";
+    public static $USER_ID = "kullanıcı_id";
+    public static $TITLE = "başlık";
+    public static $DESC = "açıklama";
+    public static $ADD_DATETIME = "ekleme_zamanı";
+    public static $PARENT_ID = "ana_soru_id";
+    public static $IS_PARENT = "ana_soru";
+    public static $IS_ACTIVE = "aktif";
     public static $EDIT_DATETIME = "edit_datetime";
 
 
@@ -204,15 +204,13 @@ class TicketDatabase extends Database {
 
 
     public function getTicketListByUserIdAndParentId($userId,$parentId) {
-        $sql = sprintf("SELECT * FROM %s WHERE %s = ? AND %s = ? AND %s = ?  ORDER BY %s ASC;",
+        $sql = sprintf("SELECT * FROM %s WHERE %s = ? ORDER BY %s ASC;",
             TicketDatabase::$TABLE_NAME,
-            TicketDatabase::$USER_ID,
             TicketDatabase::$PARENT_ID,
-            TicketDatabase::$IS_PARENT,
             TicketDatabase::$ADD_DATETIME);
 
         if($stmt = $this->getDb()->prepare($sql)){
-            $stmt->bind_param("ddd",$userId,$parentId,Ticket::$NOT_PARENT);
+            $stmt->bind_param("d",$parentId);
 
             if(!$stmt->execute()){
                 $this->setIsError(true);
@@ -229,7 +227,7 @@ class TicketDatabase extends Database {
     public function addTicket($userId,$subject,$detail,$isParent,$isActive,$parentId)
     {
         $sql = sprintf("INSERT INTO 
-              ticket(%s,%s,%s,%s,%s,%s) VALUES(?,?,?,?,?,?)",
+              sorular(%s,%s,%s,%s,%s,%s) VALUES(?,?,?,?,?,?)",
             TicketDatabase::$USER_ID,
             TicketDatabase::$TITLE,
             TicketDatabase::$DESC,

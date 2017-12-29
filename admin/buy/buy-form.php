@@ -97,7 +97,7 @@
                             <div class="bottom-detail">
                                 <p class="name"><?php echo $product->getName() ?></p>
                                 <p class="price"><i class="lira icon"></i>
-                                    <?php echo floor($product->getPrice()); ?></p>
+                                    <?php echo $product->getPrice(); ?></p>
                                 <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
                             </div>
 

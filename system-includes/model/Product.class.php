@@ -127,7 +127,7 @@ class Product{
      */
     public function getPrice()
     {
-        return floor($this->price * ExchangeRate::getDOLLARTOTRY());
+        return $this->price;
     }
 
     /**
