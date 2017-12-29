@@ -8,8 +8,6 @@ if (!$bool){
 getAdminHeader();
 ?>
 
-
-
 <div id="icon-container" class="ui fluid container">
     <button class="ui left floated button">
         <i id="menu-icon" class="huge sidebar icon"></i>

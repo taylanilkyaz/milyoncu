@@ -28,4 +28,27 @@ class CategoriesDatabase extends Database {
         }
     }
 
+    public function getCategoryNameNonSeq($id){
+        $sql = sprintf("SELECT %s FROM %s WHERE %s = ?",
+            self::$CATEGORIES_NAME,
+            self::$CATEGORIES_TABLE_NAME,
+            self::$CATEGORIES_ID);
+        if($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("d",$id);
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Kategori ismi getirme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }   else{
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                return $row['name'];
+            }
+        }else{
+            $this->setIsError(true);
+            $this->setErrorMessage("Kategori ismi getirme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+
 }
