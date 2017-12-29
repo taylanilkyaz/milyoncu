@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 5.08.2017
- * Time: 23:46
- */
+
 class StoredCardDatabase extends Database {
     public static $STORED_CARD_TABLE_NAME = "stored_card";
     public static $STORED_CARD_ID = "id";

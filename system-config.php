@@ -4,9 +4,6 @@
  * Database ayarları.
  */
 
- /**
- * Ayhan ilk commit
- */
 /**
  * Encode UTF-8 olarak ayarlanıyor.
  */

@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 5.06.2017
- * Time: 00:37
- */
+
 class Logout{
 
 

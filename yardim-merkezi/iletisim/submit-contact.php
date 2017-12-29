@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 11.08.2017
- * Time: 14:54
- */
+
 require $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'system-header.php';
 
 if (isset($_GET['email']) && isset($_GET['user_name']) && isset($_GET['mesaj']) && isset($_GET['choices'])){

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 9.08.2017
- * Time: 11:52
- */
 
 require $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'system-header.php';
 

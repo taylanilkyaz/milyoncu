@@ -16,11 +16,9 @@ if ($_SESSION['user_type']==UserTypes::$TYPICAL_USER){
     </div>
 <?php
 getAdminHeader();
-//getNavbar();
 ?>
 </div>
 
 <?php
     require 'form/index-form.php';
-    require 'form/right-sidebar.php';
 ?>

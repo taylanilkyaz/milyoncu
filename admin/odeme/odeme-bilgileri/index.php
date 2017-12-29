@@ -26,7 +26,6 @@ getAdminHeader();
 
 <?php
 require '../../form/index-form.php';
-require '../../form/right-sidebar.php';
 require '../../form/bottom-sidebar.php';
 ?>
 

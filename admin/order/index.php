@@ -15,16 +15,13 @@ getAdminHeader();
 <div id="dashboard">
     <h1 id="header-id" class="ui header">Sipariş Durumu</h1>
     <?php
-    //getNavbar();
     require 'order-form.php';
-    //TODO-Muhammet Ortadan kenarlara uzaklıkları değiştir
     ?>
 
 </div>
 
 <?php
 require '../form/index-form.php';
-require '../form/right-sidebar.php';
 require '../form/bottom-sidebar.php';
 ?>
 

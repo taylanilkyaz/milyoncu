@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 31.07.2017
- * Time: 17:36
- */
+
 class Model{
     public static function timeFormat($order_date){
 

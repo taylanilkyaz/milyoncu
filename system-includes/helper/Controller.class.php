@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 6.08.2017
- * Time: 22:58
- */
+
 class Controller
 {
     function controllUserLevel($level)

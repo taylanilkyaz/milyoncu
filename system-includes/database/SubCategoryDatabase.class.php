@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 3.08.2017
- * Time: 18:00
- */
-
 
 class SubCategoryDatabase extends Database {
     public static $SUB_CATEGORY_TABLE_NAME = "sub_categories";

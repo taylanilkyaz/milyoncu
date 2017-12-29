@@ -31,6 +31,8 @@ body {
 
 #dashboard {
     margin-bottom: 80px;
+    margin-top: 80px;
+    padding: 20px;
 }
 
 #header-id {
@@ -176,26 +178,6 @@ body {
 
 #buy-sidebar .remove-buy-item {
     cursor: pointer;
-}
-
-@media screen and (min-width: 1127px) {
-    #dashboard {
-        padding-left: 260px;
-    }
-
-    #dashboard .goodmargin {
-        margin: 1em 0.6em;
-    }
-}
-
-@media screen and (max-width: 1127px) {
-    #dashboard {
-        padding-left: 0;
-    }
-
-    #dashboard .ui.button {
-        margin: 0.5em 0;
-    }
 }
 
 #dashboard .sline {

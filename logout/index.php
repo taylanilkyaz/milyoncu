@@ -8,7 +8,6 @@ getNavbar();
 
 if($logout->isAlreadyLogin()){
     session_destroy();
-    sleep(1);
     redirect_javascript('/home/index.php');
 }else{
     redirect_javascript('/login/login-form.php');

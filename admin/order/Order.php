@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ayhan
- * Date: 18.07.2017
- * Time: 13:07
- */
+
 class Order{
 
     function selectIcon($order_status){
