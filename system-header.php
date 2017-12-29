@@ -1,6 +1,6 @@
 <?php
-//$dev = 'localhost';
-$dev = 'milyoncu.dev';
+$dev = 'localhost';
+//$dev = 'milyoncu.dev';
 
 
 if($dev == 'localhost' || $dev == 'milyoncu.dev'){

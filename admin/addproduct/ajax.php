@@ -1,5 +1,4 @@
 <?php
-if ($_POST['csrf'] == $_SESSION['csrf']){
     require $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'system-header.php';
     $uploadfile = PRODUCTIMAGEPATH . basename($_FILES['photo']['name']);
     $productName = $_POST['product-name'];
@@ -46,10 +45,10 @@ if ($_POST['csrf'] == $_SESSION['csrf']){
     $nameOfFile=$path_parts['filename'].".".$path_parts['extension'];
 
     $object2 = new ProductDatabase();
-    $object = new Product(null,$productName,$productPrice,$productInfo,$nameOfFile,null,0,$productLongInfo);
+    $object = new Product(null,$productName,$productPrice,$productInfo,$nameOfFile,0,$productLongInfo,1);
     $_SESSION['message']=$object2->insertProduct($object);
 
-}
-redirect_javascript("/admin/addproduct/index.php",2000);
+
+redirect_javascript("/admin/addproduct/index.php",1000);
 
 ?>

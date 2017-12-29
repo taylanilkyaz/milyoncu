@@ -1,5 +1,4 @@
 <?php
-if ($_POST['csrf'] == $_SESSION['csrf']){
     require $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'system-header.php';
     $object2 = new ProductDatabase();
     $nameOfFile = "";
@@ -47,8 +46,5 @@ if ($_POST['csrf'] == $_SESSION['csrf']){
         $object2->editProductWithoutImage($productName,$productPrice,$productInfo,$productId,$productLongInfo);
     }
 
-}
 
-
-
-redirect_javascript("/admin/editproduct/index.php",2000);
+redirect_javascript("/admin/editproduct/index.php",1000);
