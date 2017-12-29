@@ -1,13 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 //$dev = 'localhost';
 $dev = 'milyoncu.dev';
-=======
-$dev = 'localhost';
-//$dev = 'kolaydna.dev';
->>>>>>> 365ffb026a399cec883a01e990a0de42af34e0bb
-//$dev = 'www.kolaydna.com';
 
 if($dev == 'localhost' || $dev == 'milyoncu.dev'){
     /**Error report Ayarları **/
