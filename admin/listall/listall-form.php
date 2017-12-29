@@ -53,8 +53,11 @@
                 </table>
                 <br>
                 <div style="text-align: center; ">
-                    <button class="ui large green button" onclick="javascript:pdf();">
-                        PDF Yazdır
+                    <button class="ui large green button" onClick="doExport('#dbTableForList', {type: 'doc'});">
+                        DOC Dosyası İndir
+                    </button>
+                    <button class="ui large blue button" onClick="doExport('#dbTableForList', {type: 'json'});">
+                        JSON Dosyası İndir
                     </button>
                 </div>
             </div>
@@ -85,54 +88,69 @@
 </div>
 
 </body>
-<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
-<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<script>
-    function pdf() {
-        var dataSource = shield.DataSource.create({
-            data: "#dbTableForList",
-            schema: {
-                type: "table",
-                fields: {
-                    İSİM : { type: String },
-                    SOYİSİM : { type: String },
-                    MAİL : { type: String },
-                    TELEFON : { type: String }
-                }
-            }
-        });
+<script type="text/javascript" src="/lib/tableExport/libs/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="/lib/tableExport/libs/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="/lib/tableExport/libs/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" src="/lib/tableExport/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="/lib/tableExport/libs/html2canvas/html2canvas.min.js"></script>
+<script type="text/javascript" src="/lib/tableExport/tableExport.js"></script>
 
-        dataSource.read().then(function (data) {
-            var pdf = new shield.exp.PDFDocument({
-                author: "Milyoncu",
-                created: new Date()
-            });
+<script type="text/javaScript">
 
-            pdf.addPage("a4", "portrait");
+    function doExport(selector, params) {
+        var options = {
+            //ignoreRow: [1,11,12,-2],
+            ignoreColumn: [4,5],
+            //pdfmake: {enabled: true},
+            fileName: 'Kullanicilar'
+        };
 
-            pdf.table(
-                50,
-                50,
-                data,
-                [
-                    { field: "İSİM", title: "Ad", width: 100 },
-                    { field: "SOYİSİM", title: "Soyad", width: 100 },
-                    { field: "MAİL", title: "E-Mail", width: 200 },
-                    { field: "TELEFON", title: "Telefon", width: 100 }
-                ],
-                {
-                    margins: {
-                        top: 50,
-                        left: 50
-                    }
-                }
-            );
+        $.extend(true, options, params);
 
-            pdf.saveAs({
-                fileName: "kullanicilar"
-            });
-        });
+        $(selector).tableExport(options);
     }
+
+    function DoOnCellHtmlData(cell, row, col, data) {
+        var result = "";
+        if (data != "") {
+            var html = $.parseHTML( data );
+
+            $.each( html, function() {
+                if ( typeof $(this).html() === 'undefined' )
+                    result += $(this).text();
+                else if ( $(this).is("input") )
+                    result += $('#'+$(this).attr('id')).val();
+                else if ( $(this).is("select") )
+                    result += $('#'+$(this).attr('id')+" option:selected").text();
+                else if ( $(this).hasClass('no_export') !== true )
+                    result += $(this).html();
+            });
+        }
+        return result;
+    }
+
+    function DoOnCsvCellData(cell, row, col, data) {
+        var result = data;
+        if (result != "" && row > 0 && col == 0) {
+            result = "\x1F" + data;
+        }
+        return result;
+    }
+
+    function DoOnXlsxCellData(cell, row, col, data) {
+        var result = data;
+        if (result != "" && (row < 1 || col != 0)) {
+            if ( result == +result )
+                result = +result;
+        }
+        return result;
+    }
+
+    function DoOnMsoNumberFormat(cell, row, col) {
+        var result = "";
+        if (row > 0 && col == 0)
+            result = "\\@";
+        return result;
+    }
+
 </script>
