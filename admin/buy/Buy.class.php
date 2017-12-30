@@ -467,7 +467,7 @@ HTML;
     /**
      * @return null|Product[]
      */
-    public function getAllProductsPrive($small,$large)
+    public function getAllProductsPrice($small,$large)
     {
         $res = $this->getProductDb()->getAllProductsPrice($small,$large);
         if (!$res) {
