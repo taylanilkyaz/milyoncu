@@ -90,40 +90,60 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
 </div>
 <script>
 
-    function getState(val) {
+    var menu1  = $("#ust_kategori").val();
+    var menu2  = $("#alt_kategori").val();
 
+    if (menu1>0 && menu2>0){
+        alert("değeler hazır");
+    }
+
+    function getState(val) {
         $("#alt_menu").empty();
         var value = $("#ust_kategori").val();
+        var $menu =  $('.alt-kategori').find('.menu');
+
         if (value==='1'){
-            var $menu =  $('.alt-kategori').find('.menu');
+            $menu.append('<div class="item" data-value="1">Cam</div>');
+            $menu.append('<div class="item" data-value="2">Porselen</div>');
 
-            $menu.append('<div class="item" data-value="1">Fall</div>');
-            $menu.append('<div class="item" data-value="2">Summer</div>');
-
-            //reinitialize drop down
-            $('.ui.dropdown.seasons').dropdown();
         } else  if (value==='2'){
-            var $menu =  $('.alt-kategori').find('.menu');
+            $menu.append('<div class="item" data-value="3">Defter</div>');
+            $menu.append('<div class="item" data-value="4">Kalem</div>');
 
-            $menu.append('<div class="item" data-value="1">Salak</div>');
-
-            //reinitialize drop down
-            $('.ui.dropdown.seasons').dropdown();
         } else  if (value==='3'){
-            var $menu =  $('.alt-kategori').find('.menu');
+            $menu.append('<div class="item" data-value="5">Avize</div>');
+            $menu.append('<div class="item" data-value="6">Masa Lambası</div>');
 
-            $menu.append('<div class="item" data-value="1">Canım</div>');
-            $menu.append('<div class="item" data-value="2">Tatlım</div>');
-            $menu.append('<div class="item" data-value="3">Şekerim</div>');
+        }else  if (value==='4'){
+            $menu.append('<div class="item" data-value="7">Küpe</div>');
+            $menu.append('<div class="item" data-value="8">Kolye</div>');
+            $menu.append('<div class="item" data-value="9">Yüzük</div>');
 
-            //reinitialize drop down
-            $('.ui.dropdown.seasons').dropdown();
+        } else  if (value==='5'){
+            $menu.append('<div class="item" data-value="10">Bardak</div>');
+            $menu.append('<div class="item" data-value="11">Çatal Bıçak</div>');
+            $menu.append('<div class="item" data-value="12">Çaydanlık</div>');
+            $menu.append('<div class="item" data-value="13">Tencere</div>');
+            $menu.append('<div class="item" data-value="14">Banyo Aksesuarı</div>');
+
+        } else  if (value==='6'){
+            $menu.append('<div class="item" data-value="20">Hırdavat</div>');
+
+        }else  if (value==='7') {
+            $menu.append('<div class="item" data-value="15">Kızlara Özel</div>');
+            $menu.append('<div class="item" data-value="16">Erkeklere Özel</div>');
+
+        } else  if (value==='8') {
+            $menu.append('<div class="item" data-value="17">Kişisel Bakım</div>');
+            $menu.append('<div class="item" data-value="18">Ev Temizliği</div>');
+
         } else {
-
+            $menu.append('<div class="item" data-value="19">Hediye</div>');
         }
+        $('.ui.dropdown.seasons').dropdown();
+
     }
     function getState2(val) {
         var value = $("#alt_kategori").val();
-
     }
 </script>

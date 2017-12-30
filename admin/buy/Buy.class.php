@@ -471,6 +471,17 @@ HTML;
         /** @var Product[] $res */
         return $res;
     }
+    public function getAllProductsSearch($search)
+    {
+        $res = $this->getProductDb()->getAllProductsSearch($search);
+        if (!$res) {
+            $this->is_error = true;
+            $this->error_message = $this->getDb()->getErrorMessage();
+        }
+
+        /** @var Product[] $res */
+        return $res;
+    }
 
 }
 

@@ -238,6 +238,38 @@ class ProductDatabase extends Database{
         }
     }
 
+    public function getAllProductsSearch($search)
+    {
+        $sql = sprintf("SELECT * FROM %s WHERE %s like '%s' OR %s like '%s' ",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_NAME,
+            "%".$search. "%",
+            self::$PRODUCT_DESC,
+            "%".$search. "%");
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+
 
 
 

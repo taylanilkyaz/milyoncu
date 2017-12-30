@@ -22,16 +22,25 @@ getAdminHeader();
         <div class="ui vertical sticky menu"
              style="left: 10px;font-size: 18px; top: 100px;position: fixed;background-color: #4d97a9">
 
-            <div class="item">
-                <div class="ui fluid search column">
-                    <div class="ui fluid big icon input">
-                        <input id="search" class="prompt" type="text" placeholder="Ara...">
-                        <i class="search icon"></i>
+            <form class="ui stackable grid" action="index.php" method="post">
+                <div class="item">
+                    <div class="ui fluid search column">
+                        <div class="ui fluid big icon input">
+                            <input id="search" name="search" class="prompt" type="text" placeholder="Ara..." style="font-size: 15px; margin-top: 5%">
+                            <i class="search icon"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="sixteen wide column" style="text-align: center ;padding-top: 0px">
+                    <button class=" ui primary button" type="submit" id="filtrele-ara"
+                            style="background-color: #41C4E2 ; color: white; margin-bottom: 5%">
+                        Ara
+                    </button>
+                </div>
+            </form>
+
             <div class="item">
-                <div class="header">Ürün Kategorileri</div>
+                <div class="header" style="font-size: x-large"><a href="index.php">Ürünler</a></div>
                 <div class="menu">
                     <a class="item" href="#1">
                         <b>Züccaciye</b>
@@ -79,7 +88,7 @@ getAdminHeader();
 
                     <div class="sixteen wide column" style="text-align: center ;padding-top: 0px">
                         <button class=" ui primary button" type="submit" id="filtrele-ara"
-                                style="background-color: #2773E9 ; color: white">
+                                style="background-color: #41C4E2 ; color: white">
                             Ara
                         </button>
                     </div>
