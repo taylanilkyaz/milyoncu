@@ -12,7 +12,7 @@ mb_internal_encoding( 'UTF-8' );
 /**
  * Veritabanı ismi
  */
-define('DB_NAME', 'b4u_dna');
+define('DB_NAME', 'milyoncu');
 
 /**
  * Veritabanı kullanıcı adı
