@@ -357,8 +357,8 @@ HTML;
             $str .=<<<HTML
             <div class="ui grid product-container-grid" id="${id}">
                 <div class="three wide column">
-                    <a href="../product-description/index.php?name=${name}">
-                        <img src="/assets/images/productimage/512/${image_path}">
+                    <a href="../product-description/index.php?name=${name}"id="buy-image-size" >
+                        <img  src="/assets/images/productimage/512/${image_path}">
                     </a>
                 </div>
                 <div class="five wide column">

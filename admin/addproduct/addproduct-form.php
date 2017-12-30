@@ -28,7 +28,7 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
             <div class="menu">
                 <?php
                 $category = new CategoriesDatabase();
-                for ($i = 1; $i < 5; $i++) {
+                for ($i = 1; $i < 10; $i++) {
                     $categoryName = $category->getCategoryNameNonSeq($i);
                     ?>
                     <div class="item" data-value="<?php echo $i; ?>"><?php echo ucwords($categoryName)?></div>

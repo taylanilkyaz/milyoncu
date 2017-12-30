@@ -6,11 +6,12 @@ $controllerObj = new Controller();
 getAdminHeader();
 ?>
 <style>
-    .left-menu a{
+    .left-menu a {
         color: #404040 !important;
         font-weight: 700;
     }
-    .left-menu a:hover{
+
+    .left-menu a:hover {
         color: #ffffff !important;
         font-weight: bolder;
     }
@@ -29,18 +30,18 @@ getAdminHeader();
                     </div>
                 </div>
             </div>
-            <div class="item" >
+            <div class="item">
                 <div class="header">Ürün Kategorileri</div>
-                <div class="menu" >
-                    <a class="item" href="#1" >
+                <div class="menu">
+                    <a class="item" href="#1">
                         <b>Züccaciye</b>
                     </a>
 
                     <a class="item" href="#2">
-                       <b>Kırtasiye Ürünleri</b>
+                        <b>Kırtasiye</b>
                     </a>
                     <a class="item" href="#3">
-                        <b>Aydınlatma Ürünleri</b>
+                        <b>Aydınlatma</b>
                     </a>
                     <a class="item" href="#4">
                         <b>Bujiteri</b>
@@ -55,10 +56,10 @@ getAdminHeader();
                         <b>Oyuncak</b>
                     </a>
                     <a class="item" href="#8">
-                        <b>Temizlik Ürünleri</b>
+                        <b>Temizlik</b>
                     </a>
                     <a class="item" href="#9">
-                        <b>Hediyelik Ürün</b>
+                        <b>Hediyelik</b>
                     </a>
 
                 </div>
@@ -66,26 +67,25 @@ getAdminHeader();
             <div class="item">
                 <div class="header" style="font-size: 18px ; margin-bottom: 15px">Fiyat Filtresi</div>
 
-                <div class="ui stackable grid">
+                <form class="ui stackable grid" action="index.php" method="post">
+                    <div class="eight wide column ui mini input focus" style="padding-right: 2px">
+                        <input type="text" name="smallval" id="smallval" placeholder="Min...">
+                    </div>
 
-                    <form action="index.php" method="post" >
-                        <div class="eight wide column ui mini input focus" style="padding-right: 2px">
-                            <input type="text" name="smallval" id="smallval" placeholder="Min...">
-                        </div>
+                    <div class="eight wide column ui mini input focus "
+                         style="padding-left: 2px ; margin-right: inherit">
+                        <input type="text" name="largeval" id="largeval" placeholder="Max...">
+                    </div>
 
-                        <div class="eight wide column ui mini input focus " style="padding-left: 2px ; margin-right: inherit">
-                            <input type="text" name="largeval" id="largeval" placeholder="Max...">
-                        </div>
-
-                        <div class="sixteen wide column" style="text-align: center">
-                            <button class=" ui primary button" type="submit" id="filtrele-ara" style="background-color: #2773E9 ; color: white">
-                                Ara
-                            </button>
-                        </div>
-                    </form>
+                    <div class="sixteen wide column" style="text-align: center ;padding-top: 0px">
+                        <button class=" ui primary button" type="submit" id="filtrele-ara"
+                                style="background-color: #2773E9 ; color: white">
+                            Ara
+                        </button>
+                    </div>
+                </form>
 
 
-                </div>
             </div>
 
         </div>
