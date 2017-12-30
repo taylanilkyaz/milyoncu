@@ -13,16 +13,6 @@ $user_id = $_SESSION['id'];
             <div class="center aligned eight wide computer column">
                 <div class="ui segment left aligned" id="sepet-id">
                     <span class="ui header" id="titlecolor"><b>Sepetim</b></span>
-                    <div class="ui stackable grid">
-                        <div class="nine wide tablet nine wide computer column">
-                        </div>
-                        <div class="four wide computer column" id="sepetim-four-wide">
-                            <div class="col-amount">ADET</div>
-                        </div>
-                        <div class="four wide tablet three wide computer column right aligned"id="sepetim-toplam">
-                            <div class="toplam">TOPLAM</div>
-                        </div>
-                    </div>
 
                     <div class="ui divider"></div>
                     <div id="product-container">
