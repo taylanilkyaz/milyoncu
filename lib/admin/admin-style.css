@@ -695,8 +695,8 @@ rating bar bitiş
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #buy-container .ui.segment {

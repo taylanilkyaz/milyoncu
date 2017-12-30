@@ -5,11 +5,96 @@ $controllerObj = new Controller();
 
 getAdminHeader();
 ?>
+<style>
+    .left-menu a{
+        color: #404040 !important;
+        font-weight: 700;
+    }
+    .left-menu a:hover{
+        color: #ffffff !important;
+        font-weight: bolder;
+    }
+</style>
+<div id="dashboard" class="ui stackable grid">
 
-<div id="dashboard">
-    <?php
-    require 'buy-form.php';
-    ?>
+    <div class="two wide column left-menu">
+        <div class="ui vertical sticky menu"
+             style="left: 10px;font-size: 18px; top: 100px;position: fixed;background-color: #4d97a9">
+
+            <div class="item">
+                <div class="ui fluid search column">
+                    <div class="ui fluid big icon input">
+                        <input id="search" class="prompt" type="text" placeholder="Ara...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item" >
+                <div class="header">Ürün Kategorileri</div>
+                <div class="menu" >
+                    <a class="item" href="#" >
+                        <b>Züccaciye</b>
+                    </a>
+
+                    <a class="item" href="#">
+                       <b>Kırtasiye Ürünleri</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Aydınlatma Ürünleri</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Bujiteri</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Mutfak & Banyo</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Hırdavat</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Oyuncak</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Temizlik Ürünleri</b>
+                    </a>
+                    <a class="item" href="#">
+                        <b>Hediyelik Ürün</b>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <div class="header" style="font-size: 18px ; margin-bottom: 15px">Fiyat Filtresi</div>
+
+                <div class="ui stackable grid">
+
+                    <div class="eight wide column ui mini input focus" style="padding-right: 2px">
+                        <input type="text" placeholder="Min...">
+                    </div>
+
+                    <div class="eight wide column ui mini input focus " style="padding-left: 2px ; margin-right: inherit">
+                        <input type="text" placeholder="Max...">
+                    </div>
+
+                    <div class="sixteen wide column" style="text-align: center">
+                        <button class=" ui primary button" style="background-color: #2773E9 ; color: white">
+                            Ara
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="thirteen wide column">
+        <?php
+        require 'buy-form.php';
+        ?>
+    </div>
+    <div class="one wide column"></div>
+
 
 </div>
 

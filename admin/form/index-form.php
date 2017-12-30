@@ -9,7 +9,7 @@
             ?>
             <a href="/home">
             <?php  }  ?>
-            <img src="/assets/fotos/logo.png"></a>
+            <img src="/assets/fotos/yenilogo.jpg"></a>
     </div>
     <div class="right menu">
         <?php
