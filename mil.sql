@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- b4u_dna için veritabanı yapısı dökülüyor
-CREATE DATABASE IF NOT EXISTS `b4u_dna` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `b4u_dna`;
+-- milyoncu için veritabanı yapısı dökülüyor
+CREATE DATABASE IF NOT EXISTS `milyoncu` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `milyoncu`;
 
--- tablo yapısı dökülüyor b4u_dna.adres_kullanıcı_relation
+-- tablo yapısı dökülüyor milyoncu.adres_kullanıcı_relation
 CREATE TABLE IF NOT EXISTS `adres_kullanıcı_relation` (
   `kullanıcı_id` int(11) NOT NULL,
   `fatura_adresi_id` int(11) DEFAULT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `adres_kullanıcı_relation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.adres_kullanıcı_relation: ~6 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.adres_kullanıcı_relation: ~6 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `adres_kullanıcı_relation` DISABLE KEYS */;
 INSERT IGNORE INTO `adres_kullanıcı_relation` (`kullanıcı_id`, `fatura_adresi_id`, `kargo_adresi_id`, `aktif`, `id`) VALUES
 	(1, NULL, 1, 1, 1),
@@ -37,7 +37,7 @@ INSERT IGNORE INTO `adres_kullanıcı_relation` (`kullanıcı_id`, `fatura_adres
 	(1, NULL, 3, 0, 6);
 /*!40000 ALTER TABLE `adres_kullanıcı_relation` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.aktivasyon_kodu
+-- tablo yapısı dökülüyor milyoncu.aktivasyon_kodu
 CREATE TABLE IF NOT EXISTS `aktivasyon_kodu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `aktivasyon_kodu` int(11) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `aktivasyon_kodu` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.aktivasyon_kodu: ~9 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.aktivasyon_kodu: ~8 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `aktivasyon_kodu` DISABLE KEYS */;
 INSERT IGNORE INTO `aktivasyon_kodu` (`id`, `aktivasyon_kodu`, `gönderim_zamanı`, `kullanıcı_id`) VALUES
 	(3, 290704, '2017-09-13 17:31:03', 5),
@@ -60,7 +60,7 @@ INSERT IGNORE INTO `aktivasyon_kodu` (`id`, `aktivasyon_kodu`, `gönderim_zaman�
 	(12, 510627, '2017-12-29 03:20:58', 6);
 /*!40000 ALTER TABLE `aktivasyon_kodu` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.alt_kategori
+-- tablo yapısı dökülüyor milyoncu.alt_kategori
 CREATE TABLE IF NOT EXISTS `alt_kategori` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `üst_id` int(11) DEFAULT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `alt_kategori` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.alt_kategori: ~13 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.alt_kategori: ~13 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `alt_kategori` DISABLE KEYS */;
 INSERT IGNORE INTO `alt_kategori` (`id`, `üst_id`, `isim`) VALUES
 	(1, 1, 'baba'),
@@ -86,7 +86,7 @@ INSERT IGNORE INTO `alt_kategori` (`id`, `üst_id`, `isim`) VALUES
 	(13, 4, 'köken testleri');
 /*!40000 ALTER TABLE `alt_kategori` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.fatura_adresi
+-- tablo yapısı dökülüyor milyoncu.fatura_adresi
 CREATE TABLE IF NOT EXISTS `fatura_adresi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `fatura_adresi` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.fatura_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.fatura_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `fatura_adresi` DISABLE KEYS */;
 INSERT IGNORE INTO `fatura_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`, `mahalle`, `açık_adres`, `postakodu`, `telefon_numarası`, `adres_tipi`) VALUES
 	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
@@ -110,7 +110,21 @@ INSERT IGNORE INTO `fatura_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`,
 	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş');
 /*!40000 ALTER TABLE `fatura_adresi` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.kargo_adresi
+-- tablo yapısı dökülüyor milyoncu.girişler
+CREATE TABLE IF NOT EXISTS `girişler` (
+  `id` int(11) NOT NULL,
+  `e_mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `giriş_zamanı` datetime NOT NULL,
+  `admin` int(11) DEFAULT NULL,
+  `çıkış_zamanı` datetime NOT NULL,
+  PRIMARY KEY (`çıkış_zamanı`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- milyoncu.girişler: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
+/*!40000 ALTER TABLE `girişler` DISABLE KEYS */;
+/*!40000 ALTER TABLE `girişler` ENABLE KEYS */;
+
+-- tablo yapısı dökülüyor milyoncu.kargo_adresi
 CREATE TABLE IF NOT EXISTS `kargo_adresi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ad` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
@@ -126,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `kargo_adresi` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.kargo_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kargo_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kargo_adresi` DISABLE KEYS */;
 INSERT IGNORE INTO `kargo_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`, `mahalle`, `açık_adres`, `postakodu`, `telefon_numarası`, `adres_tipi`) VALUES
 	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
@@ -134,14 +148,14 @@ INSERT IGNORE INTO `kargo_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`, 
 	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş');
 /*!40000 ALTER TABLE `kargo_adresi` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.kategori
+-- tablo yapısı dökülüyor milyoncu.kategori
 CREATE TABLE IF NOT EXISTS `kategori` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `isim` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.kategori: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kategori: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kategori` DISABLE KEYS */;
 INSERT IGNORE INTO `kategori` (`id`, `isim`) VALUES
 	(1, 'aile'),
@@ -150,7 +164,7 @@ INSERT IGNORE INTO `kategori` (`id`, `isim`) VALUES
 	(4, 'köken');
 /*!40000 ALTER TABLE `kategori` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.kullanıcılar
+-- tablo yapısı dökülüyor milyoncu.kullanıcılar
 CREATE TABLE IF NOT EXISTS `kullanıcılar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `e_mail` varchar(254) COLLATE utf8_unicode_ci NOT NULL,
@@ -166,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `kullanıcılar` (
   UNIQUE KEY `e_mail` (`e_mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.kullanıcılar: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kullanıcılar: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kullanıcılar` DISABLE KEYS */;
 INSERT IGNORE INTO `kullanıcılar` (`id`, `e_mail`, `tc`, `şifre`, `ad`, `soyad`, `ekleme_zamanı`, `telefon_numarası`, `aktif`, `admin`) VALUES
 	(1, 'ayhanyunt@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayhan', 'yünt', '2017-08-06 20:42:45', '05456772303', 1, 0),
@@ -176,40 +190,29 @@ INSERT IGNORE INTO `kullanıcılar` (`id`, `e_mail`, `tc`, `şifre`, `ad`, `soya
 	(6, 'ayseakcan1907@gmail.com', '12565605338', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayşe', 'akcan', '2017-12-29 03:20:58', '05386151818', 1, 0);
 /*!40000 ALTER TABLE `kullanıcılar` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.loginattempts
-CREATE TABLE IF NOT EXISTS `loginattempts` (
-  `IP` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `Attempts` int(11) NOT NULL,
-  `LastLogin` datetime NOT NULL,
-  `e-mail` varchar(254) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- b4u_dna.loginattempts: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `loginattempts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `loginattempts` ENABLE KEYS */;
-
--- tablo yapısı dökülüyor b4u_dna.satın_alınanlar
+-- tablo yapısı dökülüyor milyoncu.satın_alınanlar
 CREATE TABLE IF NOT EXISTS `satın_alınanlar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kullanıcı_id` int(11) NOT NULL DEFAULT '0',
   `ürün_id` int(11) NOT NULL,
   `sipariş_kodu` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.satın_alınanlar: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.satın_alınanlar: ~7 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `satın_alınanlar` DISABLE KEYS */;
 INSERT IGNORE INTO `satın_alınanlar` (`id`, `kullanıcı_id`, `ürün_id`, `sipariş_kodu`) VALUES
 	(1, 1, 9, 'B1000001'),
 	(2, 1, 8, 'B1000001'),
 	(3, 1, 1, 'B1000002'),
 	(4, 1, 2, 'B1000002'),
-	(5, 1, 8, 'B1000002');
+	(5, 1, 8, 'B1000002'),
+	(6, 1, 8, 'B1000003'),
+	(7, 1, 8, 'B1000003'),
+	(8, 1, 8, 'B1000003');
 /*!40000 ALTER TABLE `satın_alınanlar` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.sepet
+-- tablo yapısı dökülüyor milyoncu.sepet
 CREATE TABLE IF NOT EXISTS `sepet` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ürün_id` int(11) NOT NULL,
@@ -217,18 +220,47 @@ CREATE TABLE IF NOT EXISTS `sepet` (
   `işlem_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`kullanıcı_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.sepet: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sepet: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sepet` DISABLE KEYS */;
 INSERT IGNORE INTO `sepet` (`id`, `ürün_id`, `kullanıcı_id`, `işlem_zamanı`) VALUES
 	(3, 1, 5, '2017-09-19 19:17:43'),
 	(4, 2, 6, '2017-12-29 17:21:38'),
-	(5, 2, 6, '2017-12-29 17:21:39'),
-	(9, 40, 1, '2017-12-30 02:44:44');
+	(5, 2, 6, '2017-12-29 17:21:39');
 /*!40000 ALTER TABLE `sepet` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.sipariş_ilişkileri
+-- tablo yapısı dökülüyor milyoncu.sipariş_durumu
+CREATE TABLE IF NOT EXISTS `sipariş_durumu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sipariş_kodu` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `durum` int(11) NOT NULL,
+  `ekleme_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- milyoncu.sipariş_durumu: ~16 rows (yaklaşık) tablosu için veriler indiriliyor
+/*!40000 ALTER TABLE `sipariş_durumu` DISABLE KEYS */;
+INSERT IGNORE INTO `sipariş_durumu` (`id`, `sipariş_kodu`, `durum`, `ekleme_zamanı`) VALUES
+	(15, 'B1000002', 6, '2017-12-29 19:03:32'),
+	(22, '<br />\n<font size=\'1\'><table class=\'xdebug-error x', -1, '2017-12-30 03:22:59'),
+	(26, 'B1000001', 4, '2017-12-30 03:26:52'),
+	(27, 'B1000001', 5, '2017-12-30 03:26:53'),
+	(28, 'B1000001', 6, '2017-12-30 03:26:53'),
+	(32, 'B1000002', 4, '2017-12-30 03:27:08'),
+	(33, 'B1000002', 5, '2017-12-30 03:27:08'),
+	(34, 'B1000001', 1, '2017-12-30 03:39:03'),
+	(35, 'B1000001', 2, '2017-12-30 03:39:07'),
+	(36, 'B1000001', 3, '2017-12-30 03:39:10'),
+	(39, 'B1000002', 1, '2017-12-30 16:04:13'),
+	(40, 'B1000002', 2, '2017-12-30 17:05:13'),
+	(41, 'B1000002', 3, '2017-12-30 17:05:17'),
+	(42, 'B1000003', 1, '2017-12-30 17:05:22'),
+	(43, 'B1000003', 2, '2017-12-30 17:05:23'),
+	(44, 'B1000003', 3, '2017-12-30 17:05:24');
+/*!40000 ALTER TABLE `sipariş_durumu` ENABLE KEYS */;
+
+-- tablo yapısı dökülüyor milyoncu.sipariş_ilişkileri
 CREATE TABLE IF NOT EXISTS `sipariş_ilişkileri` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sipariş_kodu` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -240,16 +272,17 @@ CREATE TABLE IF NOT EXISTS `sipariş_ilişkileri` (
   `fatura_adres_id` int(11) DEFAULT NULL,
   `kargo_numarası` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.sipariş_ilişkileri: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sipariş_ilişkileri: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sipariş_ilişkileri` DISABLE KEYS */;
 INSERT IGNORE INTO `sipariş_ilişkileri` (`id`, `sipariş_kodu`, `ekleme_zamanı`, `güncelleme_zamanı`, `sipariş_durumu`, `kullanıcı_id`, `kargo_adres_id`, `fatura_adres_id`, `kargo_numarası`) VALUES
 	(1, 'B1000001', '2017-08-17 20:22:45', '2017-12-30 03:39:10', 3, 1, 1, 1, 'S757465'),
-	(2, 'B1000002', '2017-08-17 20:23:11', '2017-12-30 03:49:37', 2, 1, 1, 1, 'S457876');
+	(2, 'B1000002', '2017-08-17 20:23:11', '2017-12-30 17:05:17', 3, 1, 1, 1, 'S457876'),
+	(3, 'B1000003', '2017-12-30 16:58:27', '2017-12-30 17:05:35', 3, 1, 1, 1, 'S457877');
 /*!40000 ALTER TABLE `sipariş_ilişkileri` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.sorular
+-- tablo yapısı dökülüyor milyoncu.sorular
 CREATE TABLE IF NOT EXISTS `sorular` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kullanıcı_id` int(11) NOT NULL,
@@ -264,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `sorular` (
   KEY `parent_ticket_id` (`ana_soru_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.sorular: ~11 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sorular: ~8 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sorular` DISABLE KEYS */;
 INSERT IGNORE INTO `sorular` (`id`, `kullanıcı_id`, `başlık`, `açıklama`, `ana_soru_id`, `ana_soru`, `aktif`, `ekleme_zamanı`) VALUES
 	(1, 6, 'Para Sorunu', 'Fiyatlar çok fazla', -1, 1, 1, '2017-12-29 16:06:55'),
@@ -280,34 +313,7 @@ INSERT IGNORE INTO `sorular` (`id`, `kullanıcı_id`, `başlık`, `açıklama`, 
 	(11, 2, '', 'Haklısınız efendim. Size daha iyi hizmet verebilmek için uğraşmaktayız', 1, 0, 1, '2017-12-29 17:08:59');
 /*!40000 ALTER TABLE `sorular` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.status_update_time
-CREATE TABLE IF NOT EXISTS `status_update_time` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_code` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `order_status` int(11) NOT NULL,
-  `add_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- b4u_dna.status_update_time: ~13 rows (yaklaşık) tablosu için veriler indiriliyor
-/*!40000 ALTER TABLE `status_update_time` DISABLE KEYS */;
-INSERT IGNORE INTO `status_update_time` (`id`, `order_code`, `order_status`, `add_time`) VALUES
-	(15, 'B1000002', 6, '2017-12-29 19:03:32'),
-	(22, '<br />\n<font size=\'1\'><table class=\'xdebug-error x', -1, '2017-12-30 03:22:59'),
-	(26, 'B1000001', 4, '2017-12-30 03:26:52'),
-	(27, 'B1000001', 5, '2017-12-30 03:26:53'),
-	(28, 'B1000001', 6, '2017-12-30 03:26:53'),
-	(31, 'B1000002', 3, '2017-12-30 03:27:06'),
-	(32, 'B1000002', 4, '2017-12-30 03:27:08'),
-	(33, 'B1000002', 5, '2017-12-30 03:27:08'),
-	(34, 'B1000001', 1, '2017-12-30 03:39:03'),
-	(35, 'B1000001', 2, '2017-12-30 03:39:07'),
-	(36, 'B1000001', 3, '2017-12-30 03:39:10'),
-	(37, 'B1000002', 1, '2017-12-30 03:39:29'),
-	(38, 'B1000002', 2, '2017-12-30 03:49:37');
-/*!40000 ALTER TABLE `status_update_time` ENABLE KEYS */;
-
--- tablo yapısı dökülüyor b4u_dna.stored_card
+-- tablo yapısı dökülüyor milyoncu.stored_card
 CREATE TABLE IF NOT EXISTS `stored_card` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -318,17 +324,18 @@ CREATE TABLE IF NOT EXISTS `stored_card` (
   `card_holder_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `add_datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.stored_card: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.stored_card: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `stored_card` DISABLE KEYS */;
 INSERT IGNORE INTO `stored_card` (`id`, `user_id`, `card_user_key`, `card_token`, `card_alias`, `bin_number`, `card_holder_name`, `add_datetime`) VALUES
 	(2, 1, NULL, NULL, NULL, NULL, 'ayhan yünt', '2017-08-19 21:46:18'),
 	(3, 6, NULL, NULL, NULL, NULL, 'ayşe akcan', '2017-12-29 17:26:29'),
-	(5, 6, NULL, NULL, NULL, NULL, 'ayse akcan', '2017-12-29 17:32:43');
+	(5, 6, NULL, NULL, NULL, NULL, 'ayse akcan', '2017-12-29 17:32:43'),
+	(6, 1, 'g153Fc8eIyV3V0mINU/CH0u/LOk=', 'zgb5gd9C0ldCFJ8UGYVg7ux6D7Q=', 'paraf', '589004', 'ayhan ayhan', '2017-12-30 16:58:18');
 /*!40000 ALTER TABLE `stored_card` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.ürün
+-- tablo yapısı dökülüyor milyoncu.ürün
 CREATE TABLE IF NOT EXISTS `ürün` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `isim` varchar(255) NOT NULL,
@@ -342,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `ürün` (
   KEY `name` (`isim`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
--- b4u_dna.ürün: ~24 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.ürün: ~24 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `ürün` DISABLE KEYS */;
 INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_yeri`, `alt_kategori_id`, `kategori_id`, `uzun_açıklama`) VALUES
 	(1, 'Bebek Cinsiyet Testi', 218.68, 'Bebek mi bekliyorsunuz? Kız mı yoksa erkek mi?  Bu test ile gebeliğin 9.haftasından itibaren aklınızdaki tüm soru işaretlerini kaldırıyoruz.', 'arkaplan2.jpg', 2, 1, 'Bebek mi bekliyorsunuz? Kız mı yoksa erkek mi?  Bebek cinsiyet testi ile bu soruya cevap almanızısağlıyoruz. Test, gebeliğin 9.haftasından itibaren uygulanabilir olup, son derece bilimsel tahminler sunar. Testimiz, kan örneğinizi kullanarak, akredite edilmiş laboratuvarlarımızdayapılır ve % 98 oranında doğruluk sağlar. '),
@@ -371,7 +378,7 @@ INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_y
 	(40, 'Steteskop', 15, 'Oyuncak', 'stethoscope.png', 1, 1, 'Dokturculuk için üretildi');
 /*!40000 ALTER TABLE `ürün` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor b4u_dna.ürün_yorumları
+-- tablo yapısı dökülüyor milyoncu.ürün_yorumları
 CREATE TABLE IF NOT EXISTS `ürün_yorumları` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ürün_id` int(11) DEFAULT NULL,
@@ -383,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `ürün_yorumları` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- b4u_dna.ürün_yorumları: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.ürün_yorumları: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `ürün_yorumları` DISABLE KEYS */;
 INSERT IGNORE INTO `ürün_yorumları` (`id`, `ürün_id`, `kullanıcı_id`, `başlık`, `içerik`, `ekleme_zamanı`, `puan`) VALUES
 	(3, 8, 1, 'rewqq', 'qwerwq', '2017-09-13 14:31:09', 4),
