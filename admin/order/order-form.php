@@ -68,8 +68,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                                    target="_blank">Sonucu Görüntüle</a>
                             </div>
                             <div class="left aligned two wide column">
-                                <a href="/assets/results/<?php echo md5($arr[$i]['order_code']) ?>.pdf"
-                                   download="kolay-dna-sonuc">
+                                <a href="/assets/results/<?php echo md5($arr[$i]['order_code']) ?>.pdf" download="kolay-dna-sonuc">
                                     <i class="download icon"></i>
                                     Sonucu İndir
                                 </a>

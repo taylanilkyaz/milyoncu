@@ -716,7 +716,7 @@ rating bar bitiş
 
 #buy-container .ui.segment:hover {
     filter: blur(1px);
-    border: 2px solid rgb(38, 202, 154);
+    border: 2px solid #41C4E2;
 }
 
 #buy-container .ui.segment.featured {
@@ -800,8 +800,7 @@ rating bar bitiş
     right: 0;
     margin: 0 auto;
     width: 93%;
-    background: rgba(37, 107, 105, 0.9);
-    box-shadow: 0 8px 6px -6px black;
+    background-color: #41C4E2;
     font-size: 170%;
     color: white;
     top: 36%;
@@ -821,7 +820,6 @@ rating bar bitiş
     max-width: 400px;
     width: 93%;
     background: rgba(255, 169, 46, 0.9);
-    box-shadow: 0 8px 6px -6px black;
     font-size: 170%;
     color: white;
     bottom: 36%;
@@ -836,17 +834,6 @@ rating bar bitiş
 
 /** buy-container end **/
 
-/**
-result upload start
- */
-#result-upload-container .button {
-    width: 100%;
-
-}
-
-/**
-result upload end
- */
 /** Top Content -2 **/
 #top-content-2 .small {
     color: #999;
@@ -882,30 +869,6 @@ barcode tracking container
 @media (min-width: 768px ) and (max-width: 1200px) {
     #barcode-tracking-container img {
         width: 260px;
-    }
-}
-
-/*
-result-upload
- */
-@media screen and (max-width: 767px) {
-    #result-upload-container img {
-        width: 290px;
-    }
-}
-
-@media (min-width: 768px ) and (max-width: 1200px) {
-    #result-upload-container img {
-        width: 200px;
-    }
-
-    #result-upload-container .ui.blue.button {
-        width: 60%;
-        margin-right: 20%;
-    }
-
-    #result-upload-container .ui.green.button {
-        width: 60%;
     }
 }
 

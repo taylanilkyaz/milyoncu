@@ -32,35 +32,35 @@ getAdminHeader();
             <div class="item" >
                 <div class="header">Ürün Kategorileri</div>
                 <div class="menu" >
-                    <a class="item" href="#" >
+                    <a class="item" href="#1" >
                         <b>Züccaciye</b>
                     </a>
 
-                    <a class="item" href="#">
+                    <a class="item" href="#2">
                        <b>Kırtasiye Ürünleri</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#3">
                         <b>Aydınlatma Ürünleri</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#4">
                         <b>Bujiteri</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#5">
                         <b>Mutfak & Banyo</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#6">
                         <b>Hırdavat</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#7">
                         <b>Oyuncak</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#8">
                         <b>Temizlik Ürünleri</b>
                     </a>
-                    <a class="item" href="#">
+                    <a class="item" href="#9">
                         <b>Hediyelik Ürün</b>
                     </a>
-                    
+
                 </div>
             </div>
             <div class="item">
