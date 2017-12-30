@@ -1,11 +1,11 @@
 <?php
 
 class AddressUserRelation extends Database{
-    public static $RELATION_TABLE_NAME = "address_user_relation";
-    public static $RELATION_USER_ID = "user_id";
-    public static $RELATION_BILL_ADDRESS_ID = "bill_address_id";
-    public static $RELATION_CARGO_ADDRESS_ID = "cargo_address_id";
-    public static $ADDRESS_IS_ACTIVE ="is_active";
+    public static $RELATION_TABLE_NAME = "adres_kullanıcı_relation";
+    public static $RELATION_USER_ID = "kullanıcı_id";
+    public static $RELATION_BILL_ADDRESS_ID = "fatura_adresi_id";
+    public static $RELATION_CARGO_ADDRESS_ID = "kargo_adresi_id";
+    public static $ADDRESS_IS_ACTIVE ="aktif";
     public static $ENABLE = 1;
     public static $DISABLE =0;
 

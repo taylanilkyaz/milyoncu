@@ -1,11 +1,11 @@
 <?php
 
 class BuyedProductsDatabase extends Database{
-    public static $BUYED_TABLE_NAME = "buyed_products";
+    public static $BUYED_TABLE_NAME = "satın_alınanlar";
     public static $BUYED_ID = "id";
-    public static $BUYED_USER_ID = "user_id";
-    public static $BUYED_PRODUCT_ID = "product_id";
-    public static $BUYED_ORDER_CODE = "order_code";
+    public static $BUYED_USER_ID = "kullanıcı_id";
+    public static $BUYED_PRODUCT_ID = "ürün_id";
+    public static $BUYED_ORDER_CODE = "sipariş_kodu";
 
 
 
@@ -101,7 +101,7 @@ class BuyedProductsDatabase extends Database{
             }
             $result = $stmt->get_result();
             $singleRow = $result->fetch_assoc();
-            return $singleRow['user_id'];
+            return $singleRow['kullanıcı_id'];
         }else{
             $this->setErrorMessage("Satın alınan ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
             return null;

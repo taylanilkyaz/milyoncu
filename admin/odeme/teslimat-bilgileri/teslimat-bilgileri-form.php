@@ -97,14 +97,14 @@ foreach ($basketList as $item){
                                                      * @var $one_cargo_address Address
                                                      */
                                                     ?>
-                                                    <div class="item" data-value="<?php echo $one_cargo_address['cargo_address_id']; ?>"><?php
-                                                        echo $one_cargo_address['address_name'];
+                                                    <div class="item" data-value="<?php echo $one_cargo_address['kargo_adresi_id']; ?>"><?php
+                                                        echo $one_cargo_address['adres_tipi'];
                                                         echo "<br>";
-                                                        echo $one_cargo_address['cargoAddress']." ".$one_cargo_address['district']." ".$one_cargo_address['county']
-                                                        ."/".$one_cargo_address['city']."/".$one_cargo_address['country'];
+                                                        echo $one_cargo_address['açık_adres']." ".$one_cargo_address['mahalle']." ".$one_cargo_address['ilçe']
+                                                        ."/".$one_cargo_address['il']."/".$one_cargo_address['ülke'];
                                                         echo "<br>";
-                                                        echo $one_cargo_address['firstname']." ".$one_cargo_address['lastname'].
-                                                            " - ".$one_cargo_address['phoneNumber'];
+                                                        echo $one_cargo_address['ad']." ".$one_cargo_address['soyad'].
+                                                            " - ".$one_cargo_address['telefon_numarası'];
                                                         ?>
                                                     </div>
                                                 <?php
@@ -131,14 +131,14 @@ foreach ($basketList as $item){
                                                          * @var $one_cargo_address Address
                                                          */
                                                         ?>
-                                                        <div class="item" data-value="<?php echo $one_bill_address['bill_address_id'];?>"><?php
-                                                            echo $one_bill_address['address_name'];
+                                                        <div class="item" data-value="<?php echo $one_bill_address['fatura_adresi_id'];?>"><?php
+                                                            echo $one_bill_address['adres_tipi'];
                                                             echo "<br>";
-                                                            echo $one_bill_address['billingAddress']." ".$one_bill_address['district']." ".$one_bill_address['county']
-                                                                ."/".$one_bill_address['city']."/".$one_bill_address['country'];
+                                                            echo $one_bill_address['açık_adres']." ".$one_bill_address['mahalle']." ".$one_bill_address['ilçe']
+                                                                ."/".$one_bill_address['il']."/".$one_bill_address['ülke'];
                                                             echo "<br>";
-                                                            echo $one_bill_address['firstname']." ".$one_bill_address['lastname'].
-                                                                " - ".$one_bill_address['phoneNumber'];
+                                                            echo $one_bill_address['ad']." ".$one_bill_address['soyad'].
+                                                                " - ".$one_bill_address['telefon_numarası'];
                                                             ?>
                                                         </div>
                                                         <?php

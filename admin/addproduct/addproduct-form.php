@@ -22,7 +22,7 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
 
     <div class="middle aligned ten wide center aligned column">
         <div class="ui selection dropdown ust-kategori" style="margin-bottom: 10px;margin-right: 20px">
-            <input type="hidden" name="gender">
+            <input type="hidden" name="ust_kategori" id="ust_kategori"  onchange="getState()" >
             <i class="dropdown icon"></i>
             <div class="default text">Kategori</div>
             <div class="menu">
@@ -37,11 +37,11 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
         </div>
 
         <div class="ui selection dropdown alt-kategori" style="margin-bottom: 10px;margin-left: 20px">
-            <input type="hidden" name="gender">
+            <input type="hidden" name="alt_kategori" id="alt_kategori"  onchange="getState2()" >
             <i class="dropdown icon"></i>
             <div class="default text">Alt Kategori</div>
             <div class="menu">
-                <div class="item" data-value="1">Male</div>
+
             </div>
         </div>
 
@@ -88,3 +88,41 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
         </form>
     </div>
 </div>
+<script>
+
+    function getState(val) {
+        $('#alt-kategori').dropdown('clear');
+        var value = $("#ust_kategori").val();
+        if (value==='1'){
+            var $menu =  $('.alt-kategori').find('.menu');
+
+            $menu.append('<div class="item" data-value="1">Fall</div>');
+            $menu.append('<div class="item" data-value="2">Summer</div>');
+
+            //reinitialize drop down
+            $('.ui.dropdown.seasons').dropdown();
+        } else  if (value==='2'){
+            var $menu =  $('.alt-kategori').find('.menu');
+
+            $menu.append('<div class="item" data-value="1">Salak</div>');
+
+            //reinitialize drop down
+            $('.ui.dropdown.seasons').dropdown();
+        } else  if (value==='3'){
+            var $menu =  $('.alt-kategori').find('.menu');
+
+            $menu.append('<div class="item" data-value="1">Canım</div>');
+            $menu.append('<div class="item" data-value="2">Tatlım</div>');
+            $menu.append('<div class="item" data-value="3">Şekerim</div>');
+
+            //reinitialize drop down
+            $('.ui.dropdown.seasons').dropdown();
+        } else {
+
+        }
+    }
+    function getState2(val) {
+        var value = $("#alt_kategori").val();
+
+    }
+</script>

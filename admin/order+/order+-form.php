@@ -71,17 +71,17 @@ if (isset($_SESSION['id'])) {
         for ($i = 0;
         $i < count($order_code_array);
         $i++) {
-        $res = $obj->getAllBuyedProducts($order_code_array[$i]['order_code']);
+        $res = $obj->getAllBuyedProducts($order_code_array[$i]['sipariş_kodu']);
         $resList = array();
         while ($row = $res->fetch_assoc()) {
             array_push($resList, Product::__constructByMysqliRow($row, true));
         }
         //order code arrayin her biri için user id den isim almalıyız
         //order code bildiğimiz elemanın tarihini almalıyız
-        $order_date = $relation_obj->getAddDate($order_code_array[$i]['order_code']);
-        $customerUserId = $obj->getCustomerId($order_code_array[$i]['order_code']);
+        $order_date = $relation_obj->getAddDate($order_code_array[$i]['sipariş_kodu']);
+        $customerUserId = $obj->getCustomerId($order_code_array[$i]['sipariş_kodu']);
         $customerNameAndSurname = $user_obj->getCustomerName($customerUserId);
-        $order_status = $relation_obj->getOrderStatus($order_code_array[$i]['order_code']);
+        $order_status = $relation_obj->getOrderStatus($order_code_array[$i]['sipariş_kodu']);
         ?>
 
         <?php
@@ -117,7 +117,7 @@ if (isset($_SESSION['id'])) {
                             ?></div>
                     </div>
                     <div class="one wide column talign">
-                        <div class="col-shipping-option order-code-container"><?php echo $order_code_array[$i]['order_code']; ?></div>
+                        <div class="col-shipping-option order-code-container"><?php echo $order_code_array[$i]['sipariş_kodu']; ?></div>
                     </div>
                     <div class="two wide column talign">
                         <div class="col-amount "><?php
@@ -125,11 +125,11 @@ if (isset($_SESSION['id'])) {
                             //echo $order_date; ?></div>
                     </div>
                     <div class="two wide column talign"><?php
-                        echo $relation_obj->getBillAddress($order_code_array[$i]['order_code']);
+                        echo $relation_obj->getBillAddress($order_code_array[$i]['sipariş_kodu']);
                         ?>
                     </div>
                     <div class="two wide column talign"><?php
-                        echo $relation_obj->getCargoAddress($order_code_array[$i]['order_code']);
+                        echo $relation_obj->getCargoAddress($order_code_array[$i]['sipariş_kodu']);
                         ?>
                     </div>
                     <div class="two wide column talign order-status-string-container"><?php echo $classObj->getOrderString($order_status) ?></div>
@@ -150,7 +150,7 @@ if (isset($_SESSION['id'])) {
                             <div class="column">
                                 <div class="status-container" style="display: none"
                                      id="<?php echo $order_status ?>"></div>
-                                <div class="sefa" id="<?php echo $order_code_array[$i]['order_code']; ?>">
+                                <div class="sefa" id="<?php echo $order_code_array[$i]['sipariş_kodu']; ?>">
                                     <div class="ui toggle checkbox" data-status="0">
                                         <input type="checkbox" name="public">
                                         <label>Sipariş Verildi </label>
@@ -173,7 +173,7 @@ if (isset($_SESSION['id'])) {
                                     <div class="ui input focus shipping" <?php if ($order_status < 2){ ?>
                                          style="display: none" <?php } ?>data-status="input">
                                         <input type="text" placeholder="Kargo Numarası"
-                                               value="<?php echo $order_code_array[$i]['cargo_no'] ?>">
+                                               value="<?php echo $order_code_array[$i]['kargo_numarası'] ?>">
                                         <button style="width: 100%" class="ui green button submit-cargo-no">Kaydet
                                         </button>
                                     </div>
@@ -183,103 +183,8 @@ if (isset($_SESSION['id'])) {
                                         <label>Ürün size ulaştı. </span> </label>
                                     </div>
 
-                                    <div class="ui toggle checkbox" data-status="4">
-                                        <input type="checkbox" name="public">
-                                        <label>Ürün merkezimize ulaştı. </label>
-                                    </div>
-
-                                    <div class="ui toggle checkbox" data-status="5">
-                                        <input type="checkbox" name="public">
-                                        <label>Ürün test aşamasında. </span> </label>
-                                    </div>
-
-                                    <div class="ui toggle checkbox" data-status="6">
-                                        <input type="checkbox" name="public">
-                                        <label>Sonuçlar hazır.</label>
-                                    </div>
 
                                 </div>
-                            </div>
-                            <div class="column">
-                                <div class="qr-code-container">
-
-                                </div>
-                                <input class="qr-size" type="number" placeholder="Boyut Giriniz.">
-                                <button class="ui right labeled icon button">
-                                    <i class="qrcode icon"></i>
-                                    Barkod üretmek için tıklayınız.
-                                </button>
-                            </div>
-
-                        </div>
-                        <div class="ui stackable two column grid">
-                            <div class="column">
-                                <h2>Türkçe Belgeler</h2>
-                                <a href="/assets/documents/turkce/inst-hakkında.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 1
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/turkce/saglik-dna.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 2
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/turkce/saglik-klinik.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 3
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/turkce/soy-toplama.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 4
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="column">
-                                <h2>İngilizce Belgeler</h2>
-                                <a href="/assets/documents/turkce/inst-hakkında.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 1
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/turkce/saglik-dna.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 2
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/ingilizce/saglik-klinik.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 3
-                                    </button>
-                                </a>
-
-                                <a href="/assets/documents/ingilizce/soy-toplama.pdf"
-                                   target="_blank">
-                                    <button class="ui left labeled icon button">
-                                        <i class="qrcode icon"></i>
-                                        Belge 4
-                                    </button>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -287,12 +192,6 @@ if (isset($_SESSION['id'])) {
                 <?php
                 }
                 ?>
-
-            </div>
-        </div>
-
-        <div class="ui fullscreen modal">
-            <div class="content generated-qr-container" style="text-align: center">
 
             </div>
         </div>

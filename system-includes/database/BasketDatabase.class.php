@@ -2,16 +2,16 @@
 
 class BasketDatabase extends Database{
 
-    public static $BASKET_TABLE_NAME = "basket";
+    public static $BASKET_TABLE_NAME = "sepet";
     public static $BASKET_ID = "id";
-    public static $BASKET_PRODUCT_ID = "product_id";
-    public static $BASKET_USER_ID = "user_id";
-    public static $BASKET_ADD_DATE = "process_date";
+    public static $BASKET_PRODUCT_ID = "ürün_id";
+    public static $BASKET_USER_ID = "kullanıcı_id";
+    public static $BASKET_ADD_DATE = "işlem_zamanı";
 
     public function addBasketByProductName($user_id,$productName):bool{
 
         $sql = sprintf("
-      INSERT INTO basket (%s,%s)
+      INSERT INTO sepet (%s,%s)
       SELECT  a.%s, ?
       FROM    %s AS a
       WHERE   a.%s = ?",self::$BASKET_PRODUCT_ID,self::$BASKET_USER_ID,ProductDatabase::$PRODUCT_ID,ProductDatabase::$PRODUCT_TABLE_NAME,ProductDatabase::$PRODUCT_NAME);

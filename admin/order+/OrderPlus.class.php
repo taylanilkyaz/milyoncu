@@ -11,12 +11,6 @@ class OrderPlus{
             echo  "Kargo takip numarası girildi";
         }   else if ($order_status==3){
             echo  "Ürün kullanıcıya ulaştı";
-        }   else if ($order_status==4){
-            echo  "Ürün merkezimize ulaştı";
-        }   else if ($order_status==5){
-            echo  "Ürün test aşamasında";
-        }   else if ($order_status==6){
-            echo  "Sonuçlar Hazır";
         }   else{
             echo "none";
         }

@@ -1,9 +1,9 @@
 <?php
 
 class CategoriesDatabase extends Database {
-    public static $CATEGORIES_TABLE_NAME = "categories";
+    public static $CATEGORIES_TABLE_NAME = "kategori";
     public static $CATEGORIES_ID = "id";
-    public static $CATEGORIES_NAME = "name";
+    public static $CATEGORIES_NAME = "isim";
 
     public function getCategoryName($id){
         $sql = sprintf("SELECT * FROM %s WHERE %s = ? ORDER BY %s",
@@ -42,7 +42,7 @@ class CategoriesDatabase extends Database {
             }   else{
                 $result = $stmt->get_result();
                 $row = $result->fetch_assoc();
-                return $row['name'];
+                return $row['isim'];
             }
         }else{
             $this->setIsError(true);

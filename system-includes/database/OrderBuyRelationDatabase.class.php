@@ -1,16 +1,16 @@
 <?php
 
 class OrderBuyRelationDatabase extends Database{
-    public static $ORDER_BUY_RELATION_TABLE_NAME = "order_buy_relation";
+    public static $ORDER_BUY_RELATION_TABLE_NAME = "sipariş_ilişkileri";
     public static $ORDER_BUY_RELATION_ID = "id";
-    public static $ORDER_BUY_RELATION_ORDER_CODE = "order_code";
-    public static $ORDER_BUY_RELATION_ADD_TIME = "add_time";
-    public static $ORDER_BUY_RELATION_UPDATE_TIME = "update_time";
-    public static $ORDER_BUY_RELATION_ORDER_STATUS = "order_status";
-    public static $ORDER_BUY_RELATION_USER_ID = "user_id";
-    public static $ORDER_BUY_RELATION_BILL_ADDRESS_ID = "bill_address_id";
-    public static $ORDER_BUY_RELATION_CARGO_ADDRESS_ID = "cargo_address_id";
-    public static $ORDER_BUY_RELATION_CARGO_NO = "cargo_no";
+    public static $ORDER_BUY_RELATION_ORDER_CODE = "sipariş_kodu";
+    public static $ORDER_BUY_RELATION_ADD_TIME = "ekleme_zamanı";
+    public static $ORDER_BUY_RELATION_UPDATE_TIME = "güncelleme_zamanı";
+    public static $ORDER_BUY_RELATION_ORDER_STATUS = "sipariş_durumu";
+    public static $ORDER_BUY_RELATION_USER_ID = "kullanıcı_id";
+    public static $ORDER_BUY_RELATION_BILL_ADDRESS_ID = "fatura_adres_id";
+    public static $ORDER_BUY_RELATION_CARGO_ADDRESS_ID = "kargo_adres_id";
+    public static $ORDER_BUY_RELATION_CARGO_NO = "kargo_numarası";
 
     public function getRowCount(){
         $sql = sprintf("SELECT * FROM %s",self::$ORDER_BUY_RELATION_TABLE_NAME);
@@ -133,7 +133,7 @@ class OrderBuyRelationDatabase extends Database{
             else{
                 $result = $stmt->get_result();
                 $singleRow = $result->fetch_assoc();
-                return $singleRow['order_status'];
+                return $singleRow['sipariş_durumu'];
             }
         }
     }
@@ -186,7 +186,7 @@ class OrderBuyRelationDatabase extends Database{
             else{
                 $result = $stmt->get_result();
                 $singleRow = $result->fetch_assoc();
-                return $singleRow['add_time'];
+                return $singleRow['ekleme_zamanı'];
             }
         }
     }

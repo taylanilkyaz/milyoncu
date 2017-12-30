@@ -3,14 +3,14 @@
 class CommentDatabase extends Database
 {
 
-    public static $COMMENT_TABLE_NAME = "product_comments";
+    public static $COMMENT_TABLE_NAME = "ürün_yorumları";
     public static $COMMENT_ID = "id";
-    public static $COMMENT_PRODUCT_ID = "product_id";
-    public static $COMMENT_USER_ID = "user_id";
-    public static $COMMENT_TITLE = "title";
-    public static $COMMENT_CONTENT = "content";
-    public static $COMMENT_ADD_TIME = "add_time";
-    public static $COMMENT_RATE = "rate";
+    public static $COMMENT_PRODUCT_ID = "ürün_id";
+    public static $COMMENT_USER_ID = "kullanıcı_id";
+    public static $COMMENT_TITLE = "başlık";
+    public static $COMMENT_CONTENT = "içerik";
+    public static $COMMENT_ADD_TIME = "ekleme_zamanı";
+    public static $COMMENT_RATE = "puan";
 
     public function getRateArray($product_id)
     {

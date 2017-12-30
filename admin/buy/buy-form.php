@@ -52,7 +52,7 @@
             $category = $buy->getAllCategories($i);
 
             ?>
-            <h1 class="ui center aligned header"><?php echo ucwords($category['name']) ?></h1>
+            <h1 class="ui center aligned header"><?php echo ucwords($category['isim']) ?></h1>
             <div class="ui divider"></div>
             <div class="ui four column doubling stackable centered grid" style="padding-bottom: 20px">
                 <?php

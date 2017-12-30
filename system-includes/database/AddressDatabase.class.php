@@ -1,20 +1,20 @@
 <?php
 
 class AddressDatabase extends Database{
-    public static $CARGO_ADDRESS_TABLE_NAME = "cargo_address";
-    public static $BILL_ADDRESS_TABLE_NAME = "bill_address";
+    public static $CARGO_ADDRESS_TABLE_NAME = "kargo_adresi";
+    public static $BILL_ADDRESS_TABLE_NAME = "fatura_adresi";
     public static $ADDRESS_ID ="id";
-    public static $ADDRESS_NAME = "address_name";
-    public static $ADDRESS_USER_FIRSTNAME = "firstname";
-    public static $ADDRESS_USER_LASTNAME = "lastname";
-    public static $ADDRESS_COUNTRY  =   "country";
-    public static $ADDRESS_CITY =   "city";
-    public static $ADDRESS_COUNTY   =   "county";
-    public static $ADDRESS_DISTRICT =   "district";
-    public static $ADDRESS_BILLING_ADDRESS  =   "billingAddress";
-    public static $ADDRESS_CARGO_ADDRESS = "cargoAddress";
-    public static $ADDRESS_POSTCODE =   "postcode";
-    public static $ADDRESS_PHONE_NUMBER =   "phoneNumber";
+    public static $ADDRESS_NAME = "adres_tipi";
+    public static $ADDRESS_USER_FIRSTNAME = "ad";
+    public static $ADDRESS_USER_LASTNAME = "soyad";
+    public static $ADDRESS_COUNTRY  =   "ülke";
+    public static $ADDRESS_CITY =   "il";
+    public static $ADDRESS_COUNTY   =   "ilçe";
+    public static $ADDRESS_DISTRICT =   "mahalle";
+    public static $ADDRESS_BILLING_ADDRESS  =   "açık_adres";
+    public static $ADDRESS_CARGO_ADDRESS = "açık_adres";
+    public static $ADDRESS_POSTCODE =   "postakodu";
+    public static $ADDRESS_PHONE_NUMBER =   "telefon_numarası";
 
 
     /**
@@ -42,25 +42,25 @@ class AddressDatabase extends Database{
             $addressName    =   $object->getAddressName();
             $firstName      =   $object->getFirstName();
             $lastName       =   $object->getLastName();
-            $country        =   $object->getCountry();
-            $county         =   $object->getCounty();
-            $city           =   $object->getCity();
+            $ülke        =   $object->getCountry();
+            $ilçe         =   $object->getCounty();
+            $il           =   $object->getCity();
             $district       =   $object->getDistrict();
             $billAddress    =   $object->getBillingAddress();
             $postCode       =   $object->getPostCode();
-            $phoneNumber    =   $object->getPhoneNumber();
+            $telefon_numarası    =   $object->getPhoneNumber();
 
             $stmt->bind_param("ssssssssds",
                 $addressName,
                 $firstName,
                 $lastName,
-                $country,
-                $county,
-                $city,
+                $ülke,
+                $ilçe,
+                $il,
                 $district,
                 $billAddress,
                 $postCode,
-                $phoneNumber
+                $telefon_numarası
             );
 
             if (!$stmt->execute()){
@@ -132,25 +132,25 @@ class AddressDatabase extends Database{
             $addressName    =   $object->getAddressName();
             $firstName      =   $object->getFirstName();
             $lastName       =   $object->getLastName();
-            $country        =   $object->getCountry();
-            $county         =   $object->getCounty();
-            $city           =   $object->getCity();
+            $ülke        =   $object->getCountry();
+            $ilçe         =   $object->getCounty();
+            $il           =   $object->getCity();
             $district       =   $object->getDistrict();
-            $cargoAddress    =   $object->getCargoAddress();
+            $açık_adres    =   $object->getCargoAddress();
             $postCode       =   $object->getPostCode();
-            $phoneNumber    =   $object->getPhoneNumber();
+            $telefon_numarası    =   $object->getPhoneNumber();
 
             $stmt->bind_param("ssssssssds",
                 $addressName,
                 $firstName,
                 $lastName,
-                $country,
-                $county,
-                $city,
+                $ülke,
+                $ilçe,
+                $il,
                 $district,
-                $cargoAddress,
+                $açık_adres,
                 $postCode,
-                $phoneNumber
+                $telefon_numarası
                 );
 
             if (!$stmt->execute()){
@@ -218,7 +218,7 @@ class AddressDatabase extends Database{
             if ($stmt->execute()){
                 $result = $stmt->get_result();
                 $rows = $result->fetch_assoc();
-                return $rows['billingAddress']." ".$rows['county']." ".$rows['city']." ".$rows['country']." ".$rows['firstname']." ".$rows['lastname']." - ".$rows['phoneNumber'];
+                return $rows['açık_adres']." ".$rows['ilçe']." ".$rows['il']." ".$rows['ülke']." ".$rows['ad']." ".$rows['soyad']." - ".$rows['telefon_numarası'];
             }
         }
     }
@@ -244,7 +244,7 @@ class AddressDatabase extends Database{
             if ($stmt->execute()){
                 $result = $stmt->get_result();
                 $rows = $result->fetch_assoc();
-                return $rows['cargoAddress']." ".$rows['county']." ".$rows['city']." ".$rows['country']." ".$rows['firstname']." ".$rows['lastname']." - ".$rows['phoneNumber'];
+                return $rows['açık_adres']." ".$rows['ilçe']." ".$rows['il']." ".$rows['ülke']." ".$rows['ad']." ".$rows['soyad']." - ".$rows['telefon_numarası'];
             }
         }
     }
@@ -258,7 +258,7 @@ class AddressDatabase extends Database{
             if ($stmt->execute()){
                 $result = $stmt->get_result();
                 $rows = $result->fetch_assoc();
-                return $rows['billingAddress']." ".$rows['county']." ".$rows['city']." ".$rows['country']." - ".$rows['phoneNumber'];
+                return $rows['açık_adres']." ".$rows['ilçe']." ".$rows['il']." ".$rows['ülke']." - ".$rows['telefon_numarası'];
             }
         }
     }
@@ -272,7 +272,7 @@ class AddressDatabase extends Database{
             if ($stmt->execute()){
                 $result = $stmt->get_result();
                 $rows = $result->fetch_assoc();
-                return $rows['cargoAddress']." ".$rows['county']." ".$rows['city']." ".$rows['country']." - ".$rows['phoneNumber'];
+                return $rows['açık_adres']." ".$rows['ilçe']." ".$rows['il']." ".$rows['ülke']." - ".$rows['telefon_numarası'];
             }
         }
     }
