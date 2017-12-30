@@ -91,8 +91,7 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
 <script>
 
     function getState(val) {
-        $(".menu").dropdown("refresh");
-        $('#alt-kategori').dropdown('clear');
+        $('#alt-kategori').dropdown('reflesh');
         var value = $("#ust_kategori").val();
         if (value==='1'){
             var $menu =  $('.alt-kategori').find('.menu');
