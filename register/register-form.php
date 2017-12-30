@@ -59,32 +59,11 @@ $_SESSION['csrf'] = $csrf_salt;
                         </div>
                     </div>
                 </div>
-                <div class="two fields">
-                    <div class="field">
-                        <div class="ui left icon labeled input">
-                            <i class="user icon"></i>
-                            <input type="text" name="mother_name" placeholder="Anne adı(Opsiyonel)">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon labeled input">
-                            <i class="user icon"></i>
-                            <input type="text" name="father_name" placeholder="Baba adı(Opsiyonel)">
-                        </div>
-                    </div>
-                </div>
-
 
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="phone icon"></i>
                         <input type="text" name="tel_number" placeholder="03122619999(Opsiyonel)">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input type="text" name="mother_maiden" placeholder="Anne Kızlık Soyadı(Opsiyonel)">
                     </div>
                 </div>
                 <div class="field">

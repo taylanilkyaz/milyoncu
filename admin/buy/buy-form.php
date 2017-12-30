@@ -52,31 +52,8 @@
             $category = $buy->getAllCategories($i);
 
             ?>
-<<<<<<< HEAD
-            <h1 class="ui center aligned header"><?php echo ucwords($category['isim']) ?></h1>
-            <div class="ui divider"></div>
-            <div class="ui four column doubling stackable centered grid" style="padding-bottom: 20px">
-                <?php
-                $products = $buy->getAllProducts($i);
-                foreach ($products as $product) {
-                    /**
-                     * @var $product Product
-                     */
-                    ?>
-                    <div class="center aligned centered column">
-                        <div class="ui segment ">
-                            <img class="ui centered fluid image"
-                                 src="/assets/images/productimage/512/<?=$product->getImagePath() ?>">
-
-                            <div class="bottom-detail">
-                                <p class="name"><?php echo $product->getName() ?></p>
-                                <p class="price"><i class="lira icon"></i>
-                                    <?php echo $product->getPrice(); ?></p>
-                                <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
-                            </div>
-=======
             <div id="<?php echo $i;?>" style="padding-top: 110px ; margin-top: -100px">
-                <h1  class="ui center aligned header"><?php echo ucwords($category['name']) ?></h1>
+                <h1  class="ui center aligned header"><?php echo ucwords($category['isim']) ?></h1>
                 <div class="ui divider"></div>
                 <div class="ui four column doubling stackable centered grid" style="padding-bottom: 20px">
                     <?php
@@ -97,8 +74,6 @@
                                         <?php echo $product->getPrice(); ?></p>
                                     <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
                                 </div>
->>>>>>> 2cadbac819356ab998bdb6c2fc93fe7ac2ed7723
-
                             </div>
                             <div class="add-basket-button">
                                 + Sepete Ekle
