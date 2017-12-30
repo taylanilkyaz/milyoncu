@@ -20,7 +20,7 @@ class MailSender
         self::$mail->Password = '147852369A';                           // SMTP password
         self::$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         self::$mail->Port = 587;                                    // TCP port to connect to
-        self::$mail->setFrom('ayhanyunt@gmail.com', 'kolaydna.com');
+        self::$mail->setFrom('ayhanyunt@gmail.com', 'milyoncu.com');
         self::$mail->CharSet = 'UTF-8';
     }
 

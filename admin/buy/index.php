@@ -26,16 +26,10 @@ getAdminHeader();
                 <div class="item">
                     <div class="ui fluid search column">
                         <div class="ui fluid big icon input">
-                            <input id="search" name="search" class="prompt" type="text" placeholder="Ara..." style="font-size: 15px; margin-top: 5%">
+                            <input id="search" name="search" class="prompt" type="text" placeholder="Ara..." style="font-size: 15px; margin-top: 5%; margin-bottom: 10%">
                             <i class="search icon"></i>
                         </div>
                     </div>
-                </div>
-                <div class="sixteen wide column" style="text-align: center ;padding-top: 0px">
-                    <button class=" ui primary button" type="submit" id="filtrele-ara"
-                            style="background-color: #41C4E2 ; color: white; margin-bottom: 5%">
-                        Ara
-                    </button>
                 </div>
             </form>
 

@@ -164,7 +164,6 @@
                                         <div class="sixteen wide field">
                                             <label>Kart Numarası</label>
                                             <input id="credit-card-number" placeholder="Kart Numarası" type="tel" name="number" maxlength="19">
-                                            <img style="margin: 0 12px" id="inter-type" class="tooltip-tipsy" src="/assets/images/keyboard.svg"  >
                                         </div>
                                     </div>
 
@@ -238,32 +237,22 @@
          */
         else {
             $storedCardDb = new StoredCardDatabase();
-            $cardStore = new CardStore();
             $user_id = $_SESSION['id'];
 
             $obj = $storedCardDb->getStoredCardByUserID($user_id);
-            $cardUserKey = $obj[0]->getCardUserKey();
-            $cardStore->list_card($cardUserKey);
             ?>
 
             <div class="ui stackable centered grid">
 
                 <div class="nine wide center aligned  centered column">
-                    <h1> Kredi ve ya Banka Kartları</h1>
-                    <span>Kartlar İyzico Güvencesiyle hızlı ödeme seçeneği için kaydolmaktadır.</span>
-                </div>
-
-
-                <div class="nine wide center aligned  centered column">
                     <table class="ui celled striped table">
                         <tbody>
-
                         <?php
                         foreach ($obj as $userCard){?>
                             <tr>
                                 <td>
-                                    <b><?php echo $userCard->getCardHolderName();?></b>&nbsp;&nbsp;<span><b><?php echo $userCard->getBinNumber();?></b>****** **** ****</span>
-                                    <p class="small"><?php echo $userCard->getCardAlias();?>&nbsp;<?php echo $userCard->getAddDatetime(). " tarihinde eklendi";?></p>
+                                    <b><?php echo $userCard->getCardName()?></b>&nbsp;&nbsp;<span><b><?php echo substr($userCard->getCardNumber(),0,2)."************" .substr($userCard->getCardNumber(),-2);?></b></span>
+                                    <p class="small">&nbsp;<?php echo $userCard->getAddDatetime(). " tarihinde eklendi";?></p>
                                 </td>
                                 <td>
                                     <button data-id="<?php echo $userCard->getId(); ?>" class="ui button" >

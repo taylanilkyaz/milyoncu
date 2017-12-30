@@ -1,6 +1,5 @@
 <script src="/lib/functional/clipboard.min.js"></script>
 
-
 <?php
 
 require "Order.php";
@@ -40,43 +39,6 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                 }
 
                 //siparişin bitip bitmediği kontrolü
-                if ($arr[$i]['sipariş_durumu'] == 6) {
-                    ?>
-                    <div class="active title">
-                        <div class="ui grid">
-                            <div class="twelve wide column">
-                                <i class="dropdown icon"></i>
-                                <div class="header-2 sline">
-                                    <?php for ($j = 0; $j < count($resList); $j++) {
-                                        $oneProduct = $resList[$j];
-                                        /**
-                                         * @var $oneProduct Product
-                                         */
-                                        echo $oneProduct->getCount() . " Adet " . $oneProduct->getName();
-                                        if ($j != count($resList) - 1) {
-                                            echo ", ";
-                                        }
-                                    } ?>
-
-                                </div>
-                                <?php
-                                echo $orderObj->selectIcon($arr[$i]['order_status']);
-                                ?>
-                            </div>
-                            <div class="left aligned two wide column">
-                                <a href="/assets/results/<?php echo md5($arr[$i]['order_code']) ?>.pdf"
-                                   target="_blank">Sonucu Görüntüle</a>
-                            </div>
-                            <div class="left aligned two wide column">
-                                <a href="/assets/results/<?php echo md5($arr[$i]['order_code']) ?>.pdf" download="kolay-dna-sonuc">
-                                    <i class="download icon"></i>
-                                    Sonucu İndir
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                } else {
                     ?>
                     <div class="title">
                         <div class="ui grid">
@@ -101,27 +63,9 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                             </div>
                         </div>
                     </div>
-                    <?php
-                }
-                ?>
-
-                <!--    title sonu -->
-
-                <?php
-                if ($arr[$i]['sipariş_durumu'] == 6){
-                ?>
-                <div class="content">
-                    <?php
-                    }
-                    else{
-                    ?>
                     <div class="active content">
-                        <?php
-                        }
-                        ?>
                         <?php if ($arr[$i]['sipariş_durumu'] >= 2) {
                             ?>
-
                             <h3 class="header sline"> Kargo No : </h3>
                             <div class="ui action input" >
                                 <input type="text" value="<?php echo $arr[$i]['kargo_numarası'] ?>">

@@ -1,6 +1,6 @@
 <?php
-//$dev = 'localhost';
-$dev = 'milyoncu.dev';
+$dev = 'localhost';
+//$dev = 'milyoncu.dev';
 
 
 if($dev == 'localhost' || $dev == 'milyoncu.dev'){
@@ -65,10 +65,10 @@ $DEBUG = true;
 /**
  * Template'i ve geliştirme ortamını yükler.
  */
-if ( !isset($b4u_did_header) ) {
+if ( !isset($did_header) ) {
 
     //Bir kere yüklenmesini sağlayacak
-    $b4u_did_header = true;
+    $did_header = true;
 
     // Sistem kütüphanesini yükle
     require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR.'system-load.php' );

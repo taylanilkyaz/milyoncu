@@ -29,26 +29,16 @@ $ccMonth = explode("/",$ccDate)[0];
 $ccYear = explode("/",$ccDate)[1];
 $selectedInsallmentNumber = intval($selectedInsallmentNumber);
 
-$cardStore = new CardStore();
-
-/**
- * Eğer kullanıcının sistemde kartı varsa
- */
-
-/**
- * Eğer kullanıcı sisteme ilk kez kart kayıt ediyorsa
- */
 
 if($type == "store"){
 $storedCard = new StoredCard();
-$card = $cardStore->create_user_and_add_card("test1@gmail.com","1","paraf", $ccSurname,  $ccNumber, $ccMonth, $ccYear);
 
 $storedCard->setUserId($user_id);
-$storedCard->setCardToken($card->getCardToken());
-$storedCard->setCardUserKey($card->getCardUserKey());
-$storedCard->setCardAlias($card->getCardAlias());
-$storedCard->setBinNumber($card->getBinNumber());
-$storedCard->setCardHolderName($ccSurname);
+$storedCard->setCardNumber($ccNumber);
+$storedCard->setCardName($ccSurname);
+$storedCard->setCardCvc($ccCode);
+$storedCard->setCardMonth($ccMonth);
+$storedCard->setCardYear($ccYear);
 
 $storedCardDb->insert($storedCard);
 }
@@ -58,16 +48,9 @@ if($type == "list"){
      * @var $obj StoredCard[]
      */
     $obj = $storedCardDb->getStoredCardByUserID($user_id);
-    $cardUserKey = $obj[0]->getCardUserKey();
-    $cardStore->list_card($cardUserKey);?>
+    ?>
 
     <div class="ui stackable centered grid">
-
-        <div class="nine wide center aligned  centered column">
-            <h1> Kredi ve ya Banka Kartları</h1>
-            <span>Kartlar İyzico Güvencesiyle hızlı ödeme seçeneği için kaydolmaktadır.</span>
-        </div>
-
 
         <div class="nine wide center aligned  centered column">
             <table class="ui celled striped table">
@@ -77,8 +60,8 @@ if($type == "list"){
                 foreach ($obj as $userCard){?>
                         <tr>
                             <td>
-                                <b><?php echo $userCard->getCardHolderName();?></b>&nbsp;&nbsp;<span><b><?php echo $userCard->getBinNumber();?></b>****** **** ****</span>
-                                <p class="small"><?php echo $userCard->getCardAlias();?>&nbsp;<?php echo $userCard->getAddDatetime(). " tarihinde eklendi";?></p>
+                                <b><?php echo $userCard->getCardName()?></b>&nbsp;&nbsp;<span><b><?php echo substr($userCard->getCardNumber(),0,2)."************" .substr($userCard->getCardNumber(),-2);?></b></span>
+                                <p class="small">&nbsp;<?php echo $userCard->getAddDatetime(). " tarihinde eklendi";?></p>
                             </td>
                             <td>
                                 <button data-id="<?php echo $userCard->getId(); ?>" class="ui button" >

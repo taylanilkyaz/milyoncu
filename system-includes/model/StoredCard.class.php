@@ -3,24 +3,24 @@
 class StoredCard{
     private $id;
     private $user_id;
-    private $card_user_key;
-    private $card_token;
-    private $card_alias;
-    private $bin_number;
+    private $card_number;
+    private $card_name;
+    private $card_cvc;
+    private $card_month;
+    private $card_year;
     private $add_datetime;
-    private $card_holder_name;
 
 
     public static function __constructByMysqliRow($row){
         $obj =  new self();
         $obj->setId($row[StoredCardDatabase::$STORED_CARD_ID]);
         $obj->setUserId($row[StoredCardDatabase::$STORED_CARD_USER_ID]);
-        $obj->setCardUserKey($row[StoredCardDatabase::$STORED_CARD_USER_KEY]);
-        $obj->setCardToken($row[StoredCardDatabase::$STORED_CARD_TOKEN]);
-        $obj->setCardAlias($row[StoredCardDatabase::$STORED_CARD_ALIAS]);
-        $obj->setBinNumber($row[StoredCardDatabase::$STORED_CARD_BIN_NUMBER]);
+        $obj->setCardNumber($row[StoredCardDatabase::$STORED_CARD_NUMBER]);
+        $obj->setCardName($row[StoredCardDatabase::$STORED_CARD_NAME]);
+        $obj->setCardCvc($row[StoredCardDatabase::$STORED_CARD_CVC]);
+        $obj->setCardMonth($row[StoredCardDatabase::$STORED_CARD_MONTH]);
+        $obj->setCardYear($row[StoredCardDatabase::$STORED_CARD_YEAR]);
         $obj->setAddDatetime($row[StoredCardDatabase::$STORED_CARD_ADD_DATETIME]);
-        $obj->setCardHolderName($row[StoredCardDatabase::$STORED_CARD_HOLDER_NAME]);
         return $obj;
     }
 
@@ -59,65 +59,81 @@ class StoredCard{
     /**
      * @return mixed
      */
-    public function getCardUserKey()
+    public function getCardNumber()
     {
-        return $this->card_user_key;
+        return $this->card_number;
     }
 
     /**
-     * @param mixed $card_user_key
+     * @param mixed $card_number
      */
-    public function setCardUserKey($card_user_key)
+    public function setCardNumber($card_number)
     {
-        $this->card_user_key = $card_user_key;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCardToken()
-    {
-        return $this->card_token;
-    }
-
-    /**
-     * @param mixed $card_token
-     */
-    public function setCardToken($card_token)
-    {
-        $this->card_token = $card_token;
-    }
-
-    /**
-     * @param $card_alias
-     */
-    public function setCardAlias($card_alias)
-    {
-        $this->card_alias = $card_alias;
-    }
-
-    /**
-     * @param $bin_number
-     */
-    public function setBinNumber($bin_number)
-    {
-        $this->bin_number = $bin_number;
+        $this->card_number = $card_number;
     }
 
     /**
      * @return mixed
      */
-    public function getCardAlias()
+    public function getCardName()
     {
-        return $this->card_alias;
+        return $this->card_name;
+    }
+
+    /**
+     * @param mixed $card_name
+     */
+    public function setCardName($card_name)
+    {
+        $this->card_name = $card_name;
     }
 
     /**
      * @return mixed
      */
-    public function getBinNumber()
+    public function getCardCvc()
     {
-        return $this->bin_number;
+        return $this->card_cvc;
+    }
+
+    /**
+     * @param mixed $card_cvc
+     */
+    public function setCardCvc($card_cvc)
+    {
+        $this->card_cvc = $card_cvc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardMonth()
+    {
+        return $this->card_month;
+    }
+
+    /**
+     * @param mixed $card_month
+     */
+    public function setCardMonth($card_month)
+    {
+        $this->card_month = $card_month;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCardYear()
+    {
+        return $this->card_year;
+    }
+
+    /**
+     * @param mixed $card_year
+     */
+    public function setCardYear($card_year)
+    {
+        $this->card_year = $card_year;
     }
 
     /**
@@ -128,19 +144,6 @@ class StoredCard{
         return $this->add_datetime;
     }
 
-    public function setCardHolderName($ccSurname)
-    {
-        $this->card_holder_name = $ccSurname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCardHolderName()
-    {
-        return $this->card_holder_name;
-    }
-
     /**
      * @param mixed $add_datetime
      */
@@ -148,10 +151,6 @@ class StoredCard{
     {
         $this->add_datetime = $add_datetime;
     }
-
-
-
-
 
 
 }

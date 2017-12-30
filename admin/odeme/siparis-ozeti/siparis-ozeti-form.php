@@ -118,9 +118,6 @@ $basketList = $dashboard->getAllBasketAsProductArr($user_id);
                                 }
                             ?>
 
-                            <p class="delivery-info">
-                                * Geçmiş teslimatlara göre hesaplanan ortalama kargoya veriliş süreleridir. Bu süre, ürünün stok durumuna göre değişiklik gösterebilir.
-                            </p>
                         </div>
                  <div class="ui segment">
                             <p class="ahref">

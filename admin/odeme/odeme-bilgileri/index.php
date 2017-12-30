@@ -7,16 +7,9 @@ if (!$bool){
 }
 getAdminHeader();
 ?>
-
-<div id="icon-container" class="ui fluid container">
-    <button class="ui left floated button">
-        <i id="menu-icon" class="huge sidebar icon"></i>
-    </button>
-    <button class="ui right floated button">
-        <i id="shop-icon" class="huge shop icon"></i>
-    </button>
-</div>
-
+<br>
+<br>
+<br>
 <div id="dashboard">
     <?php
     require("odeme-bilgileri-form.php");;
