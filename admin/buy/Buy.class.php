@@ -355,22 +355,26 @@ HTML;
             $price = floor($obj->getPrice()) * $count;
             $totalPrice+=$price;
             $str .=<<<HTML
-            <div class="ui grid product-container-grid" id="${id}">
-                <div class="three wide column">
-                    <a href="../product-description/index.php?name=${name}"id="buy-image-size" >
-                        <img  src="/assets/images/productimage/512/${image_path}">
+            <div class="ui celled centered grid product-container-grid flex-parent" id="${id}">
+                <div class="four wide column">
+                    <a href="../product-description/index.php?name=${name}">
+                        <img src="/assets/images/productimage/512/${image_path}">
                     </a>
                 </div>
-                <div class="five wide column">
-                    <h4 class="product-name">
+                <div class="three wide column">
+                <h4 class="product-name" style="margin-left: 30px;text-align: center">
                         <a href="../product-description/index.php?name=${name}" >${name}</a>
                     </h4>
+                  
+                </div>
+                <div class="two wide column">
                     <div>
-                        <button class="btn-delete ui button"><i class="trash icon"></i>Sil</button>                    
+                        <button class="btn-delete ui button" style="margin-left: 25px"><i class="trash icon"></i>Sil</button>                    
                     </div>
                 </div>
-                <div class="eight wide column flex-parent">
-                    <div class="four wide column">
+               
+                <div class="three wide column">
+                    <div class="" style="margin-left: 20px ; margin-right: -10px">
                         <div class="container sepetim-count-input">
                             <div class="count-input">
                                 <a class="incr-btn" data-action="decrease" href="#" title="Azalt"><b>&minus;</b></a>
@@ -378,11 +382,14 @@ HTML;
                                 <a class="incr-btn" data-action="increase" href="#" title="Arttır"><b>&plus;</b></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="four wide column">
-                        <div class="col-total-sepetim"><i class="lira icon"></i><b><span class="price-span">${price}</span></b></div>
-                    </div>
+                    </div> 
                 </div>
+                <div class="two wide column">
+                <div class="">
+                                        <div style="margin-left: 20px" class="col-total-sepetim"><i class="lira icon"></i><b><span class="price-span">${price}</span></b></div>
+
+</div>
+                    </div>
             </div> 
             <div class="ui divider"></div> 
 
@@ -460,7 +467,7 @@ HTML;
     /**
      * @return null|Product[]
      */
-    public function getAllProductsPrice($small,$large)
+    public function getAllProductsPrive($small,$large)
     {
         $res = $this->getProductDb()->getAllProductsPrice($small,$large);
         if (!$res) {
