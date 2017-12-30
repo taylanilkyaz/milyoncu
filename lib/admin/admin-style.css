@@ -886,16 +886,6 @@ input#sendTicket:hover {
     border: 2px solid #41C4E2;
 }
 
-@media screen and (min-width: 2400px) {
-    h4.product-name {
-        width: 15vh;
-    }
-
-    .product-container-grid {
-        margin-bottom: 20px !important;
-    }
-}
-
 #sepet-id .ui.divider {
     width: 100%;
 }

@@ -27,7 +27,6 @@ class CategoriesDatabase extends Database {
             return null;
         }
     }
-
     public function getCategoryNameNonSeq($id){
         $sql = sprintf("SELECT %s FROM %s WHERE %s = ?",
             self::$CATEGORIES_NAME,
@@ -50,5 +49,4 @@ class CategoriesDatabase extends Database {
             return null;
         }
     }
-
 }

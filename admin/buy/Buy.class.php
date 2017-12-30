@@ -457,6 +457,20 @@ HTML;
         $productObj = new ProductDatabase();
         return $productObj->getAllProductsForSubCategory($id);
     }
+    /**
+     * @return null|Product[]
+     */
+    public function getAllProductsPrice($small,$large)
+    {
+        $res = $this->getProductDb()->getAllProductsPrice($small,$large);
+        if (!$res) {
+            $this->is_error = true;
+            $this->error_message = $this->getDb()->getErrorMessage();
+        }
+
+        /** @var Product[] $res */
+        return $res;
+    }
 
 }
 

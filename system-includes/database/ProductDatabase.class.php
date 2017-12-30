@@ -204,4 +204,41 @@ class ProductDatabase extends Database{
             $this->setErrorMessage("Ürün silme sırasında bir hata meydana geldi : " .$this->getDb()->error);
         }
     }
+
+    public function getAllProductsPrice($small , $large)
+    {
+        $sql = sprintf("SELECT * FROM %s WHERE %s >= ? AND %s <= ?",
+            self::$PRODUCT_TABLE_NAME,
+            self::$PRODUCT_PRICE,
+            self::$PRODUCT_PRICE);
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            $stmt->bind_param("dd",$small , $large);
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+
+
+
+
 }

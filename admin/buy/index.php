@@ -69,15 +69,15 @@ getAdminHeader();
                 <div class="ui stackable grid">
 
                     <div class="eight wide column ui mini input focus" style="padding-right: 2px">
-                        <input type="text" placeholder="Min...">
+                        <input type="text" id="smallval" placeholder="Min...">
                     </div>
 
                     <div class="eight wide column ui mini input focus " style="padding-left: 2px ; margin-right: inherit">
-                        <input type="text" placeholder="Max...">
+                        <input type="text" id="largeval" placeholder="Max...">
                     </div>
 
                     <div class="sixteen wide column" style="text-align: center">
-                        <button class=" ui primary button" style="background-color: #2773E9 ; color: white">
+                        <button class=" ui primary button" id="filtrele-ara" style="background-color: #2773E9 ; color: white">
                             Ara
                         </button>
                     </div>

@@ -1,5 +1,48 @@
 <div id="buy-container">
     <?php
+    if (isset($_POST['smallval']) && isset($_POST['largeval'])) {
+        $smallval = $_POST['smallval'];
+        $largeval = $_POST['largeval'];
+
+    ?>
+
+    <h1 class="ui center aligned header">gggggg</h1>
+    <div class="ui divider"></div>
+    <div class="ui four column doubling stackable centered grid">
+        <?php
+        /**
+         * @var $product Product
+         */
+        $buy = new Buy();
+        $products = $buy->getAllProductsPrice($smallval,$largeval);
+        $i = 0;
+        foreach ($products as $product) {?>
+
+            <div class="center aligned centered column">
+                <div data-id="<?= $i++; ?>"class="ui segment">
+
+                    <img class="ui centered fluid image"
+                         src="/assets/images/productimage/512/<?=$product->getImagePath() ?>">
+
+                    <div class="bottom-detail">
+                        <p class="name"><?php echo $product->getName() ?></p>
+                        <p class="price"><i class="lira icon"></i><?php echo floor($product->getPrice()); ?></p>
+                        <p class="desc"><?php echo substr($product->getShortDesc(),0,62)."..." ?></p>
+                    </div>
+                </div>
+
+                <div class="add-basket-button" >
+                    + Sepete Ekle
+                </div>
+
+                <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName();?>">
+                    + Ürün İncele
+                </div>
+            </div>
+
+            <?php }
+
+    }
     if (isset($_GET['value']))
     {
         $subCategoryId = $_GET['value'];
