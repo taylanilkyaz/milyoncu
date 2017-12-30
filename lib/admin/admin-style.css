@@ -736,6 +736,7 @@ rating bar bitiş
 
 #buy-container .ui.segment img {
     max-width: 160px;
+    height: 200px;
 }
 
 #buy-container .bottom-detail {
