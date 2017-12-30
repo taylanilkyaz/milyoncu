@@ -68,19 +68,22 @@ getAdminHeader();
 
                 <div class="ui stackable grid">
 
-                    <div class="eight wide column ui mini input focus" style="padding-right: 2px">
-                        <input type="text" id="smallval" placeholder="Min...">
-                    </div>
+                    <form action="index.php" method="post" >
+                        <div class="eight wide column ui mini input focus" style="padding-right: 2px">
+                            <input type="text" name="smallval" id="smallval" placeholder="Min...">
+                        </div>
 
-                    <div class="eight wide column ui mini input focus " style="padding-left: 2px ; margin-right: inherit">
-                        <input type="text" id="largeval" placeholder="Max...">
-                    </div>
+                        <div class="eight wide column ui mini input focus " style="padding-left: 2px ; margin-right: inherit">
+                            <input type="text" name="largeval" id="largeval" placeholder="Max...">
+                        </div>
 
-                    <div class="sixteen wide column" style="text-align: center">
-                        <button class=" ui primary button" id="filtrele-ara" style="background-color: #2773E9 ; color: white">
-                            Ara
-                        </button>
-                    </div>
+                        <div class="sixteen wide column" style="text-align: center">
+                            <button class=" ui primary button" type="submit" id="filtrele-ara" style="background-color: #2773E9 ; color: white">
+                                Ara
+                            </button>
+                        </div>
+                    </form>
+
 
                 </div>
             </div>

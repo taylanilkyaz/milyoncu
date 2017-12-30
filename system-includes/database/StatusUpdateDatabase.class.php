@@ -1,11 +1,11 @@
 <?php
 
 class StatusUpdateDatabase extends Database{
-    public static $STATUS_UPDATE_TABLE_NAME = "status_update_time";
+    public static $STATUS_UPDATE_TABLE_NAME = "sipariş_durumu";
     public static $STATUS_UPDATE_ID = "id";
-    public static $STATUS_UPDATE_ORDER_CODE = "order_code";
-    public static $STATUS_UPDATE_ORDER_STATUS = "order_status";
-    public static $STATUS_UPDATE_ADD_TIME = "add_time";
+    public static $STATUS_UPDATE_ORDER_CODE = "sipariş_kodu";
+    public static $STATUS_UPDATE_ORDER_STATUS = "durum";
+    public static $STATUS_UPDATE_ADD_TIME = "ekleme_zamanı";
 
     public function getStatusUpdateTimes($order_code){
         $rows = array();
@@ -64,50 +64,5 @@ class StatusUpdateDatabase extends Database{
         }
     }
 
-    public function getOrderStatus($order_code){
-        $sql = sprintf("SELECT %s FROM %s WHERE %s=?",
-            self::$ORDER_BUY_RELATION_ORDER_STATUS,
-            self::$ORDER_BUY_RELATION_TABLE_NAME,
-            self::$ORDER_BUY_RELATION_ORDER_CODE);
-        if ($stmt = $this->getDb()->prepare($sql)){
-            $stmt->bind_param("s",
-                $order_code
-            );
-
-            if (!$stmt->execute()){
-                $this->setIsError(true);
-                $this->setErrorMessage("Order Buy Relation getirmede hata meydana geldi : " .$this->getDb()->error);
-                return $this->getErrorMessage();
-            }
-            else{
-                $result = $stmt->get_result();
-                $singleRow = $result->fetch_assoc();
-                return $singleRow['order_status'];
-            }
-        }
-    }
-
-    public function getAddDate($order_code){
-        $sql = sprintf("SELECT %s FROM %s WHERE %s=?",
-            self::$ORDER_BUY_RELATION_ADD_TIME,
-            self::$ORDER_BUY_RELATION_TABLE_NAME,
-            self::$ORDER_BUY_RELATION_ORDER_CODE);
-        if ($stmt = $this->getDb()->prepare($sql)){
-            $stmt->bind_param("s",
-                $order_code
-            );
-
-            if (!$stmt->execute()){
-                $this->setIsError(true);
-                $this->setErrorMessage("Order Buy Relation getirmede hata meydana geldi : " .$this->getDb()->error);
-                return $this->getErrorMessage();
-            }
-            else{
-                $result = $stmt->get_result();
-                $singleRow = $result->fetch_assoc();
-                return $singleRow['add_time'];
-            }
-        }
-    }
 
 }

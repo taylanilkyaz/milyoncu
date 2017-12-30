@@ -40,7 +40,7 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
             <input type="hidden" name="alt_kategori" id="alt_kategori"  onchange="getState2()" >
             <i class="dropdown icon"></i>
             <div class="default text">Alt Kategori</div>
-            <div class="menu">
+            <div id="alt_menu" class="menu">
 
             </div>
         </div>
@@ -91,7 +91,8 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
 <script>
 
     function getState(val) {
-        $('#alt-kategori').dropdown('reflesh');
+
+        $("#alt_menu").empty();
         var value = $("#ust_kategori").val();
         if (value==='1'){
             var $menu =  $('.alt-kategori').find('.menu');

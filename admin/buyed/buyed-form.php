@@ -19,7 +19,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
     <tbody>
     <?php for ($i = 0; $i < count($arr); $i++) {
         //kullanıcının bir siparişinin içinde bulunan ürünler ve adetleri alındı
-        $res = $buyedObj->getAllBuyedProducts($arr[$i]['order_code']);
+        $res = $buyedObj->getAllBuyedProducts($arr[$i]['sipariş_kodu']);
         $resList = array();
         while ($row = $res->fetch_assoc()) {
             array_push($resList, Product::__constructByMysqliRow($row, true));
@@ -44,7 +44,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
             <td><?php echo $paketAdi ?></td>
             <td><?php echo $totalPrice ?></td>
             <td><?php echo $totalCount ?></td>
-            <td><?php echo $arr[$i]['add_time'] ?></td>
+            <td><?php echo $arr[$i]['ekleme_zamanı'] ?></td>
 
 
         </tr>

@@ -33,14 +33,14 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                 $i < count($arr);
                 $i++){
                 //kullanıcının bir siparişinin içinde bulunan ürünler ve adetleri alındı
-                $res = $buyedObj->getAllBuyedProducts($arr[$i]['order_code']);
+                $res = $buyedObj->getAllBuyedProducts($arr[$i]['sipariş_kodu']);
                 $resList = array();
                 while ($row = $res->fetch_assoc()) {
                     array_push($resList, Product::__constructByMysqliRow($row, true));
                 }
 
                 //siparişin bitip bitmediği kontrolü
-                if ($arr[$i]['order_status'] == 6) {
+                if ($arr[$i]['sipariş_durumu'] == 6) {
                     ?>
                     <div class="active title">
                         <div class="ui grid">
@@ -96,7 +96,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
 
                                 </div>
                                 <?php
-                                echo $orderObj->selectIcon($arr[$i]['order_status']);
+                                echo $orderObj->selectIcon($arr[$i]['sipariş_durumu']);
                                 ?>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                 <!--    title sonu -->
 
                 <?php
-                if ($arr[$i]['order_status'] == 6){
+                if ($arr[$i]['sipariş_durumu'] == 6){
                 ?>
                 <div class="content">
                     <?php
@@ -119,13 +119,13 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
                         <?php
                         }
                         ?>
-                        <?php if ($arr[$i]['order_status'] >= 2) {
+                        <?php if ($arr[$i]['sipariş_durumu'] >= 2) {
                             ?>
 
                             <h3 class="header sline"> Kargo No : </h3>
                             <div class="ui action input" >
-                                <input type="text" value="<?php echo $arr[$i]['cargo_no'] ?>">
-                                <button style="margin-left: 5px" data-clipboard-text="<?php echo $arr[$i]['cargo_no'] ?>"
+                                <input type="text" value="<?php echo $arr[$i]['kargo_numarası'] ?>">
+                                <button style="margin-left: 5px" data-clipboard-text="<?php echo $arr[$i]['kargo_numarası'] ?>"
                                         class="ui teal right labeled icon button btn">
 
                                     <i class="copy icon"></i>
@@ -135,7 +135,7 @@ $arr = $obj->getAllOrdersForUser($_SESSION['id']);
 
                             <?php
                         }
-                        $var = $orderObj->getOrderStatus($arr[$i]['order_code'], $arr[$i]['order_status'], $arr[$i]['add_time']);
+                        $var = $orderObj->getOrderStatus($arr[$i]['sipariş_kodu'], $arr[$i]['sipariş_durumu'], $arr[$i]['ekleme_zamanı']);
                         echo $var;
                         ?>
 
