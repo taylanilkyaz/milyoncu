@@ -3,7 +3,7 @@
 
         <div class="computer only row">
             <a href="/home" class="header item">
-                <img class="ui logo-size image" src="/assets/fotos/logo.png">
+                <img class="ui logo-size image" src="/assets/fotos/yenilogo.jpg">
             </a>
 
             <div class="right menu">
