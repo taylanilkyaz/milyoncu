@@ -2,11 +2,12 @@
 require $_SERVER['DOCUMENT_ROOT'].'/system-header.php';
 require $_SERVER['DOCUMENT_ROOT'].'/admin/buy/Buy.class.php';
 
+$cargo_id=$_SESSION['cargoId'];
 $user_id = $_SESSION['id'];
 $dashboard = new Buy();
 $totalPrice = $dashboard->getAllBasketTotalPrice($user_id) ;
-$cargoPrice = $dashboard->getAllCargoPrice($user_id);
-$fullPrice = doubleval($totalPrice) + doubleval($cargoPrice);
+$cargoPrice = $dashboard->getAllCargoPrice($cargo_id);
+$fullPrice = $totalPrice + $cargoPrice;
 
 $basketList = $dashboard->getAllBasketAsProductArr($user_id);
 $selectedInstallmentNumber = $_POST['selectedInstallmentNumber'];

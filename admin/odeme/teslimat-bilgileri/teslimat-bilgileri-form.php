@@ -10,13 +10,14 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/admin/buy/Buy.class.php';
 
 $user_id = $_SESSION['id'];
+$cargo_id = 0;
 $dashboard = new Buy();
 $relationObj = new AddressUserRelation();
 $addressObj = new AddressDatabase();
 $bool = $relationObj->isAddressExists($user_id);
-$totalPrice = floor($dashboard->getAllBasketTotalPrice($user_id));
-$cargoPrice = $dashboard->getAllCargoPrice($user_id);
-$fullPrice = doubleval($totalPrice) + doubleval($cargoPrice);
+$totalPrice = $dashboard->getAllBasketTotalPrice($user_id);
+$cargoPrice = $dashboard->getAllCargoPrice($cargo_id);
+$fullPrice = $totalPrice + $cargoPrice;
 $totalProductCount = 0;
 $basketList = $dashboard->getAllBasketAsProductArr($user_id);
 
@@ -27,7 +28,6 @@ foreach ($basketList as $item) {
     $totalProductCount += $item->getCount();
 }
 ?>
-
 <div id="teslim-bilgileri-page-id">
     <div id="teslimat-bilgileri-top-content-id" class="ui fluid container">
         <div class="ui tablet stackable steps" id="steps-id">
@@ -62,7 +62,17 @@ foreach ($basketList as $item) {
         </div>
     </div>
 </div>
-
+<style>
+    .ui.table thead th{
+        background-color: #FFB273 !important;
+    }
+    .ui.celled.table tr td:first-child{
+        background-color: #FFB273 !important;
+    }
+    #first{
+        background-color: #ffffff !important;
+    }
+</style>
 <div id="top-content-2" class="ui fluid container">
     <form class="ui large form" id="shipping-information-form" action="database-process.php">
         <div class="ui stackable centered grid" id="centered-information-menu">
@@ -151,43 +161,6 @@ foreach ($basketList as $item) {
                                         </div>
                                         <a href="#" id="add-new-bill-address">+Yeni Adres Ekle</a>
                                     </div>
-                                </div>
-                                <label class="ui header">Kargo Şirket Şeçiminizi de burada
-                                    gerçekleştirmelisiniz!</label>
-                                <div class="field" style="margin-top: 20px">
-
-                                    <table class="ui compact celled definition table">
-                                        <thead>
-                                        <tr>
-                                            <th>Seçiniz</th>
-                                            <th>Şirket Adı</th>
-                                            <th>Taşıma Süresi</th>
-                                            <th>Fiyatı</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        /**
-                                         * @var CargoCompany $cargoCompany
-                                         *  @var CargoCompany $cargoCompanies
-                                         */
-                                        $cargoCom = new CargoCompany();
-                                        foreach ($cargoCompanies as $cargoCompany) {
-
-                                            ?>
-                                            <tr>
-                                                <td class="collapsing">
-                                                    <label><input type="checkbox" class="radio" value="1" name="fooby[1][]"/>Kiwi</label>
-                                                </td>
-                                                <td><?php echo $cargoCompany->getName() ?></td>
-                                                <td><?php echo $cargoCompany->getTime() ?></td>
-                                                <td><?php echo $cargoCompany->getPrice() ?></td>
-                                            </tr>
-                                        <?php } ?>
-
-
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -670,17 +643,17 @@ foreach ($basketList as $item) {
                             </h3>
                             <h3 class="ui header">
                                 <div class="sub header">Ürünler Toplamı(KDV Dahil)</div>
-                                <div class="ui header">
+                                <div class="ui header" id="cartPrice">
                                     <i class="lira icon"></i>
                                     <?php echo $totalPrice; ?>
                                 </div>
                                 <div class="sub header">Kargo Ücreti</div>
-                                <div class="ui header">
+                                <div class="ui header" id="cargoPrice">
                                     <i class="lira  icon"></i>
-                                    <?php echo $cargoPrice; ?>
+                                    15
                                 </div>
                                 <div class="sub header">Ödenecek Tutar</div>
-                                <div class="ui header">
+                                <div class="ui header" id="totalPrice">
                                     <i class="lira  icon"></i>
                                     <?php echo $fullPrice; ?>
                                 </div>
@@ -694,6 +667,57 @@ foreach ($basketList as $item) {
             </div>
         </div>
     </form>
+
+    <div class="ui center stackable grid">
+        <div class="two wide column"></div>
+        <div id="shipping-information-table-id"
+             class="center aligned seven wide computer ten wide tablet column">
+            <div style="text-align: center">
+                <label class="ui header ">Kargo Şirket Şeçiminizi de burada
+                    gerçekleştirmelisiniz!</label>
+                <form id="cargos" class="field" style="margin-top: 20px;">
+                    <table class="ui compact celled definition table" style="text-align: center ; ">
+                        <thead>
+                        <tr >
+                            <th id="first"></th>
+                            <th>Şirket Adı</th>
+                            <th>Taşıma Süresi (Gün)</th>
+                            <th>Fiyatı (TL)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        /**
+                         * @var $cargoCom CargoCompany
+                         */
+                        $cargoCompanies = new CargoCompanyDatabase();
+                        $rows = $cargoCompanies->getAllCargoCompany();
+                        foreach ($rows as $cargoCom) {
+                            ?>
+                            <tr>
+
+                                <td class="collapsing">
+                                    <div class="ui slider checkbox">
+                                        <input type="radio" id="cargo" name="cargo" value="<?php echo $cargoCom['id']; ?>">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td><?php echo $cargoCom['isim']; ?></td>
+                                <td><?php echo $cargoCom['süre']; ?></td>
+                                <td><?php echo $cargoCom['fiyat']; ?></td>
+                            </tr>
+                        <?php } ?>
+
+
+                        </tbody>
+                    </table>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
 
     <div class="ui modal" id="billAddModal">
         <form class="ui large form" id="addBillForm">

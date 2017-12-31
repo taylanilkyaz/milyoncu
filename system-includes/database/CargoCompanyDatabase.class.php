@@ -3,6 +3,7 @@
 class CargoCompanyDatabase extends Database{
     public static $CARGO_COMPANY_TABLE_NAME = "kargo_şirketleri";
     public static $CARGO_COMPANY_ID = "id";
+    public static $CARGO_COMPANY_NAME= "isim";
     public static $CARGO_COMPANY_TIME = "süre";
     public static $CARGO_COMPANY_PRICE= "fiyat";
 

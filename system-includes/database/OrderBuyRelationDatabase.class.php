@@ -11,6 +11,8 @@ class OrderBuyRelationDatabase extends Database{
     public static $ORDER_BUY_RELATION_BILL_ADDRESS_ID = "fatura_adres_id";
     public static $ORDER_BUY_RELATION_CARGO_ADDRESS_ID = "kargo_adres_id";
     public static $ORDER_BUY_RELATION_CARGO_NO = "kargo_numarası";
+    public static $ORDER_BUY_RELATION_CARGO_COM = "kargo_sirketi";
+
 
     public function getRowCount(){
         $sql = sprintf("SELECT * FROM %s",self::$ORDER_BUY_RELATION_TABLE_NAME);
@@ -46,20 +48,21 @@ class OrderBuyRelationDatabase extends Database{
         $obj->updateStatus($order_code,$new_status);
     }
 
-    public function insertOrderBuyRelation($order_code,$user_id,$bill_address_id,$cargo_address_id){
+    public function insertOrderBuyRelation($order_code,$user_id,$bill_address_id,$cargo_address_id,$cargo_com){
         $sql = sprintf("
-                  INSERT INTO %s (%s,%s,%s,%s) VALUES (?,?,?,?)",
+                  INSERT INTO %s (%s,%s,%s,%s,%s) VALUES (?,?,?,?,?)",
             self::$ORDER_BUY_RELATION_TABLE_NAME,
             self::$ORDER_BUY_RELATION_ORDER_CODE,
             self::$ORDER_BUY_RELATION_USER_ID,
             self::$ORDER_BUY_RELATION_BILL_ADDRESS_ID,
-            self::$ORDER_BUY_RELATION_CARGO_ADDRESS_ID
-            );
+            self::$ORDER_BUY_RELATION_CARGO_ADDRESS_ID,
+            self::$ORDER_BUY_RELATION_CARGO_COM
+        );
 
         if ($stmt = $this->getDb()->prepare($sql)){
 
-            $stmt->bind_param("sddd",
-               $order_code,$user_id,$bill_address_id,$cargo_address_id
+            $stmt->bind_param("sdddd",
+               $order_code,$user_id,$bill_address_id,$cargo_address_id,$cargo_com
             );
 
             if (!$stmt->execute()){

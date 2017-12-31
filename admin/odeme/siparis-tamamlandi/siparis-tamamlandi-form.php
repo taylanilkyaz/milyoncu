@@ -14,8 +14,8 @@ if (isset($_SESSION['id'])){
     $dashboard = new Buy();
     $obj = new AddressDatabase();
     $totalPrice = $dashboard->getAllBasketTotalPrice($user_id) ;
-    $cargoPrice = $dashboard->getAllCargoPrice($user_id);
-    $fullPrice = doubleval($totalPrice) + doubleval($cargoPrice);
+    $cargoPrice = $pay_price;
+    $fullPrice = $pay_price;
     $basketList = $dashboard->getAllBasketAsProductArr($user_id);
     $buyed_product_obj = new BuyedProductsDatabase();
     $order_code=$buyed_product_obj->insertBuyedProducts($basketList,$user_id);
@@ -187,8 +187,7 @@ if (isset($_SESSION['id'])){
                     <div class="eight wide phone eight wide tablet six wide computer column">
                         <div class="ui segment substance">
                             <div class="col-delivery"><?php
-                            echo $fullPrice;
-                                ?></div>
+                            echo $fullPrice; ?></div>
                         </div>
                     </div>
                 </div>

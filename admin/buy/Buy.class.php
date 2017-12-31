@@ -437,9 +437,22 @@ HTML;
         return $res;
     }
 
-    public function getAllCargoPrice($user_id)
+    public function getAllCargoPrice($cargo_id)
     {
-        return 11.90;
+        if ($cargo_id>0){
+            /**
+             * @var $cargoCom CargoCompany
+             */
+            $cargoCompanies = new CargoCompanyDatabase();
+            $rows = $cargoCompanies->getAllCargoCompany();
+            foreach ($rows as $cargoCom) {
+                if ($cargoCom['id'] == $cargo_id)
+                    return $cargoCom['fiyat'];
+            }
+            return 15;
+        }
+        else
+            return 15;
     }
 
     public function getAllBasketAsProductArr($user_id)
@@ -488,6 +501,32 @@ HTML;
 
         /** @var Product[] $res */
         return $res;
+    }
+    public function getCargoPrice($cargo_id)
+    {
+        $cargo = new CargoCompany();
+        $res = $cargo->getDb()->getAllCargoCompany();
+        if (!$res) {
+            $this->is_error = true;
+            $this->error_message = $this->getDb()->getErrorMessage();
+            return null;
+        }
+
+        $resList = array();
+        while ($row = $res->fetch_assoc()) {
+            array_push($resList, Product::__constructByMysqliRow($row, true));
+        }
+
+        $sum = 15;
+        /**
+         * @var $obj CargoCompany
+         */
+        foreach ($resList as $obj) {
+            if ($cargo_id == $obj->getId())
+           return $obj->getPrice();
+        }
+
+        return $sum;
     }
 
 }

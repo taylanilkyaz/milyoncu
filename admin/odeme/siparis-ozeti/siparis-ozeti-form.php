@@ -107,7 +107,7 @@ $basketList = $dashboard->getAllBasketAsProductArr($user_id);
                                                 <div class="col-amount"><?php echo $item->getCount(); ?></div>
                                             </div>
                                             <div class="three wide column">
-                                                <div class="col-total"><?php echo floor($item->getCount() * $item->getPrice()); ?> <i class="small lira icon"></i></div>
+                                                <div class="col-total"><?php echo $item->getCount() * $item->getPrice(); ?> <i class="small lira icon"></i></div>
 
                                             </div>
 

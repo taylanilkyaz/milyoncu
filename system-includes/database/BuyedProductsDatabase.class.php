@@ -19,6 +19,7 @@ class BuyedProductsDatabase extends Database{
         $cargoAddress = $addressRelationObj->getActiveCargoAddress($user_id);
         $count = $relationObj->getRowCount()+1000001;
         $order_code = "B".$count;
+        $cargo_com = $_SESSION["cargoId"];
         foreach ($basketList as $productObj) {
             /**
              * @var $productObj Product
@@ -43,7 +44,7 @@ class BuyedProductsDatabase extends Database{
                 }
             }
         }
-        $relationObj->insertOrderBuyRelation($order_code,$user_id,$billAddress,$cargoAddress);
+        $relationObj->insertOrderBuyRelation($order_code,$user_id,$billAddress,$cargoAddress,$cargo_com);
         return $order_code;
 
     }

@@ -6,6 +6,25 @@ class CargoCompany{
     private $price;
     private $time;
 
+
+    public static function __constructByMysqliRow($row){
+        $obj =  new self();
+        $obj->setId($row[CargoCompanyDatabase::$CARGO_COMPANY_ID]);
+        $obj->setName($row[CargoCompanyDatabase::$CARGO_COMPANY_NAME]);
+        $obj->setPrice($row[CargoCompanyDatabase::$CARGO_COMPANY_PRICE]);
+        $obj->setTime($row[CargoCompanyDatabase::$CARGO_COMPANY_TIME]);
+        return $obj;
+    }
+
+    public function getDb()
+    {
+
+        if (!isset($this->db)) {
+            $this->db = new CargoCompanyDatabase();
+        }
+
+        return $this->db;
+    }
     /**
      * @return mixed
      */
@@ -15,11 +34,11 @@ class CargoCompany{
     }
 
     /**
-     * @param mixed $count
+     * @param mixed $time
      */
-    public function setCount($count)
+    public function setTime($time)
     {
-        $this->count = $count;
+        $this->time = $time;
     }
 
 
