@@ -150,7 +150,6 @@ class UserDatabase extends Database
         }
     }
 
-
     /*
      * get fonksiyonları bitiş
      */

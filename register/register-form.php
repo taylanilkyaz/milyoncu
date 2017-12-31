@@ -1,6 +1,25 @@
 <?php
 $csrf_salt = base64_encode(openssl_random_pseudo_bytes(16));
 $_SESSION['csrf'] = $csrf_salt;
+
+/*
+$connect =  mysqli_connect("localhost" , "root" , "asd123" , "milyoncu");
+
+if (isset($_POST["insert_btn"]))
+{
+    $sql = "CALL insertData('".$_POST[email]."' ,'".$_POST[password]."' ,'".$_POST[first_name]."' 
+     , '".$_POST[last_name]."' , '".$_POST[tel_no]."' , '".$_POST[tc_no]."')";
+
+    if (mysqli_query($connect ,$sql)){
+        header("location:index.php?inserted=1");
+    }
+}
+if (isset($_GET["inserted"]))
+{
+    echo '<script>alert("data inserted")</script>';
+}
+
+*/
 ?>
 <div id="top-content" class="ui fluid container">
     <div class="ui stackable centered grid">
@@ -72,7 +91,7 @@ $_SESSION['csrf'] = $csrf_salt;
                         <input type="text" name="tc_no" placeholder="TC(Opsiyonel)">
                     </div>
                 </div>
-                <input value="Aktivasyon Gönder" class="ui big fluid button" type="submit" id="login-submit">
+                <input value="Aktivasyon Gönder" class="ui big fluid button" name="insert_btn" type="submit" id="login-submit">
                 <div class="ui error message"></div>
 
                 <p class="smalller-text"><i class="big hide icon"></i>Bilgileriniz hiç kimseyle kati suretle paylaşılmaz.<p>
