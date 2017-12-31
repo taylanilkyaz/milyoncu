@@ -36,9 +36,9 @@ class Register
         $lastName  = $_POST['last_name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $motherName = $_POST['mother_name'];
-        $fatherName = $_POST['father_name'];
-        $maidenName = $_POST['mother_maiden'];
+        $motherName = "";
+        $fatherName ="";
+        $maidenName = "";
         $tcNo =  $_POST['tc_no'];
         $tel = $_POST['tel_number'];
 

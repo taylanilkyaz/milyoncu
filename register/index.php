@@ -24,7 +24,7 @@ if($register->isPostData()){
             $message = $mailSender->sendMailForActivation($_POST['email']);
             //burayı kontrol etmeliyiz
             $_SESSION['message'] = $message;
-            redirect_javascript("/login/index.php?user=".$_POST['email']);
+            //redirect_javascript("/login/index.php?user=".$_POST['email']);
         }
     }
 }
