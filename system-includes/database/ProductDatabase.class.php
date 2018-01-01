@@ -22,24 +22,31 @@ class ProductDatabase extends Database{
         $short_desc = $object->getShortDesc();
         $path = $object->getImagePath();
         $long_desc = $object->getLongDesc();
+        $cat = $object->getCategory();
+        $sub_cat = $object->getSubCategory();
+
         $sql = sprintf("
-                INSERT INTO %s (%s, %s ,%s , %s,%s)
-                VALUES (?,?,?,?,?)",
+                INSERT INTO %s (%s, %s ,%s , %s,%s, %s, %s)
+                VALUES (?,?,?,?,?,?,?)",
             self::$PRODUCT_TABLE_NAME,
             self::$PRODUCT_NAME,
             self::$PRODUCT_PRICE,
             self::$PRODUCT_DESC,
             self::$PRODUCT_IMAGEPATH,
-            self::$PRODUCT_LONG_DESC);
+            self::$PRODUCT_LONG_DESC,
+            self::$PRODUCT_CATEGORY_ID,
+            self::$PRODUCT_SUB_CATEGORY_ID);
 
         if ($stmt = $this->getDb()->prepare($sql)){
 
-            $stmt->bind_param("sssss",
+            $stmt->bind_param("sssssdd",
                 $name,
                 $price,
                 $short_desc,
                 $path,
-                $long_desc);
+                $long_desc,
+                $cat,
+                $sub_cat);
 
             if (!$stmt->execute()){
                 $this->setIsError(true);

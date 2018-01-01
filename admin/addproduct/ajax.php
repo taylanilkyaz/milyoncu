@@ -5,6 +5,8 @@
     $productPrice = floatval($_POST['product-price']);
     $productInfo = $_POST['product-info'];
     $productLongInfo = $_POST['product-long-info'];
+    $ust_category = $_POST["ust_kategori"];
+    $alt_category = $_POST["alt_kategori"];
 
     $path_parts = pathinfo($uploadfile);
 
@@ -43,7 +45,7 @@
     $nameOfFile=$path_parts['filename'].".".$path_parts['extension'];
 
     $object2 = new ProductDatabase();
-    $object = new Product(null,$productName,$productPrice,$productInfo,$nameOfFile,0,$productLongInfo,1);
+    $object = new Product(null,$productName,$productPrice,$productInfo,$nameOfFile,0,$productLongInfo,$ust_category,$alt_category);
     $_SESSION['message']=$object2->insertProduct($object);
 
 

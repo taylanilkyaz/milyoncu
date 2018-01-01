@@ -21,6 +21,8 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
 <div class="ui stackable centered grid" id="add-product-container">
 
     <div class="middle aligned ten wide center aligned column">
+        <form class="ui large form" enctype="multipart/form-data" method="POST" action="ajax.php">
+
         <div class="ui selection dropdown ust-kategori" style="margin-bottom: 10px;margin-right: 20px">
             <input type="hidden" name="ust_kategori" id="ust_kategori"  onchange="getState()" >
             <i class="dropdown icon"></i>
@@ -45,7 +47,6 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
             </div>
         </div>
 
-        <form class="ui large form" enctype="multipart/form-data" method="POST" action="ajax.php">
             <input type="hidden" name="csrf" id="csrf_salt" value="<?php echo $_SESSION['csrf'] ?>"/>
 
             <div class="field">
@@ -146,4 +147,5 @@ eklenmek istenen ürünlerin resmi, fiyatı, ismi ve açıklaması alınır
     function getState2(val) {
         var value = $("#alt_kategori").val();
     }
+
 </script>

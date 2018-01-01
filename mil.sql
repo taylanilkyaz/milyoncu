@@ -24,17 +24,21 @@ CREATE TABLE IF NOT EXISTS `adres_kullanıcı_relation` (
   `aktif` tinyint(4) DEFAULT '1',
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.adres_kullanıcı_relation: ~6 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.adres_kullanıcı_relation: ~10 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `adres_kullanıcı_relation` DISABLE KEYS */;
 INSERT IGNORE INTO `adres_kullanıcı_relation` (`kullanıcı_id`, `fatura_adresi_id`, `kargo_adresi_id`, `aktif`, `id`) VALUES
 	(1, NULL, 1, 1, 1),
 	(1, 1, NULL, 1, 2),
 	(6, NULL, 2, 1, 3),
-	(6, 2, NULL, 1, 4),
+	(6, 2, NULL, 0, 4),
 	(1, 3, NULL, 0, 5),
-	(1, NULL, 3, 0, 6);
+	(1, NULL, 3, 0, 6),
+	(6, 4, NULL, 1, 7),
+	(6, NULL, 4, 0, 8),
+	(7, NULL, 5, 1, 9),
+	(7, 5, NULL, 1, 10);
 /*!40000 ALTER TABLE `adres_kullanıcı_relation` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.aktivasyon_kodu
@@ -44,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `aktivasyon_kodu` (
   `gönderim_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `kullanıcı_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.aktivasyon_kodu: ~9 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.aktivasyon_kodu: ~11 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `aktivasyon_kodu` DISABLE KEYS */;
 INSERT IGNORE INTO `aktivasyon_kodu` (`id`, `aktivasyon_kodu`, `gönderim_zamanı`, `kullanıcı_id`) VALUES
 	(3, 290704, '2017-09-13 17:31:03', 5),
@@ -57,7 +61,9 @@ INSERT IGNORE INTO `aktivasyon_kodu` (`id`, `aktivasyon_kodu`, `gönderim_zaman�
 	(9, 890711, '2017-09-19 18:31:45', 6),
 	(10, 172349, '2017-09-19 18:32:14', 7),
 	(11, 378939, '2017-09-19 18:33:31', 8),
-	(12, 510627, '2017-12-29 03:20:58', 6);
+	(12, 510627, '2017-12-29 03:20:58', 6),
+	(16, 517328, '0000-00-00 00:00:00', 0),
+	(17, 936920, '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `aktivasyon_kodu` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.alt_kategori
@@ -107,14 +113,16 @@ CREATE TABLE IF NOT EXISTS `fatura_adresi` (
   `telefon_numarası` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `adres_tipi` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.fatura_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.fatura_adresi: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `fatura_adresi` DISABLE KEYS */;
 INSERT IGNORE INTO `fatura_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`, `mahalle`, `açık_adres`, `postakodu`, `telefon_numarası`, `adres_tipi`) VALUES
 	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
 	(2, 'ayşe', 'akcan', 'tr', 'ankara', 'çankaya', 'beytepe', 'hacettepe üniversitesi', 6800, '05386151818', 'beytepe'),
-	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş');
+	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş'),
+	(4, 'ayşe', 'akcan', 'Türkiye', 'Ankara', 'etimesgut', 'elvankent', 'Ayyılız 10', 6000, '05386151818', 'ev'),
+	(5, 'taylan', 'ilkyaz', 'tr', 'ankara', 'etimesgut', 'elvankent', 'ayyıldız', 6000, '05061208062', 'ev');
 /*!40000 ALTER TABLE `fatura_adresi` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.girişler
@@ -145,14 +153,16 @@ CREATE TABLE IF NOT EXISTS `kargo_adresi` (
   `telefon_numarası` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `adres_tipi` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.kargo_adresi: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kargo_adresi: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kargo_adresi` DISABLE KEYS */;
 INSERT IGNORE INTO `kargo_adresi` (`id`, `ad`, `soyad`, `ülke`, `il`, `ilçe`, `mahalle`, `açık_adres`, `postakodu`, `telefon_numarası`, `adres_tipi`) VALUES
 	(1, 'ayhan', 'yünt', 'tr', 'sivas', 'merkez', 'aydoğan', 'fatih mahallesi', 58040, '05456772303', 'ev'),
 	(2, 'ayşe', 'akcan', 'tr', 'ankara', 'çankaya', 'beytepe', 'hacettepe üniversitesi', 6800, '05386151818', 'beytepe'),
-	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş');
+	(3, 'ayhan', 'yünt', 'Türkiye', 'ankara', 'çankaya', 'beytepe', 'Hacettepe Teknokent', 6800, '05325698745', 'iş'),
+	(4, 'ayşe', 'akcan', 'Türkiye', 'Ankara', 'etimesgut', 'elvankent', 'Ayyılız 10', 6000, '05386151818', 'ev'),
+	(5, 'taylan', 'ilkyaz', 'tr', 'ankara', 'etimesgut', 'elvankent', 'ayyıldız', 6000, '05061208062', 'ev');
 /*!40000 ALTER TABLE `kargo_adresi` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.kargo_şirketleri
@@ -206,12 +216,14 @@ CREATE TABLE IF NOT EXISTS `kaydedilen_kartlar` (
   `yıl` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ekleme_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.kaydedilen_kartlar: ~1 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kaydedilen_kartlar: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kaydedilen_kartlar` DISABLE KEYS */;
 INSERT IGNORE INTO `kaydedilen_kartlar` (`id`, `kullanıcı_id`, `kart_numarası`, `ad_soyad`, `cvc`, `ay`, `yıl`, `ekleme_zamanı`) VALUES
-	(10, 6, '1111111111111111', 'ayse akcan', '555', '10', '20', '2017-12-31 01:30:44');
+	(10, 6, '1111111111111111', 'ayse akcan', '555', '10', '20', '2017-12-31 01:30:44'),
+	(11, 1, '2222222222222222', 'ayhan yunt', '4444', '10', '20', '2017-12-31 04:00:29'),
+	(12, 6, '3333333333333333', 'taylan ilkyaz', '999', '12', '30', '2017-12-31 21:50:15');
 /*!40000 ALTER TABLE `kaydedilen_kartlar` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.kullanıcılar
@@ -228,14 +240,15 @@ CREATE TABLE IF NOT EXISTS `kullanıcılar` (
   `admin` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `e_mail` (`e_mail`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.kullanıcılar: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.kullanıcılar: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `kullanıcılar` DISABLE KEYS */;
 INSERT IGNORE INTO `kullanıcılar` (`id`, `e_mail`, `tc`, `şifre`, `ad`, `soyad`, `ekleme_zamanı`, `telefon_numarası`, `aktif`, `admin`) VALUES
 	(1, 'ayhanyunt@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayhan', 'yünt', '2017-08-06 20:42:45', '05456772303', 1, 0),
 	(2, 'milyoncu@gmail.com', '', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ali kemal', 'kırçakçı', '2017-08-07 12:37:46', '', 1, 1),
-	(6, 'ayseakcan1907@gmail.com', '12565605338', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayşe', 'akcan', '2017-12-29 03:20:58', '05386151818', 1, 0);
+	(6, 'ayseakcan1907@gmail.com', '12565605338', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'ayşe', 'akcan', '2017-12-29 03:20:58', '05386151818', 1, 0),
+	(7, 'taylanozgurilkyaz@gmail.com', '37678123816', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'taylan', 'ilkyaz', '2017-12-31 21:56:38', '05061208062', 1, 0);
 /*!40000 ALTER TABLE `kullanıcılar` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.satın_alınanlar
@@ -245,31 +258,24 @@ CREATE TABLE IF NOT EXISTS `satın_alınanlar` (
   `ürün_id` int(11) NOT NULL,
   `sipariş_kodu` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.satın_alınanlar: ~20 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.satın_alınanlar: ~13 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `satın_alınanlar` DISABLE KEYS */;
 INSERT IGNORE INTO `satın_alınanlar` (`id`, `kullanıcı_id`, `ürün_id`, `sipariş_kodu`) VALUES
-	(1, 1, 9, 'B1000001'),
-	(2, 1, 8, 'B1000001'),
-	(3, 1, 1, 'B1000002'),
-	(4, 1, 2, 'B1000002'),
-	(5, 1, 8, 'B1000002'),
-	(6, 1, 8, 'B1000003'),
-	(7, 1, 8, 'B1000003'),
-	(8, 1, 8, 'B1000003'),
-	(9, 6, 2, 'B1000004'),
-	(10, 6, 2, 'B1000004'),
-	(11, 6, 2, 'B1000004'),
-	(12, 6, 2, 'B1000004'),
-	(13, 6, 8, 'B1000005'),
-	(14, 6, 10, 'B1000005'),
-	(15, 6, 10, 'B1000005'),
-	(16, 6, 10, 'B1000005'),
-	(17, 6, 11, 'B1000005'),
-	(18, 6, 11, 'B1000005'),
-	(19, 6, 8, 'B1000006'),
-	(20, 6, 8, 'B1000006');
+	(29, 7, 10, 'B1000001'),
+	(30, 7, 10, 'B1000001'),
+	(31, 7, 10, 'B1000001'),
+	(32, 7, 10, 'B1000001'),
+	(33, 7, 10, 'B1000001'),
+	(34, 7, 10, 'B1000001'),
+	(35, 7, 10, 'B1000001'),
+	(36, 7, 10, 'B1000001'),
+	(37, 7, 10, 'B1000001'),
+	(38, 7, 10, 'B1000001'),
+	(39, 6, 16, 'B1000002'),
+	(40, 6, 15, 'B1000002'),
+	(41, 6, 15, 'B1000002');
 /*!40000 ALTER TABLE `satın_alınanlar` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.sepet
@@ -280,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `sepet` (
   `işlem_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`kullanıcı_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- milyoncu.sepet: ~30 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sepet` DISABLE KEYS */;
@@ -324,30 +330,14 @@ CREATE TABLE IF NOT EXISTS `sipariş_durumu` (
   `durum` int(11) NOT NULL,
   `ekleme_zamanı` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.sipariş_durumu: ~19 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sipariş_durumu: ~3 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sipariş_durumu` DISABLE KEYS */;
 INSERT IGNORE INTO `sipariş_durumu` (`id`, `sipariş_kodu`, `durum`, `ekleme_zamanı`) VALUES
-	(15, 'B1000002', 6, '2017-12-29 19:03:32'),
-	(22, '<br />\n<font size=\'1\'><table class=\'xdebug-error x', -1, '2017-12-30 03:22:59'),
-	(26, 'B1000001', 4, '2017-12-30 03:26:52'),
-	(27, 'B1000001', 5, '2017-12-30 03:26:53'),
-	(28, 'B1000001', 6, '2017-12-30 03:26:53'),
-	(32, 'B1000002', 4, '2017-12-30 03:27:08'),
-	(33, 'B1000002', 5, '2017-12-30 03:27:08'),
-	(34, 'B1000001', 1, '2017-12-30 03:39:03'),
-	(35, 'B1000001', 2, '2017-12-30 03:39:07'),
-	(36, 'B1000001', 3, '2017-12-30 03:39:10'),
-	(39, 'B1000002', 1, '2017-12-30 16:04:13'),
-	(40, 'B1000002', 2, '2017-12-30 17:05:13'),
-	(41, 'B1000002', 3, '2017-12-30 17:05:17'),
-	(42, 'B1000003', 1, '2017-12-30 17:05:22'),
-	(43, 'B1000003', 2, '2017-12-30 17:05:23'),
-	(44, 'B1000003', 3, '2017-12-30 17:05:24'),
-	(45, 'B1000004', 1, '2017-12-31 01:38:37'),
-	(46, 'B1000005', 1, '2017-12-31 01:38:40'),
-	(47, 'B1000006', 1, '2017-12-31 01:38:42');
+	(49, 'B1000001', 1, '2017-12-31 22:00:36'),
+	(50, 'B1000002', 1, '2018-01-01 03:18:31'),
+	(51, 'B1000001', 2, '2018-01-01 03:18:34');
 /*!40000 ALTER TABLE `sipariş_durumu` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.sipariş_ilişkileri
@@ -361,18 +351,15 @@ CREATE TABLE IF NOT EXISTS `sipariş_ilişkileri` (
   `kargo_adres_id` int(11) DEFAULT NULL,
   `fatura_adres_id` int(11) DEFAULT NULL,
   `kargo_numarası` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kargo_sirketi` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.sipariş_ilişkileri: ~6 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sipariş_ilişkileri: ~2 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sipariş_ilişkileri` DISABLE KEYS */;
-INSERT IGNORE INTO `sipariş_ilişkileri` (`id`, `sipariş_kodu`, `ekleme_zamanı`, `güncelleme_zamanı`, `sipariş_durumu`, `kullanıcı_id`, `kargo_adres_id`, `fatura_adres_id`, `kargo_numarası`) VALUES
-	(1, 'B1000001', '2017-08-17 20:22:45', '2017-12-30 03:39:10', 3, 1, 1, 1, 'S757465'),
-	(2, 'B1000002', '2017-08-17 20:23:11', '2017-12-30 17:05:17', 3, 1, 1, 1, 'S457876'),
-	(3, 'B1000003', '2017-12-30 16:58:27', '2017-12-30 17:05:35', 3, 1, 1, 1, 'S457877'),
-	(4, 'B1000004', '2017-12-31 00:16:35', '2017-12-31 01:38:37', 1, 6, 2, 2, NULL),
-	(5, 'B1000005', '2017-12-31 00:47:33', '2017-12-31 01:38:40', 1, 6, 2, 2, NULL),
-	(6, 'B1000006', '2017-12-31 01:34:51', '2017-12-31 01:38:42', 1, 6, 2, 2, NULL);
+INSERT IGNORE INTO `sipariş_ilişkileri` (`id`, `sipariş_kodu`, `ekleme_zamanı`, `güncelleme_zamanı`, `sipariş_durumu`, `kullanıcı_id`, `kargo_adres_id`, `fatura_adres_id`, `kargo_numarası`, `kargo_sirketi`) VALUES
+	(17, 'B1000001', '2017-12-31 21:59:52', '2018-01-01 03:18:40', 2, 7, 5, 5, 'S8596526341', 1),
+	(18, 'B1000002', '2017-12-31 22:09:58', '2018-01-01 03:18:31', 1, 6, 2, 4, NULL, 4);
 /*!40000 ALTER TABLE `sipariş_ilişkileri` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.sorular
@@ -388,9 +375,9 @@ CREATE TABLE IF NOT EXISTS `sorular` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`kullanıcı_id`),
   KEY `parent_ticket_id` (`ana_soru_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.sorular: ~12 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.sorular: ~11 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `sorular` DISABLE KEYS */;
 INSERT IGNORE INTO `sorular` (`id`, `kullanıcı_id`, `başlık`, `açıklama`, `ana_soru_id`, `ana_soru`, `aktif`, `ekleme_zamanı`) VALUES
 	(1, 6, 'Para Sorunu', 'Fiyatlar çok fazla', -1, 1, 1, '2017-12-29 16:06:55'),
@@ -404,7 +391,8 @@ INSERT IGNORE INTO `sorular` (`id`, `kullanıcı_id`, `başlık`, `açıklama`, 
 	(9, 6, '', 'Ne demek. aslında çok haklısınız.', 1, 0, 1, '2017-12-29 16:56:42'),
 	(10, 6, '', 'Cevap atabilirdiiniz ama.', 1, 0, 1, '2017-12-29 17:08:11'),
 	(11, 2, '', 'Haklısınız efendim. Size daha iyi hizmet verebilmek için uğraşmaktayız', 1, 0, 1, '2017-12-29 17:08:59'),
-	(12, 6, 'Kart kaydetmek ', 'Kart kaydetmek güvenli midir?', -1, 1, 1, '2017-12-31 00:19:19');
+	(12, 6, 'Kart kaydetmek ', 'Kart kaydetmek güvenli midir?', -1, 1, 1, '2017-12-31 00:19:19'),
+	(13, 2, '', 'evet', 12, 0, 1, '2017-12-31 01:53:12');
 /*!40000 ALTER TABLE `sorular` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.ürün
@@ -419,9 +407,9 @@ CREATE TABLE IF NOT EXISTS `ürün` (
   `uzun_açıklama` text,
   PRIMARY KEY (`id`),
   KEY `name` (`isim`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
--- milyoncu.ürün: ~27 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.ürün: ~29 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `ürün` DISABLE KEYS */;
 INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_yeri`, `alt_kategori_id`, `kategori_id`, `uzun_açıklama`) VALUES
 	(1, 'İkili Metal Banyo Köşelik', 20, 'Banyonuzun daha derli toplu olması için bu ürünü almalısınız.', '2-li-metal-banyo-koselik.JPG', 14, 5, 'Banyonuzun daha derli toplu olması için bu ürünü almalısınız.'),
@@ -450,7 +438,12 @@ INSERT IGNORE INTO `ürün` (`id`, `isim`, `fiyat`, `kısa_açıklama`, `resim_y
 	(40, 'Gül Kokulu Islak Mendil', 5, 'İçinden 80 adet çıkıp , uzun havlu modeli ile işinizi kolaylaştırır . ', 'ıslakmendil.JPG', 17, 8, 'İçinden 80 adet çıkıp , uzun havlu modeli ile işinizi kolaylaştırır . '),
 	(41, 'Baca Temizleyici', 3, 'Tıkanan bacaların korkulu rüyası Tatar Baca Temizleyici', 'baca-temizleyici.JPG', 18, 8, 'Tıkanan bacaların korkulu rüyası Tatar Baca Temizleyici'),
 	(42, 'Taraftar Kumbara', 5, 'Arkadaşınızın tuttuğu takıma göre, özel kumbarasını hediye edebilirsiniz.', 'taraftar-kumbara-.JPG', 19, 9, 'Arkadaşınızın tuttuğu takıma göre, özel kumbarasını hediye edebilirsiniz.'),
-	(43, 'Hediyelik Metal Kalemlik', 7, 'Güzel disaynı ile etkileyici ve kullanışlı , insan kalemlik modeli .', 'metal-adam-kalemlik.JPG', 19, 9, 'Güzel disaynı ile etkileyici ve kullanışlı , insan kalemlik modeli .');
+	(43, 'Hediyelik Metal Kalemlik', 9, 'Güzel disaynı ile etkileyici ve kullanışlı , insan kalemlik modeli .', 'metal-adam-kalemlik.JPG', 19, 9, 'Güzel disaynı ile etkileyici ve kullanışlı , insan kalemlik modeli .'),
+	(45, 'Dilek Balonu', 5, 'Her renk ürün olup, tüm dileklerinizin iletilmesi için hep sizinleyiz.', 'dilek-balonu2.jpg', 19, 9, 'Her renk ürün olup, tüm dileklerinizin iletilmesi için hep sizinleyiz.'),
+	(46, 'Çelik Çamaşır İpi', 2, 'Her türlü bağlama işinizde hep yanınızda arayacağınız bir üründür. 100 farklı sağlık testinden geçmiştir.', 'celik-camasir-ipi-10-metre2.JPG', 20, 6, 'Her türlü bağlama işinizde hep yanınızda arayacağınız bir üründür. 100 farklı sağlık testinden geçmiştir.'),
+	(47, 'Bor Cam', 9, '300 dereceye kadar dayanıklı olan bu cam tabak, her türlü fırında sizi zorda bırakmayacaktır.', 'borcam-cesitleri2.jpg', 1, 1, '300 dereceye kadar dayanıklı olan bu cam tabak, her türlü fırında sizi zorda bırakmayacaktır.'),
+	(48, 'Oyuncak Kova', 7, 'Çocuğunuza sorumluluk mu kazandırmak istiyorsunuz, tam ona uygun boylarda bu temizlik kovası ile ona yeni beceriler kazandırın.', 'temizlik-kovasi-maya2.JPG', 15, 7, 'Çocuğunuza sorumluluk mu kazandırmak istiyorsunuz, tam ona uygun boylarda bu temizlik kovası ile ona yeni beceriler kazandırın.'),
+	(49, 'Faber Castel Kursun Kalem', 1, 'Sınavınızda başarının tek adresi bu kalemdir. kırılmayan ucu ile sizi strese sokmayacaktır.', 'kursunkalem.jpg', 4, 2, 'Sınavınızda başarının tek adresi bu kalemdir. kırılmayan ucu ile sizi strese sokmayacaktır.');
 /*!40000 ALTER TABLE `ürün` ENABLE KEYS */;
 
 -- tablo yapısı dökülüyor milyoncu.ürün_yorumları
@@ -465,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `ürün_yorumları` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- milyoncu.ürün_yorumları: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
+-- milyoncu.ürün_yorumları: ~4 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `ürün_yorumları` DISABLE KEYS */;
 INSERT IGNORE INTO `ürün_yorumları` (`id`, `ürün_id`, `kullanıcı_id`, `başlık`, `içerik`, `ekleme_zamanı`, `puan`) VALUES
 	(3, 8, 1, 'rewqq', 'qwerwq', '2017-09-13 14:31:09', 4),

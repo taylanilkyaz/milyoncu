@@ -21,7 +21,7 @@ class Product{
      * @param $image_path
      * @param $count
      */
-    public function __construct($id, $name, $price, $short_desc, $image_path,$count=null,$long_desc,$category)
+    public function __construct($id, $name, $price, $short_desc, $image_path,$count=null,$long_desc,$category,$sub_category)
     {
         $this->id = $id;
         $this->name = $name;
@@ -31,6 +31,7 @@ class Product{
         $this->count = $count;
         $this->long_desc = $long_desc;
         $this->category = $category;
+        $this->sub_category = $sub_category;
     }
 
     public function fieldToArray(){
@@ -56,7 +57,9 @@ class Product{
                 $row[ProductDatabase::$PRODUCT_IMAGEPATH],
                 $row[ProductDatabase::$PRODUCT_COUNT],
                 $row[ProductDatabase::$PRODUCT_LONG_DESC],
-                $row[ProductDatabase::$PRODUCT_CATEGORY_ID]);
+                $row[ProductDatabase::$PRODUCT_CATEGORY_ID],
+                $row[ProductDatabase::$PRODUCT_SUB_CATEGORY_ID]);
+
         }else{
             return new self(
                 $row[ProductDatabase::$PRODUCT_ID],
@@ -65,7 +68,8 @@ class Product{
                 $row[ProductDatabase::$PRODUCT_DESC],
                 $row[ProductDatabase::$PRODUCT_IMAGEPATH],null,
                 $row[ProductDatabase::$PRODUCT_LONG_DESC],
-                $row[ProductDatabase::$PRODUCT_CATEGORY_ID]);
+                $row[ProductDatabase::$PRODUCT_CATEGORY_ID],
+                $row[ProductDatabase::$PRODUCT_SUB_CATEGORY_ID]);
         }
 
     }
