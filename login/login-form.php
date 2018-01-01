@@ -8,6 +8,7 @@ $_SESSION['csrf'] = $csrf_salt;
 
             <form class="ui large form" id="login-form" method="post" action="/login/index.php">
                 <input type="hidden" name="csrf" id="csrf_salt" value="<?php echo $_SESSION['csrf'] ?>"/>
+                <h1 class="header">Giriş Ekranı</h1>
                 <div class="field">
                     <?php
                     if (isset($_SESSION['message'])) {

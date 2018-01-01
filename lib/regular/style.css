@@ -54,6 +54,7 @@ Login Form
 #login-form{
   background: rgba(0,0,0,0.5);
   padding: 1.5em 1em;
+  border-radius: 50px;
 }
 
 #login-form .header{

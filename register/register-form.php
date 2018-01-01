@@ -27,7 +27,7 @@ if (isset($_GET["inserted"]))
             <form  class="ui large form" id="login-form" method="post" action="/register/index.php">
                 <input type="hidden" name="csrf" id="csrf_salt" value="<?php echo $_SESSION['csrf'] ?>"/>
 
-                <h1 class="header">Kayıt Ol</h1>
+                <h1 class="header">Kayıt Ekranı</h1>
                 <div class="field">
                     <?php
                     if (isset($_SESSION['message'])) {
