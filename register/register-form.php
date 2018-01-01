@@ -93,9 +93,6 @@ if (isset($_GET["inserted"]))
                 </div>
                 <input value="Aktivasyon Gönder" class="ui big fluid button" name="insert_btn" type="submit" id="login-submit">
                 <div class="ui error message"></div>
-
-                <p class="smalller-text"><i class="big hide icon"></i>Bilgileriniz hiç kimseyle kati suretle paylaşılmaz.<p>
-                <p class="smalller-text"><i class="big lock icon"></i>Tüm sistem SHA-512 şifreleme ile korunur.<p>
             </form>
         </div>
     </div>

@@ -75,8 +75,8 @@ Login Form
 }
 
 #login-submit {
-  background: #E76F2F;
-  color: white;
+  background: #eccf03;
+  color: #5C5B59;
   margin-bottom: 4%;
 }
 
@@ -84,7 +84,7 @@ Login Form
 
 
 #sifremi-degistir-submit{
-  color: #f1d01e;
+  color: white;
 }
 
 
@@ -95,7 +95,7 @@ Login Form
 }
 
 #top-content .icon{
-  color: #E76F2F;
+  color: #eccf03;
 }
 
 

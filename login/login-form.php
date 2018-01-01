@@ -63,9 +63,6 @@ $_SESSION['csrf'] = $csrf_salt;
                     <a href="/sifre-degistir" id="sifremi-degistir-submit" >Şifremi Unuttum</a>
                 </div>
 
-
-                <p class="smalller-text"><i class="big hide icon"></i>Bilgileriniz hiç kimseyle kati suretle paylaşılmaz.<p>
-                <p class="smalller-text"><i class="big lock icon"></i>Tüm kütüphane sistemi SHA-512 şifreleme ile korunur.<p>
             </form>
         </div>
     </div>
