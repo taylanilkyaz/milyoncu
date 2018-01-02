@@ -226,8 +226,7 @@ class TicketDatabase extends Database {
 
     public function addTicket($userId,$subject,$detail,$isParent,$isActive,$parentId)
     {
-        $sql = sprintf("INSERT INTO 
-              sorular(%s,%s,%s,%s,%s,%s) VALUES(?,?,?,?,?,?)",
+        $sql = sprintf("CALL sorular_insert ( ?, ?, ?, ?, ?, ?);",
             TicketDatabase::$USER_ID,
             TicketDatabase::$TITLE,
             TicketDatabase::$DESC,

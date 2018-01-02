@@ -26,16 +26,14 @@ class ProductDatabase extends Database{
         $sub_cat = $object->getSubCategory();
 
         $sql = sprintf("
-                INSERT INTO %s (%s, %s ,%s , %s,%s, %s, %s)
-                VALUES (?,?,?,?,?,?,?)",
-            self::$PRODUCT_TABLE_NAME,
+                CALL urun_insert ( ?, ?, ?, ?, ?, ? ,?);",
             self::$PRODUCT_NAME,
             self::$PRODUCT_PRICE,
             self::$PRODUCT_DESC,
             self::$PRODUCT_IMAGEPATH,
-            self::$PRODUCT_LONG_DESC,
             self::$PRODUCT_CATEGORY_ID,
-            self::$PRODUCT_SUB_CATEGORY_ID);
+            self::$PRODUCT_SUB_CATEGORY_ID,
+            self::$PRODUCT_LONG_DESC);
 
         if ($stmt = $this->getDb()->prepare($sql)){
 
@@ -59,8 +57,7 @@ class ProductDatabase extends Database{
 
     public function editProduct($productName,$productPrice,$productInfo,$nameOfFile,$productId,$productLongInfo){
         $sql = sprintf("
-            UPDATE %s SET %s=? ,%s=? ,%s=? ,%s=? ,%s=? WHERE %s=?",
-            self::$PRODUCT_TABLE_NAME,
+            CALL urun_update ( ?, ?, ?, ?, ?, ? ,?);",
             self::$PRODUCT_NAME,
             self::$PRODUCT_PRICE,
             self::$PRODUCT_DESC,
@@ -197,7 +194,7 @@ class ProductDatabase extends Database{
     }
 
     public function deleteProduct($productId){
-        $sql = sprintf("DELETE FROM %s WHERE %s=?",self::$PRODUCT_TABLE_NAME,self::$PRODUCT_ID);
+        $sql = sprintf("CALL urun_delete ( ?);",self::$PRODUCT_ID);
         if ($stmt = $this->getDb()->prepare($sql)){
             $stmt->bind_param("d",$productId);
             $res = $stmt->execute();

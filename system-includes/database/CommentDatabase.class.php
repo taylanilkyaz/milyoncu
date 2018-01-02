@@ -76,8 +76,7 @@ class CommentDatabase extends Database
         $rate = $commentModelObj->getRating();
 
         $sql = sprintf("
-            INSERT INTO %s (%s,%s,%s,%s,%s) VALUES (?,?,?,?,?)",
-            self::$COMMENT_TABLE_NAME,
+            CALL yorumlar_insert ( ?, ?, ?, ?, ?);",
             self::$COMMENT_PRODUCT_ID,
             self::$COMMENT_USER_ID,
             self::$COMMENT_TITLE,
@@ -136,8 +135,7 @@ class CommentDatabase extends Database
     }
 
     public function deleteComment($comment_id){
-        $sql = sprintf("DELETE FROM %s WHERE %s=? ",
-            self::$COMMENT_TABLE_NAME,
+        $sql = sprintf("CALL yorumlar_delete ( ?);",
             self::$COMMENT_ID);
         if ($stmt = $this->getDb()->prepare($sql)) {
             $stmt->bind_param("d", $comment_id);
