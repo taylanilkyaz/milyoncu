@@ -33,11 +33,11 @@
                 </div>
 
                 <div class="add-basket-button" >
-                    + Sepete Ekle
+                    <i class="add circle icon"></i>Sepete Ekle
                 </div>
 
                 <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName();?>">
-                    <i class="big search orange icon"></i>Detaylı İncele
+                    <i class="search orange icon"></i>Detaylı İncele
                 </div>
             </div>
 
@@ -73,11 +73,11 @@
                     </div>
 
                     <div class="add-basket-button" >
-                        + Sepete Ekle
+                        <i class="add circle icon"></i>Sepete Ekle
                     </div>
 
                     <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName();?>">
-                        + Ürün İncele
+                        <i class="search orange icon"></i>Detaylı İncele
                     </div>
                 </div>
 
@@ -117,11 +117,11 @@
                             </div>
 
                             <div class="add-basket-button" >
-                                + Sepete Ekle
+                                <i class="add circle icon"></i>Sepete Ekle
                             </div>
 
                             <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName();?>">
-                                + Ürün İncele
+                                <i class="search orange icon"></i>Detaylı İncele
                             </div>
                         </div>
 
@@ -160,10 +160,10 @@
                                         </div>
                                     </div>
                                     <div class="add-basket-button">
-                                        + Sepete Ekle
+                                        <i class="add circle icon"></i>Sepete Ekle
                                     </div>
                                     <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName()?>">
-                                        + Ürün İncele
+                                        <i class="search orange icon"></i>Detaylı İncele
                                     </div>
                                 </div>
 
