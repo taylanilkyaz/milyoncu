@@ -37,14 +37,14 @@
                             <i class="dropbox icon"></i>
                             <div class="content">
                                 <a class="header">Sipariş Verildi </a>
-                                <div class="description">Sipariş isteği başarıyla alındı. <i>11.05.2017, Perşembe, 14.42</i></div>
+                                <div class="description"><i>11.05.2017, Perşembe, 14.42</i></div>
                             </div>
                         </div>
                         <div class="item">
                             <i class="users icon"></i>
                             <div class="content">
                                 <a class="header">Ürün Hazırlanmaya başlandı</a>
-                                <div class="description">Ürün hazırlıkları yapılıyor. <i>12.05.2017, Cuma, 14.42</i></div>
+                                <div class="description"><i>12.05.2017, Cuma, 14.42</i></div>
                             </div>
                         </div>
                     </div>
@@ -87,14 +87,14 @@
                             <i class="dropbox big icon"></i>
                             <div class="content">
                                 <a class="header">Sipariş Verildi - Sipariş No : 12545454 </a>
-                                <div class="description">Sipariş isteği başarıyla alındı. <i class="small-information">11.05.2017, Perşembe, 14.42</i></div>
+                                <div class="description"><i class="small-information">11.05.2017, Perşembe, 14.42</i></div>
                             </div>
                         </div>
                         <div class="item">
                             <i class="users big icon"></i>
                             <div class="content">
                                 <a class="header">Ürün Hazırlanmaya başlandı</a>
-                                <div class="description">Ürün hazırlıkları yapılıyor. <i class="small-information">12.05.2017, Cuma, 14.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 14.42</i></div>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@
                             <i class="shipping big icon"></i>
                             <div class="content">
                                 <a class="header">Ürün kargoya teslim edildi.</a>
-                                <div class="description">Ürün hazırlanması bitti ve kargoya teslim edildi.<i class="small-information">12.05.2017, Cuma, 16.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 16.42</i></div>
                             </div>
                         </div>
 
@@ -110,7 +110,7 @@
                             <i class="sort numeric ascending big icon"></i>
                             <div class="content">
                                 <a class="header">Kargo takip numarası girildi.</a>
-                                <div class="description">Kargo takip no : 1231312312523 <i class="small-information">12.05.2017, Cuma, 17.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 17.42</i></div>
                             </div>
                         </div>
 
@@ -191,7 +191,7 @@
                             <i class="users icon"></i>
                             <div class="content">
                                 <a class="header">Ürün Hazırlanmaya başlandı</a>
-                                <div class="description">Ürün hazırlıkları yapılıyor. <i class="small-information">12.05.2017, Cuma, 14.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 14.42</i></div>
                             </div>
                         </div>
 
@@ -199,7 +199,7 @@
                             <i class="shipping icon"></i>
                             <div class="content">
                                 <a class="header">Ürün kargoya teslim edildi.</a>
-                                <div class="description">Ürün hazırlanması bitti ve kargoya teslim edildi.<i class="small-information">12.05.2017, Cuma, 16.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 16.42</i></div>
                             </div>
                         </div>
 
@@ -207,7 +207,7 @@
                             <i class="sort numeric ascending icon"></i>
                             <div class="content">
                                 <a class="header">Kargo takip numarası girildi.</a>
-                                <div class="description">Kargo takip no : 1231312312523 <i class="small-information">12.05.2017, Cuma, 17.42</i></div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 17.42</i></div>
                             </div>
                         </div>
 
@@ -215,7 +215,7 @@
                             <i class="marker icon"></i>
                             <div class="content">
                                 <a class="header">Ürün size ulaştı.</a>
-                                <div class="description">Kargo ürünü başarıyla teslim etti. <i class="small-information">12.05.2017, Cuma, 17.42</i> </div>
+                                <div class="description"><i class="small-information">12.05.2017, Cuma, 17.42</i> </div>
                             </div>
                         </div>
 
@@ -223,7 +223,7 @@
                             <i class="shipping icon"></i>
                             <div class="content">
                                 <a class="header">Ürün merkezimize ulaşmak üzere yola çıktı.</a>
-                                <div class="description">Kargo ürünü başarıyla teslim etti. <i class="small-information">14.05.2017, Pazar, 1.42</i> </div>
+                                <div class="description"><i class="small-information">14.05.2017, Pazar, 1.42</i> </div>
                             </div>
                         </div>
 
@@ -231,7 +231,7 @@
                             <i class="doctor icon"></i>
                             <div class="content">
                                 <a class="header">Ürün merkeze ulaştı..</a>
-                                <div class="description">Ürün merkeze başarıyla teslim edildi. Uzmanımız test yapmaya hazır. <i class="small-information">15.05.2017, Pazartesi, 09.42</i> </div>
+                                <div class="description"><i class="small-information">15.05.2017, Pazartesi, 09.42</i> </div>
                             </div>
                         </div>
 
@@ -239,7 +239,7 @@
                             <i class="newspaper icon"></i>
                             <div class="content">
                                 <a class="header">Sonuçlar hazır.</a>
-                                <div class="description">Testiniz uzmanınımız tarafından incelendi ve rapor hazırlandı. <i class="small-information">16.05.2017, Pazartesi, 14.42</i> </div>
+                                <div class="description"><i class="small-information">16.05.2017, Pazartesi, 14.42</i> </div>
                             </div>
                         </div>
 

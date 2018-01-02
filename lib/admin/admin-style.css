@@ -82,11 +82,6 @@ body {
     font-weight: 400;
 }
 
-#menu-icon {
-    color: #E76F2F;
-    cursor: pointer;
-}
-
 #open-ticket-segment .ui.segment {
     cursor: pointer;
 }
@@ -190,6 +185,7 @@ body {
 #dashboard .header-2 {
     font-size: 1.5em;
     padding: 0 1.6em;
+    color: white;
 }
 
 .doubling.stackable.four.column.ui.grid.container {
@@ -206,37 +202,50 @@ body {
 }
 
 #order-container .content {
-    font-size: 1.12em;
+    font-size: 16px;
+    color:#41C4E2;
+;
+}
+
+#order-container h3 {
+    padding: 0px !important;
+    color: #E76F2F;
 }
 
 #order-container .title {
     font-size: 1.17em;
-    background: rgba(89, 148, 231, 0.25);
+    background: #e78524;
 }
 
 #order-container .item {
-    padding: 1.3em 0;
+    padding: 0.6em 0;
+}
+#order-container button{
+    margin-left: 0px !important;
+    color: #a9a9a9;
+    background-color: #ffdc58;
+}
+
+#order-container .item a.header {
+    cursor: pointer;
+    color: #41C4E2!important;
+    font-weight: 600;
 }
 
 #order-container input {
     max-width: 120px;
 }
 
-#order-container .description {
-    padding-top: 0.6em;
-}
-
 #order-container .small-information {
     display: block;
     font-size: 13px;
-    margin: 1.1em 0 0 1.1em;
 }
 
 #orderplus-container label {
     font-size: 1em;
 }
 
-#orderplus-container .toggle {
+#orderplus-container .slider {
     margin: 1em;
     display: block;
 }
@@ -249,19 +258,9 @@ body {
     border: 0px solid #fff;
 }
 
-#orderplus-container .ui.toggle.checkbox input {
+#orderplus-container .ui.slider.checkbox input {
     width: 13.5rem;
     height: 2.5rem;
-}
-
-@media screen and (max-width: 767px) {
-    #orderplus-container img {
-        width: 250px;
-    }
-
-    #orderplus-container .content {
-        padding-left: 0;
-    }
 }
 
 /*Start of Edit User*/
@@ -316,7 +315,7 @@ body {
     background: rgba(224, 224, 224, 0) !important;
 }
 
-#orders-id.ui.toggle.checkbox .box:after, .ui.toggle.checkbox label:after {
+#orders-id.ui.slider.checkbox .box:after, .ui.toggle.checkbox label:after {
     background: rgb(194, 194, 194) linear-gradient(transparent, rgba(2, 2, 0, 0.05));
 }
 
@@ -861,21 +860,6 @@ rating bar bitiş
 
 #payment-information-save-button-id {
     background: #43A047;
-}
-
-/**
-barcode tracking container
- */
-@media screen and (max-width: 767px) {
-    #barcode-tracking-container img {
-        width: 260px;
-    }
-}
-
-@media (min-width: 768px ) and (max-width: 1200px) {
-    #barcode-tracking-container img {
-        width: 260px;
-    }
 }
 
 /*ticket (destek) css başlangıç*/

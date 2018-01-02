@@ -2,8 +2,6 @@
 require $_SERVER['DOCUMENT_ROOT'].'/system-header.php';
 if ($_SESSION['user_type']==UserTypes::$TYPICAL_USER){
     redirect_javascript("/admin/buy");
-}   else if ($_SESSION['user_type']==UserTypes::$LABARATORY_USER){
-    redirect_javascript("/admin/barcode-tracking");
 }   else if ($_SESSION['user_type']==UserTypes::$ADMIN_USER){
     redirect_javascript("/admin/order+");
 }

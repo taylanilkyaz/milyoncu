@@ -151,17 +151,17 @@ if (isset($_SESSION['id'])) {
                                 <div class="status-container" style="display: none"
                                      id="<?php echo $order_status ?>"></div>
                                 <div class="sefa" id="<?php echo $order_code_array[$i]['sipariş_kodu']; ?>">
-                                    <div class="ui toggle checkbox" data-status="0">
+                                    <div class="ui slider checkbox" data-status="0">
                                         <input type="checkbox" name="public">
                                         <label>Sipariş Verildi </label>
                                     </div>
 
-                                    <div class="ui toggle checkbox" data-status="1">
+                                    <div class="ui slider checkbox" data-status="1">
                                         <input type="checkbox" name="public">
                                         <label>Ürün Hazırlanmaya Başlandı </label>
                                     </div>
 
-                                    <div class="ui toggle checkbox cargo" data-status="2">
+                                    <div class="ui slider checkbox cargo" data-status="2">
                                         <input type="checkbox" name="public">
                                         <label>Kargo takip numarası girildi.
                                             <span>Kargo Numarası :
@@ -178,7 +178,7 @@ if (isset($_SESSION['id'])) {
                                         </button>
                                     </div>
 
-                                    <div class="ui toggle checkbox" data-status="3">
+                                    <div class="ui slider checkbox" data-status="3">
                                         <input type="checkbox" name="public">
                                         <label>Ürün size ulaştı. </span> </label>
                                     </div>

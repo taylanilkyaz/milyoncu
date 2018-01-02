@@ -6,20 +6,15 @@ class Order{
         $str = "";
         if ($order_status==0){
             $str .=<<<HTML
-            <i class="dropbox big icon"></i> 
 HTML;
-
         }   else if ($order_status==1){
             $str .=<<<HTML
-            <i class="users big icon"></i> 
 HTML;
         }   else if ($order_status==2){
             $str .=<<<HTML
-            <i class="shipping big icon"></i> 
 HTML;
         }   else if ($order_status==3){
             $str .=<<<HTML
-            <i class="marker big icon"></i> 
 HTML;
         }
         return $str;
@@ -38,50 +33,50 @@ HTML;
         if ($order_status>=0){
             $str.=
                 "<div class=\"item\">
-                     <i class=\"dropbox big icon\"></i>
+                     <i class=\"arrow right icon\"></i>
                      <div class=\"content\">
                           <a class=\"header\">Sipariş Verildi - Sipariş No : ". $order_code ." </a>
-                          <div class=\"description\">Sipariş isteği başarıyla alındı. <i class=\"small-information\">".$buyedObj->timeFormat($order_add_time)."</i></div>
+                          <div class=\"description\"><i class=\"small-information\">".$buyedObj->timeFormat($order_add_time)."</i></div>
                      </div>
                 </div>";
 
         }  if ($order_status>=1){
                 $str.=
                     "<div class=\"item\">
-                        <i class=\"users big icon\"></i>
+                        <i class=\"arrow right icon\"></i>
                         <div class=\"content\">
                             <a class=\"header\">Ürün Hazırlanmaya başlandı</a>
-                            <div class=\"description\">Ürün hazırlıkları yapılıyor. <i class=\"small-information\">".$buyedObj->timeFormat($arr[0]['ekleme_zamanı'])."</i></div>
+                            <div class=\"description\"><i class=\"small-information\">".$buyedObj->timeFormat($arr[0]['ekleme_zamanı'])."</i></div>
                         </div>
                     </div>";
 
         }  if ($order_status>=2){
             $str.="
                 <div class=\"item\">
-                            <i class=\"shipping big icon\"></i>
+                            <i class=\"arrow right icon\"></i>
                             <div class=\"content\">
                                 <a class=\"header\">Ürün kargoya teslim edildi.</a>
-                                <div class=\"description\">Ürün hazırlanması bitti ve kargoya teslim edildi.<i class=\"small-information\">".$buyedObj->timeFormat($arr[1]['ekleme_zamanı'])."</i></div>
+                                <div class=\"description\"><i class=\"small-information\">".$buyedObj->timeFormat($arr[1]['ekleme_zamanı'])."</i></div>
                             </div>
                         </div>";
 
         }  if ($order_status>=2){
             $str.="
                 <div class=\"item\">
-                            <i class=\"sort numeric ascending big icon\"></i>
+                            <i class=\"arrow right icon\"></i>
                             <div class=\"content\">
-                                <a class=\"header\">Kargo takip numarası girildi.</a>
-                                <div class=\"description\">Kargo takip no : ${cargo_no} <i class=\"small-information\">".$buyedObj->timeFormat($arr[1]['ekleme_zamanı'])."</i></div>
+                                <a class=\"header\">Kargo takip numarası girildi : ${cargo_no}</a>
+                                <div class=\"description\"><i class=\"small-information\">".$buyedObj->timeFormat($arr[1]['ekleme_zamanı'])."</i></div>
                             </div>
                         </div>";
 
         }  if ($order_status>=3){
             $str.="
                 <div class=\"item\">
-                            <i class=\"marker big icon\"></i>
+                            <i class=\"arrow right icon\"></i>
                             <div class=\"content\">
                                 <a class=\"header\">Ürün size ulaştı.</a>
-                                <div class=\"description\">Kargo ürünü başarıyla teslim etti. <i class=\"small-information\">".$buyedObj->timeFormat($arr[2]['ekleme_zamanı'])."</i> </div>
+                                <div class=\"description\"><i class=\"small-information\">".$buyedObj->timeFormat($arr[2]['ekleme_zamanı'])."</i> </div>
                             </div>
                         </div>";
 
