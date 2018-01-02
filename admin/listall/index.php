@@ -8,11 +8,9 @@ if (!$bool){
 }
 getAdminHeader();
 ?>
-<br>
-<br>
 
 <div id="dashboard">
-    <h1 class="ui header" style="margin-top: -50px ; margin-bottom: -10px; text-align: center">Kullanıcı Listele</h1>
+    <h1 class="ui header" style="margin-top: 0px ; margin-bottom: -40px; text-align: center ; color: #5C5B59">Kullanıcı Listele</h1>
     <?php
     //getNavbar();
     require 'listall-form.php';

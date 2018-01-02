@@ -121,7 +121,7 @@ $basketList = $dashboard->getAllBasketAsProductArr($user_id);
                         </div>
                  <div class="ui segment">
                             <p class="ahref">
-                                <span class="ui header title color">Teslimat Bilgileri </span>
+                                <span class="ui header title color" >Teslimat Bilgileri </span>
                                 <a href="/admin/odeme/teslimat-bilgileri" class="link-type-one">Değiştir</a>
 
                             <div class="order-items-header group">

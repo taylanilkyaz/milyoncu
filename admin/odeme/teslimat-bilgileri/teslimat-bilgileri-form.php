@@ -85,7 +85,7 @@ foreach ($basketList as $item) {
                         ?>
                         <div id="segment-id" class="ui segment">
                             <div id="top-content-2" class="ui fluid container">
-                                <div class="header"><h1 id="first-screen-h1-id">Teslimat Bilgileri</h1></div>
+                                <div class="ui header"><h1>Teslimat Bilgileri</h1></div>
                                 <div class="meta">
                                     <span class="date"><h4>Lütfen teslimat adres bilgilerinizi ve teslimat seçeneğini belirtin.</h4></span>
                                 </div>

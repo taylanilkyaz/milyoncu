@@ -5,7 +5,6 @@ body {
 */
 #teslimat-bilgileri-top-content-id{
     text-align: center;
-    margin-top: -80px;
 }
 
 .ui.steps .disabled.step{
@@ -84,7 +83,7 @@ siparis ozeti css
 }
 
 #siparis-özeti-2 .ui.header.color{
-    color:  #41C4E2;
+    color: #ff811a;
 }
 
 #siparis-özeti-2 .ahref{

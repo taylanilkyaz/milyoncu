@@ -6,17 +6,6 @@ $productName = $_GET['name'];
 
 ?>
 
-
-
-<div id="icon-container" class="ui fluid container">
-    <button class="ui left floated button">
-        <i id="menu-icon" class="huge sidebar icon"></i>
-    </button>
-    <button class="ui right floated button">
-        <i id="shop-icon" class="huge shop icon"></i>
-    </button>
-</div>
-
 <div id="dashboard">
     <?php
     require("product-description-form.php");

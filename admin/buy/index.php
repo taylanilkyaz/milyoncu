@@ -24,9 +24,9 @@ getAdminHeader();
 
             <form class="ui stackable grid" action="index.php" method="post">
                 <div class="item">
-                    <div class="ui fluid search column">
+                    <div class="ui fluid search column"style="margin-top: 2%">
                         <div class="ui fluid big icon input">
-                            <input id="search" name="search" class="prompt" type="text" placeholder="Ara..." style="font-size: 15px; margin-top: 5%; margin-bottom: 10%">
+                            <input id="search" name="search" class="prompt" type="text" placeholder="Ara..." style="font-size: 15px">
                             <i class="search icon"></i>
                         </div>
                     </div>

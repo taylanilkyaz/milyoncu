@@ -10,7 +10,7 @@ getAdminHeader();
 <div id="dashboard">
     <div class="pusher ui stackable centered grid">
         <div class="eight wide column">
-            <h1 id="header-id" class="ui header">Destek ve İletişim</h1>
+            <h1 id="header-id" class="ui header" style="color:#5C5B59">Destek ve İletişim</h1>
             <div class="large ui buttons">
                 <button id="open-ticket" class="ui blue basic button">Önceki Sorular</button>
                 <button id="submit-ticket" class="ui blue basic button">Yeni Soru</button>

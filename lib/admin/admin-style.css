@@ -91,6 +91,7 @@ body {
     margin-left: 150px;
     width: calc(100% - 260px);
     font-size: 17px;
+    text-align: center;
 }
 
 #buy-container .extra.content {
@@ -131,51 +132,6 @@ body {
 #buy-container .button {
     background: rgb(0, 73, 176);
     color: #ffffff;
-}
-
-#shop-icon {
-    color: #E76F2F;
-    cursor: pointer;
-}
-
-#icon-container {
-    background: #ffffff;
-    height: 80px;
-}
-
-#icon-container > .ui.button {
-    width: 60px;
-    margin: 0 25px 0 50px;
-    text-align: center;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    background-image: none;
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: none;
-}
-
-#buy-sidebar {
-    color: #ffffff;
-    padding: 20px 0 0 0;
-    background: rgba(88, 83, 91, 1);
-}
-
-#buy-sidebar > .description {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ffffff;
-}
-
-#buy-sidebar h2 {
-    padding-left: 10px;
-}
-
-#buy-sidebar .meta {
-    font-size: 20px;
-}
-
-#buy-sidebar .remove-buy-item {
-    cursor: pointer;
 }
 
 #dashboard .sline {
@@ -263,6 +219,12 @@ body {
     height: 2.5rem;
 }
 
+.ui.styled.accordion .active.title {
+    background: 0 0;
+    background-color: #ffa232 !important;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 /*Start of Edit User*/
 #editUserMenu {
     display: flex;
@@ -289,10 +251,6 @@ body {
 }
 
 /**End of Edit user**/
-
-#buy-sidebar-content {
-    height: 50px;
-}
 
 #detail-checkout-button {
     width: 100%;
@@ -480,14 +438,15 @@ product-description end
 }
 
 #sepetim-segment #titlecolor {
-    font-size: 40px;
-    color: #41C4E2;
+    color: #ff811a;
     margin: 2%;
+    font-weight: bold;
+    font-size: 30px;
+    color: #ff811a;
 }
 
 #sepetim-segment #rightscreen {
-    font-size: 30px;
-    color: #41C4E2;
+    color: #ff811a;
 }
 
 #rightscreen-odtu {
@@ -719,7 +678,6 @@ rating bar bitiş
 }
 
 #buy-container .ui.segment:hover {
-    filter: blur(1px);
     border: 2px solid #41C4E2;
 }
 
@@ -881,3 +839,7 @@ input#sendTicket:hover {
 }
 
 /*ticket (destek) css bitiş*/
+
+#productTableForList{
+    text-align: center;
+}

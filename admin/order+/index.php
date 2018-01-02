@@ -8,21 +8,11 @@ if (!$bool){
 getAdminHeader();
 ?>
 
-<div id="icon-container" class="ui fluid container">
-    <button class="ui left floated button"><i id="menu-icon" class="huge sidebar icon"></i></button>
-    <button class="ui right floated button"><i id="shop-icon" class="huge shop icon"></i></button>
-</div>
+<div id="dashboard" style="margin-left: 150px ; margin-right: 150px ;">
+    <h1 id="header-id" class="ui header" style="margin-top: 0px ; margin-bottom: 20px ; color: #5C5B59">Sipariş Takibi</h1>
 
-<div id="dashboard" style="margin-left: 150px ; margin-right: 150px">
-    <h1 id="header-id" class="ui header" style="margin-top: -50px ; margin-bottom: -15px">Sipariş Takibi</h1>
-
-    <button onclick="window.history.back()" style="margin-top: 15px; margin-bottom: 15px; " class="ui labeled icon button">
-        <i class="left chevron icon"></i>
-        Geri Dön
-    </button>
 
     <?php
-    //getNavbar();
     require 'order+-form.php';
     ?>
 </div>

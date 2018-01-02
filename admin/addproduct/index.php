@@ -8,17 +8,8 @@ if (!$bool){
 getAdminHeader();
 ?>
 
-<div id="icon-container" class="ui fluid container">
-    <button class="ui left floated button">
-        <i id="menu-icon" class="huge sidebar icon"></i>
-    </button>
-    <button class="ui right floated button">
-        <i id="shop-icon" class="huge shop icon"></i>
-    </button>
-</div>
-
 <div id="dashboard">
-    <h1 id="header-id" class="ui header" style="margin-top: -50px">Ürün Ekle</h1>
+    <h1 id="header-id" class="ui header" style="margin-top: 0px ; color: #5C5B59">Ürün Ekle</h1>
 
     <?php
     require 'addproduct-form.php';

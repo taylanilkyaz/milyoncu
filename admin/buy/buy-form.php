@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="urun-incele-button" href="../product-description?name=<?php echo $product->getName();?>">
-                    + Ürün İncele
+                    <i class="big search orange icon"></i>Detaylı İncele
                 </div>
             </div>
 
