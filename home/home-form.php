@@ -9,32 +9,32 @@ $_SESSION['csrf'] = $csrf_salt;
         <ul class="slider">
             <li class="one">
                 <a href="javascript:;">
-                    <h1>Ne Alırsan Bir Milyon!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum non suscipit nesciunt veritatis nisi fugiat, labore autem aspernatur ratione dolore, itaque, fugit expedita sint.</p>
+                    <h1 style="background-color:rgba(230,202,3,0.5)">Ne Alırsan Bir Milyon!</h1>
+                    <p>Ucuz fiyatlarımızla piyasayı yerinden oynatmaya geliyoruz . Ürünlerimizi mutlaka incelemelisiniz ! </p>
                 </a>
             </li>
             <li class="two">
                 <a href="javascript:;">
-                    <h1>Yüzlerce Ürün Yüzlerce Çeşit!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae maxime minus similique. Minus provident, omnis temporibus, voluptatum, odit cum maiores tempora, nobis explicabo ipsum?</p>
+                    <h1 style="background-color:rgba(0, 0, 0, 0.5) ; color: white;">Yüzlerce Ürün Yüzlerce Çeşit!</h1>
+                    <p>Kategorilere bölünmüş yüzlerce ürün ve yüzlerce çeşit sizin alışveriş işlerinizi oldukça kolaylaştıracak . </p>
                 </a>
             </li>
             <li class="three">
                 <a href="javascript:;">
-                    <h1>Sınırsız Taşıma İmkanı</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, quis explicabo architecto tempore quia, laboriosam beatae illo eveniet nihil, aliquam vel. Officiis officia, a?</p>
+                    <h1 style="background-color:rgba(255,239,213,0.5) ; color: #4b4b4b">Sınırsız Taşıma İmkanı</h1>
+                    <p>Artık evinizden istediğiniz ürün yada ürünleri sınırsız kargo imkanlarıyla , kolayca alabilirsiniz . Buna sadece bir tık uzaksınız !</p>
                 </a>
             </li>
             <li class="four">
                 <a href="javascript:;">
-                    <h1>7 Gün / 24 Saat Hizmet</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quibusdam sed dolores, pariatur minus porro ea sunt fugiat necessitatibus, ipsum est cum tempore quas dolore.</p>
+                    <h1 style="background-color: indianred">7 Gün / 24 Saat Hizmet</h1>
+                    <p>İstediğiniz saat ya da istediğiniz gün sipariş gerçekleştirebilirsiniz . </p>
                 </a>
             </li>
             <li class="five">
                 <a href="javascript:;">
-                    <h1>Güvenlik Ve Gizlilik</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quam culpa amet in, earum minus non soluta, quas autem, distinctio assumenda, libero rem reprehenderit facilis.</p>
+                    <h1 style="background-color:rgba(255,255,255,0.5) ; color: white">Güvenlik Ve Gizlilik</h1>
+                    <p>Herhangi bir güvenlik kaygınız olmasın . Size ait hiç bir bilgi dışarı ile kesinlikle paylaşılmaz . Bu yüzden gönül rahatlığı ile alışveriş yapabilirsiniz. </p>
                 </a>
             </li>
         </ul>

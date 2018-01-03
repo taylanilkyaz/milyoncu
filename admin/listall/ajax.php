@@ -92,7 +92,6 @@ function getHTMLFormat($users){
                 <td>${e_mail}</td>
                 <td>${phone_number}</td>
                 <td><button class="ui labeled icon button" id="editButton"> <i class="edit icon"></i> Düzenle </button></td>
-                <td><button class="ui labeled icon button" id="orderButton"> <i class="shop icon"></i> Siparişler </button></td>
                 <td class="id-container" style="display: none;">${id}</td>
             </tr>
 HTML;

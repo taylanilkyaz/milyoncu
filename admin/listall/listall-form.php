@@ -41,7 +41,6 @@
                         <th>MAİL</th>
                         <th>TELEFON</th>
                         <th>KULLANICI DÜZENLE</th>
-                        <th>GEÇMİŞ SİPARİŞLERİ GÖRÜNTÜLE</th>
                     </tr>
                     </thead>
                     <tbody id="db-table-for-list-tbody">
