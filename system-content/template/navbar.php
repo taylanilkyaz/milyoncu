@@ -1,7 +1,7 @@
 <div id="navbar">
     <div class="ui large menu grid">
 
-        <div class="computer only row">
+        <div class=" row">
             <a href="/home" class="header item" style="background-color: #5C5B59">
                 <img class="ui logo-size image" src="/assets/fotos/yenilogo.jpg">
             </a>
