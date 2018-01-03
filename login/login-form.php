@@ -2,8 +2,8 @@
 $csrf_salt = base64_encode(openssl_random_pseudo_bytes(16));
 $_SESSION['csrf'] = $csrf_salt;
 ?>
-<div id="top-content" class="ui fluid container">
-    <div class="ui stackable centered grid">
+<div id="top-content" class="ui fluid container" style=" background-image: url(/assets/fotos/arkaplan.jpg)">
+    <div class="ui stackable centered grid "style="margin-top: 10%  ">
         <div class="middle aligned five wide center aligned column">
 
             <form class="ui large form" id="login-form" method="post" action="/login/index.php">

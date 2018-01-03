@@ -21,8 +21,8 @@ if (isset($_GET["inserted"]))
 
 */
 ?>
-<div id="top-content" class="ui fluid container">
-    <div class="ui stackable centered grid">
+<div id="top-content" class="ui fluid container" style=" background-image: url(/assets/fotos/arkaplan.jpg)">
+    <div class="ui stackable centered grid" style="margin-top: 10%  ">
         <div class="middle aligned eight wide tablet seven wide computer center aligned column" id="login-form-div">
             <form  class="ui large form" id="login-form" method="post" action="/register/index.php">
                 <input type="hidden" name="csrf" id="csrf_salt" value="<?php echo $_SESSION['csrf'] ?>"/>

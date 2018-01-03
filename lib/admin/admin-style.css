@@ -843,3 +843,7 @@ input#sendTicket:hover {
 #productTableForList{
     text-align: center;
 }
+
+#dbTableForList{
+    text-align: center;
+}
