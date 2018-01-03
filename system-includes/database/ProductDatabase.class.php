@@ -241,6 +241,87 @@ class ProductDatabase extends Database{
             return null;
         }
     }
+    public function getMaxThree()
+    {
+        $sql = sprintf("SELECT * FROM max_three");
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+    public function getMinThree()
+    {
+        $sql = sprintf("SELECT * FROM min_three");
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+    public function getSoldMost()
+    {
+        $sql = sprintf("SELECT * FROM most_product");
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+
+            $result = $stmt->get_result();
+
+            /**
+             * @var $rows Product[]
+             */
+            $productArr = array();
+            while ($row = mysqli_fetch_assoc($result)){
+                array_push($productArr,Product::__constructByMysqliRow($row,false));
+            }
+
+            return $productArr;
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
 
     public function getAllProductsSearch($search)
     {
@@ -273,8 +354,78 @@ class ProductDatabase extends Database{
             return null;
         }
     }
+    public function getMeanPrice()
+    {
+        $sql = sprintf("SELECT * FROM avg_price");
 
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Kategori ismi getirme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }   else{
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                return $row;
+            }
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+    public function getProductCount()
+    {
+        $sql = sprintf("SELECT * FROM count_product");
 
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Kategori ismi getirme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }   else{
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                return $row;
+            }
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
+    public function getMostCargo()
+    {
+        $sql = sprintf("SELECT * FROM most_cargo");
+
+        if($stmt = $this->getDb()->prepare($sql)){
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }
+            if(!$stmt->execute()){
+                $this->setIsError(true);
+                $this->setErrorMessage("Kategori ismi getirme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+                return null;
+            }   else{
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                return $row;
+            }
+        }else{
+            $this->setErrorMessage("Basketteki ürünleri listeleme sırasında bir hata meydana geldi : " . $this->getDb()->error);
+            return null;
+        }
+    }
 
 
 }

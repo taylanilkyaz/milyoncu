@@ -91,6 +91,10 @@
         }
         else{
             ?>
+            <a href="/admin/istatistik" class="item">
+                <div class="ui primary button" style="background-color: #ffe004 ; color:#5C5B59;">İstatistikler</div>
+            </a>
+
             <a href="/admin/buy" class="item">
                 <div class="ui primary button" style="background-color: #ffe004 ; color:#5C5B59;">Ürünler</div>
             </a>
