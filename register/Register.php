@@ -30,7 +30,7 @@ class Register
 
 
 
-    public function createUserPostData():bool {
+    public function createUserPostData() {
         $dbObject = new Database();
         $firstName = $_POST['first_name'];
         $lastName  = $_POST['last_name'];
@@ -61,7 +61,7 @@ class Register
         return true;
     }
 
-    public function isAlreadyLogin():bool
+    public function isAlreadyLogin()
     {
         if(isset($_SESSION['e-mail'])){
             return true;
@@ -94,7 +94,7 @@ class Register
      * a-z A-Z 0-9 * - _ kabul eder.
      * @param $password
      */
-    public function isValidPassword($password):bool{
+    public function isValidPassword($password){
         $len = strlen($password);
         if($len < 6 || $len>16){
             return false;
@@ -113,7 +113,7 @@ class Register
      * @param $name
      * @return bool
      */
-    public function isValidName($name):bool{
+    public function isValidName($name){
         $len = mb_strlen($name);
         if($len < 2 && $len > 99){
             return false;
@@ -131,7 +131,7 @@ class Register
      * @param $tc
      * @return bool
      */
-    public function isValidTC($tc):bool{
+    public function isValidTC($tc){
         if(!is_numeric($tc))
             return false;
 

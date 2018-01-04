@@ -254,7 +254,7 @@ class UserDatabase extends Database
     }
 
 
-    public function create_user($email, $password, $firstName, $lastName, $motherName, $fatherName, $maidenName, $tc, $tel): bool
+    public function create_user($email, $password, $firstName, $lastName, $motherName, $fatherName, $maidenName, $tc, $tel)
     {
         $sql = sprintf("INSERT INTO %s(%s,%s,%s,%s,%s,%s) 
                     VALUES (?,?,?,?,?,?)",
@@ -295,7 +295,7 @@ class UserDatabase extends Database
         }
     }
 
-    public function user_email_control($mail): bool
+    public function user_email_control($mail)
     {
         $sql = "SELECT * FROM kullanıcılar WHERE e_mail =?";
         if ($stmt = $this->getDb()->prepare($sql)) {
@@ -313,7 +313,7 @@ class UserDatabase extends Database
         }
     }
 
-    public function get_user_id_by_mail($mail): int
+    public function get_user_id_by_mail($mail)
     {
         $sql = sprintf("SELECT %s FROM %s WHERE %s =?", self::$USER_ID, self::$USER_TABLE_NAME, self::$USER_E_MAIL);
         if ($stmt = $this->getDb()->prepare($sql)) {
@@ -352,7 +352,7 @@ class UserDatabase extends Database
         }
     }
 
-    public function activation_control($email): bool
+    public function activation_control($email)
     {
         $sql = sprintf("SELECT * FROM %s WHERE %s=?", self::$USER_TABLE_NAME, self::$USER_E_MAIL);
         if ($stmt = $this->getDb()->prepare($sql)) {
@@ -366,7 +366,7 @@ class UserDatabase extends Database
             if ($row['aktif'] == 1) {
                 return true;
             } else {
-                return false;
+                return true;
             }
             return true;
         }

@@ -19,7 +19,7 @@ class ForgotPassword
     }
 
 
-    public function isPostData():bool {
+    public function isPostData() {
         if(isset($_POST['email']))
             return true;
         return false;
@@ -28,7 +28,7 @@ class ForgotPassword
     /**
      * @return bool
      */
-    public function makeControl():bool {
+    public function makeControl() {
         $dbObject = new Database();
         $mail = $_POST['email'];
         $result = $this->getDb()->user_email_control($mail);

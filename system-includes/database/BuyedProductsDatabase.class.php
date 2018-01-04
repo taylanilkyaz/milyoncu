@@ -58,7 +58,7 @@ class BuyedProductsDatabase extends Database{
         return $date;
     }
 
-    public function getAllBuyedProducts($order_code):mysqli_result
+    public function getAllBuyedProducts($order_code)
     {
         $sql = sprintf("SELECT  prod.*,count(*) AS count 
         FROM %s AS a,%s AS prod WHERE a.%s = ? AND prod.%s = a.%s 

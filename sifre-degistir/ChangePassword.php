@@ -33,7 +33,7 @@ class ChangePassword
         return false;
     }
 
-    public function makeControls():bool {
+    public function makeControls(){
         $user_obj = new UserDatabase();
         $activation_obj = new ActivationDatabase();
         $user_id = $user_obj->get_user_id_by_mail($_GET['email']);

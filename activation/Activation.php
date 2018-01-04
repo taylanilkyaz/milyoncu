@@ -29,7 +29,7 @@ class Activation
         return false;
     }
 
-    public function makeControls():bool {
+    public function makeControls(){
         //zamanını kontrol edeceğiz burada
         $user_obj = new UserDatabase();
         $activation_obj = new ActivationDatabase();

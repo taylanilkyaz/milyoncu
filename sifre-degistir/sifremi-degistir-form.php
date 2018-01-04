@@ -1,6 +1,6 @@
 
-<div id="top-content" class="ui fluid container">
-    <div class="ui stackable centered grid">
+<div id="top-content" class="ui fluid container" style=" background-image: url(/assets/fotos/arkaplan.jpg)">
+    <div class="ui stackable centered grid" style="margin-top: 10%">
         <div class="middle aligned five wide center aligned column">
             <form class="ui large form" id="login-form" method="post" action="/sifre-degistir/index.php">
                 <div class="field">
@@ -56,8 +56,6 @@
 
                 <input value="Şifremi Değiştir" class="ui fluid big submit disabled button" type="submit" id="login-submit">
 
-                <p class="smalller-text"><i class="big hide icon"></i>Bilgileriniz hiç kimseyle kati suretle paylaşılmaz.<p>
-                <p class="smalller-text"><i class="big lock icon"></i>Tüm kütüphane sistemi SHA-512 şifreleme ile korunur.<p>
             </form>
         </div>
     </div>

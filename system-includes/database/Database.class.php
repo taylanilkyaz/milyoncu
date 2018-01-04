@@ -16,14 +16,14 @@ class Database
         }
     }
 
-    public function getDb():mysqli{
+    public function getDb(){
         return $this->db;
     }
 
     /**
      * @return mixed
      */
-    public function getIsError():bool
+    public function getIsError()
     {
         return $this->is_error;
     }

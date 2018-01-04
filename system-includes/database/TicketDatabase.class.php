@@ -86,7 +86,7 @@ class TicketDatabase extends Database {
         return null;
     }
 
-    public function getOpenTicketParentByUserId($user_id):mysqli_result{
+    public function getOpenTicketParentByUserId($user_id){
         $sql = sprintf("SELECT * FROM %s WHERE %s = ? AND %s = ? AND %s = ?  ORDER BY %s DESC;",
             TicketDatabase::$TABLE_NAME,
             TicketDatabase::$USER_ID,

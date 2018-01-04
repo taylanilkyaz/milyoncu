@@ -20,7 +20,7 @@ class Login
         return $this->db;
     }
 
-    public function do_login_post_data():bool {
+    public function do_login_post_data() {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $result = $this->getDb()->user_email_control($email);
@@ -66,7 +66,7 @@ class Login
         }
     }
 
-    public function isAlreadyLogin():bool
+    public function isAlreadyLogin()
     {
         if(isset($_SESSION['e-mail'])){
             return true;

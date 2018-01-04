@@ -51,7 +51,7 @@ class SubCategoryDatabase extends Database {
             return null;
         }
     }
-    public function getAllSubCategoryForSuper($ust_id):mysqli_result
+    public function getAllSubCategoryForSuper($ust_id)
     {
         $sql = sprintf("SELECT * FROM %s WHERE %s = ?",
             self::$SUB_CATEGORY_TABLE_NAME,

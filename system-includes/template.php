@@ -1,30 +1,30 @@
 <?php
 
-function is_404():bool{
+function is_404(){
     return false;
 }
 
-function is_search():bool {
+function is_search() {
     return false;
 }
-function is_home():bool {
+function is_home() {
     return false;
 }
-function is_single():bool {
+function is_single() {
     return false;
 }
-function is_page():bool {
+function is_page(){
     return false;
 }
-function is_singular():bool {
+function is_singular() {
     return false;
 }
 
-function is_login():bool{
+function is_login(){
     return true;
 }
 
-function is_signup():bool {
+function is_signup() {
     return false;
 }
 

@@ -8,7 +8,7 @@ class BasketDatabase extends Database{
     public static $BASKET_USER_ID = "kullanıcı_id";
     public static $BASKET_ADD_DATE = "işlem_zamanı";
 
-    public function addBasketByProductName($user_id,$productName):bool{
+    public function addBasketByProductName($user_id,$productName){
 
         $sql = sprintf("
       INSERT INTO sepet (%s,%s)
@@ -74,7 +74,7 @@ class BasketDatabase extends Database{
 
     }
 
-    public function getAllBasket($user_id):mysqli_result
+    public function getAllBasket($user_id)
     {
         $sql = sprintf("SELECT  prod.*,count(*) AS count 
         FROM %s AS a,%s AS prod WHERE a.%s = ? AND prod.%s = a.%s 

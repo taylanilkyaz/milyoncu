@@ -12,7 +12,7 @@ class Logout{
 
     }
 
-    public function isAlreadyLogin():bool
+    public function isAlreadyLogin()
     {
         if(isset($_SESSION['e-mail'])){
             return true;
