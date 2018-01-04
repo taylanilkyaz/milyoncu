@@ -3,7 +3,7 @@
 class ActivationDatabase extends Database{
     public static $ACTIVATION_TABLE_NAME = "aktivasyon_kodu";
     public static $ACTIVATION_ID = "id";
-    public static $ACTIVATION_USER_ID = "gönderim_zamanı";
+    public static $ACTIVATION_USER_ID = "kullanıcı_id";
     public static $ACTIVATION_CODE= "aktivasyon_kodu";
 
 
@@ -14,7 +14,7 @@ class ActivationDatabase extends Database{
    }
 
    public function insertActivationDatabase($user_id,$activation_code){
-       $sql = sprintf("INSERT %s (%s ,%s) values(?,?)",
+       $sql = sprintf("INSERT INTO %s (%s ,%s) values(?,?)",
                             self::$ACTIVATION_TABLE_NAME,
                             self::$ACTIVATION_CODE,
                             self::$ACTIVATION_USER_ID
