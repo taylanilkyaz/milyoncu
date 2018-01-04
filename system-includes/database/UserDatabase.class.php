@@ -254,7 +254,7 @@ class UserDatabase extends Database
     }
 
 
-    public function create_user($email, $password, $firstName, $lastName, $motherName, $fatherName, $maidenName, $tc, $tel)
+    public function create_user($email, $password, $firstName, $lastName, $tc, $tel)
     {
         $sql = sprintf("INSERT INTO %s(%s,%s,%s,%s,%s,%s) 
                     VALUES (?,?,?,?,?,?)",

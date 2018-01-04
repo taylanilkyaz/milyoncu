@@ -36,13 +36,10 @@ class Register
         $lastName  = $_POST['last_name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $motherName = "";
-        $fatherName ="";
-        $maidenName = "";
         $tcNo =  $_POST['tc_no'];
         $tel = $_POST['tel_number'];
 
-        if(!$this->isValidCreateUserData($email,$password,$firstName,$lastName, $motherName,$fatherName,$maidenName,$tcNo)){
+        if(!$this->isValidCreateUserData($email,$password,$firstName,$lastName, $tcNo)){
             $this->error_message = "Kullanıcı kayıt bilgileri yanlış.";
             return false;
         }
@@ -52,7 +49,7 @@ class Register
             return false;
         }
         //user is active 1 mi sıfır mı onu kontrol etmemiz gerekiyor
-        $this->getUserDb()->create_user($email,$password,$firstName,$lastName, $motherName,$fatherName,$maidenName,$tcNo,$tel);
+        $this->getUserDb()->create_user($email,$password,$firstName,$lastName,$tcNo,$tel);
         if($this->getDb()->isError()){
             $this->error_message =  $this->getDb()->getErrorMessage();
             return false;
@@ -144,18 +141,12 @@ class Register
 
 
 
-    public function isValidCreateUserData($email,$password,$first_name,$last_name,
-        $motherName,$fatherName,$maidenName,$tc){
+    public function isValidCreateUserData($email,$password,$first_name,$last_name, $tc){
 
         if(!$this->isValidEmail($email)) return false;
         if(!$this->isValidPassword($password)) return false;
         if(!$this->isValidName($first_name)) return false;
         if(!$this->isValidName($last_name)) return false;
-        if(!$this->isValidName($motherName)) return false;
-        if(!$this->isValidName($fatherName)) return false;
-        if (strcmp($maidenName,"")!=0){
-            if(!$this->isValidName($maidenName)) return false;
-        }
         if (strcmp($tc,"")!=0) {
             if (!$this->isValidTC($tc)) return false;
         }
